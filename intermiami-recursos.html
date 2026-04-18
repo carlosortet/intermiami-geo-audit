@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inter Miami CF · Recursos · FAQs · KPIs · ROI · Mundial · Metodología</title>
+<style>
+  @page { size: A4; margin: 1.5cm; }
+  * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
+
+  :root {
+    --im-black: #000;
+    --im-pink: #F7B5CD;
+    --im-pink-strong: #E91E63;
+    --im-pink-deep: #B8005C;
+    --im-pink-bg: #FFF5F9;
+    --im-pink-soft: #FCE4EC;
+    --im-gold: #B38A00;
+    --im-gold-bg: #fffde7;
+    --text: #1a1a1a;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-size: 11pt;
+    line-height: 1.55;
+    color: var(--text);
+    background: #fff;
+    max-width: 210mm;
+    margin: 0 auto;
+    padding: 40px;
+  }
+
+  /* HEADER */
+  .header {
+    border-bottom: 4px solid var(--im-black);
+    padding-bottom: 22px;
+    margin-bottom: 30px;
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 22px;
+    align-items: center;
+    position: relative;
+  }
+  .header::after {
+    content: ""; position: absolute;
+    left: 0; right: 0; bottom: -8px;
+    height: 4px; background: var(--im-pink);
+  }
+  .header .logo-wrap { width: 120px; height: 130px; display: flex; align-items: center; justify-content: center; }
+  .header .logo-wrap img { width: 100%; height: 100%; object-fit: contain; }
+  .header .kicker {
+    font-size: 9pt; text-transform: uppercase; letter-spacing: 2.5px;
+    color: var(--im-pink-deep); font-weight: 700; margin-bottom: 6px;
+  }
+  .header h1 { font-size: 24pt; font-weight: 400; line-height: 1.1; margin-bottom: 8px; }
+  .header h1 span { font-weight: 700; }
+  .header .subtitle { font-size: 10.5pt; color: #555; font-style: italic; margin-bottom: 10px; }
+  .header .meta-line { font-size: 9pt; color: #666; display: flex; gap: 16px; flex-wrap: wrap; }
+  .header .meta-line span strong { color: var(--im-black); text-transform: uppercase; letter-spacing: 0.5px; font-size: 8pt; }
+
+  /* Quick nav */
+  .quicknav {
+    background: var(--im-black);
+    padding: 14px 22px;
+    margin-bottom: 32px;
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+  }
+  .quicknav a {
+    color: var(--im-pink);
+    text-decoration: none;
+    font-size: 9.5pt;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border: 1px solid transparent;
+    transition: border-color .15s ease, background .15s ease;
+  }
+  .quicknav a:hover {
+    border-color: var(--im-pink);
+    background: rgba(247,181,205,0.1);
+  }
+
+  /* Section */
+  .section { margin-bottom: 50px; scroll-margin-top: 20px; }
+  .section-header {
+    display: flex; align-items: center;
+    margin-bottom: 22px;
+    border-bottom: 3px solid var(--im-black);
+    padding-bottom: 12px;
+  }
+  .section-icon {
+    width: 50px; height: 50px;
+    background: var(--im-black); color: var(--im-pink);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22pt; font-weight: 700;
+    margin-right: 16px; font-family: 'Georgia', serif;
+  }
+  .section-title {
+    font-size: 20pt;
+    font-weight: 700;
+    letter-spacing: -0.4px;
+  }
+  .section-tag {
+    margin-left: auto;
+    font-size: 8pt; text-transform: uppercase;
+    letter-spacing: 1.5px; color: var(--im-black);
+    background: var(--im-pink); padding: 4px 10px; font-weight: 700;
+  }
+  .lead-p {
+    font-size: 11pt; color: #333;
+    margin-bottom: 18px; line-height: 1.6;
+  }
+  .lead-p strong { color: var(--im-pink-deep); }
+  .sub-h {
+    font-size: 13pt; font-weight: 700;
+    margin: 22px 0 10px;
+    color: var(--im-black);
+    border-left: 4px solid var(--im-pink-strong);
+    padding-left: 12px;
+  }
+
+  /* FAQ */
+  .faq-list { display: grid; gap: 14px; margin-top: 8px; }
+  .faq-item {
+    border: 2px solid var(--im-black);
+    background: #fff;
+    padding: 0;
+    overflow: hidden;
+  }
+  .faq-q {
+    background: var(--im-black);
+    color: #fff;
+    padding: 14px 20px;
+    font-weight: 700;
+    font-size: 11.5pt;
+    line-height: 1.35;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .faq-q .q-num {
+    color: var(--im-pink);
+    font-size: 16pt;
+    font-family: 'Georgia', serif;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+  .faq-a {
+    padding: 16px 20px 18px 50px;
+    font-size: 10.5pt;
+    line-height: 1.6;
+    color: #333;
+  }
+  .faq-a p { margin-bottom: 10px; }
+  .faq-a p:last-child { margin-bottom: 0; }
+  .faq-a strong { color: var(--im-pink-deep); }
+  .faq-a ul { padding-left: 16px; margin: 8px 0; }
+  .faq-a ul li { margin-bottom: 5px; font-size: 10pt; }
+
+  /* KPI Section */
+  .kpi-master {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin: 18px 0;
+  }
+  .kpi-master-card {
+    border: 2px solid var(--im-black);
+    background: #fff;
+    padding: 18px;
+    position: relative;
+  }
+  .kpi-master-card::before {
+    content: ""; position: absolute;
+    top: 0; left: 0; right: 0; height: 5px;
+    background: var(--im-pink-strong);
+  }
+  .kpi-master-card .kpi-cat {
+    font-size: 8pt; text-transform: uppercase;
+    letter-spacing: 1.5px; color: var(--im-pink-deep);
+    font-weight: 700; margin-bottom: 6px;
+  }
+  .kpi-master-card h4 {
+    font-size: 12pt; font-weight: 700;
+    margin-bottom: 8px; line-height: 1.2;
+  }
+  .kpi-master-card p {
+    font-size: 9.5pt; color: #555;
+    line-height: 1.5; margin-bottom: 10px;
+  }
+  .kpi-master-card .kpi-target {
+    background: var(--im-black); color: var(--im-pink);
+    padding: 8px 12px; font-size: 9.5pt;
+    font-weight: 700; text-align: center;
+  }
+
+  .kpi-dept-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 18px 0;
+    font-size: 9.5pt;
+  }
+  .kpi-dept-table th, .kpi-dept-table td {
+    border: 1px solid #ddd;
+    padding: 10px 12px;
+    text-align: left;
+    vertical-align: top;
+  }
+  .kpi-dept-table th {
+    background: var(--im-black);
+    color: var(--im-pink);
+    font-size: 8pt;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  .kpi-dept-table td.dept {
+    background: var(--im-pink-bg);
+    font-weight: 700;
+    width: 22%;
+    color: var(--im-pink-deep);
+  }
+  .kpi-dept-table td.target {
+    text-align: center;
+    font-weight: 700;
+    color: var(--im-pink-deep);
+    white-space: nowrap;
+    width: 20%;
+  }
+
+  /* ROI */
+  .roi-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin: 18px 0;
+  }
+  .roi-card {
+    border: 2px solid var(--im-black);
+    background: #fff;
+    padding: 18px 20px;
+    position: relative;
+  }
+  .roi-card::before {
+    content: ""; position: absolute;
+    top: 0; left: 0; right: 0; height: 5px;
+    background: linear-gradient(90deg, var(--im-pink) 0%, var(--im-pink-strong) 100%);
+  }
+  .roi-card .roi-tag {
+    font-size: 8pt; text-transform: uppercase;
+    letter-spacing: 1.5px; color: var(--im-pink-deep);
+    font-weight: 700; margin-bottom: 6px;
+  }
+  .roi-card h4 {
+    font-size: 13pt; font-weight: 700;
+    margin-bottom: 10px; line-height: 1.2;
+  }
+  .roi-card p {
+    font-size: 10pt; color: #444;
+    line-height: 1.55; margin-bottom: 8px;
+  }
+  .roi-card ul { padding: 0; list-style: none; margin: 8px 0; }
+  .roi-card ul li {
+    font-size: 9.5pt; padding: 4px 0 4px 16px;
+    position: relative; line-height: 1.4;
+  }
+  .roi-card ul li::before {
+    content: "+"; position: absolute; left: 0;
+    color: #060; font-weight: 700; top: 3px;
+  }
+
+  .roi-summary {
+    background: var(--im-black); color: #fff;
+    padding: 22px 26px; margin: 22px 0;
+    border-left: 8px solid var(--im-pink);
+  }
+  .roi-summary h4 {
+    font-size: 13pt; color: #fff; margin-bottom: 10px;
+  }
+  .roi-summary h4 em { font-style: normal; color: var(--im-pink); }
+  .roi-summary p {
+    font-size: 10.5pt; color: #ddd;
+    line-height: 1.55; margin-bottom: 10px;
+  }
+  .roi-summary p:last-child { margin-bottom: 0; }
+
+  /* World Cup */
+  .wc-hero {
+    background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+    color: #fff; padding: 28px 32px; margin: 18px 0 22px;
+    border: 3px solid var(--im-black); position: relative; overflow: hidden;
+  }
+  .wc-hero::before {
+    content: ""; position: absolute;
+    top: 0; right: 0; bottom: 0;
+    width: 8px; background: var(--im-pink);
+  }
+  .wc-hero .wc-tag {
+    display: inline-block; background: var(--im-pink); color: var(--im-black);
+    font-size: 8pt; font-weight: 700; padding: 4px 12px;
+    letter-spacing: 2px; text-transform: uppercase; margin-bottom: 14px;
+  }
+  .wc-hero h3 {
+    font-size: 20pt; font-weight: 700; line-height: 1.1;
+    margin-bottom: 12px; letter-spacing: -0.5px;
+  }
+  .wc-hero h3 em { font-style: normal; color: var(--im-pink); }
+  .wc-hero p {
+    font-size: 10.5pt; color: #ddd; line-height: 1.55;
+    margin-bottom: 10px;
+  }
+  .wc-hero p:last-child { margin-bottom: 0; }
+
+  .wc-phases {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 14px; margin: 22px 0;
+  }
+  .wc-phase {
+    border: 2px solid var(--im-black);
+    background: #fff; padding: 18px;
+    position: relative;
+  }
+  .wc-phase::before {
+    content: ""; position: absolute;
+    top: 0; left: 0; right: 0; height: 5px;
+    background: var(--im-pink-strong);
+  }
+  .wc-phase .ph-tag {
+    font-size: 8pt; text-transform: uppercase;
+    letter-spacing: 1.5px; color: var(--im-pink-deep);
+    font-weight: 700; margin-bottom: 6px;
+  }
+  .wc-phase h4 {
+    font-size: 12pt; font-weight: 700;
+    margin-bottom: 6px; line-height: 1.2;
+  }
+  .wc-phase .dates {
+    font-size: 8.5pt; color: #777;
+    font-style: italic; margin-bottom: 10px;
+  }
+  .wc-phase ul { list-style: none; padding: 0; }
+  .wc-phase ul li {
+    font-size: 9pt; padding: 3px 0 3px 14px;
+    position: relative; line-height: 1.4;
+  }
+  .wc-phase ul li::before {
+    content: "▸"; position: absolute; left: 0;
+    color: var(--im-pink-strong); font-size: 8pt;
+  }
+
+  .wc-cross {
+    margin: 22px 0;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  .wc-cross-card {
+    background: var(--im-pink-bg);
+    border: 1px solid var(--im-pink);
+    border-left: 4px solid var(--im-pink-strong);
+    padding: 14px 18px;
+  }
+  .wc-cross-card h4 {
+    font-size: 10pt; text-transform: uppercase;
+    letter-spacing: 1.2px; color: var(--im-pink-deep);
+    margin-bottom: 6px; font-weight: 700;
+  }
+  .wc-cross-card p {
+    font-size: 9.5pt; color: #444; line-height: 1.5;
+  }
+
+  /* Methodology */
+  .method-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin: 18px 0;
+  }
+  .method-card {
+    border: 2px solid var(--im-black);
+    background: #fff;
+    padding: 18px;
+    position: relative;
+  }
+  .method-card::before {
+    content: ""; position: absolute;
+    top: 0; left: 0; right: 0; height: 5px;
+    background: var(--im-pink-strong);
+  }
+  .method-card .num {
+    font-size: 28pt; font-weight: 700;
+    color: var(--im-pink-deep); line-height: 1;
+    font-family: 'Georgia', serif; margin-bottom: 8px;
+  }
+  .method-card h4 {
+    font-size: 11pt; text-transform: uppercase;
+    letter-spacing: 1.2px; color: var(--im-black);
+    margin-bottom: 8px; font-weight: 700;
+  }
+  .method-card p { font-size: 9.5pt; color: #555; line-height: 1.45; }
+
+  /* Ecosystem diagram */
+  .ecosystem-diagram {
+    background: #fafafa;
+    border: 1px solid #ddd;
+    padding: 22px;
+    margin: 18px 0;
+  }
+  .eco-row {
+    display: grid;
+    grid-template-columns: 1fr 30px 1.4fr 30px 1fr 30px 1.4fr;
+    gap: 8px;
+    align-items: center;
+  }
+  .eco-col { display: flex; flex-direction: column; gap: 8px; align-items: stretch; }
+  .eco-block {
+    border: 2px solid var(--im-black);
+    padding: 14px 10px;
+    text-align: center;
+    background: #fff;
+  }
+  .eco-block.eco-dark {
+    background: var(--im-black);
+    color: var(--im-pink);
+  }
+  .eco-block.eco-block-sm { padding: 10px 8px; }
+  .eco-block .eco-icon {
+    font-size: 22pt;
+    font-family: 'Georgia', serif;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .eco-block .eco-name {
+    font-size: 11pt;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+  }
+  .eco-block .eco-sub {
+    font-size: 7.5pt;
+    margin-top: 4px;
+    opacity: 0.85;
+    line-height: 1.3;
+  }
+  .eco-caption {
+    font-size: 7.5pt;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #666;
+    text-align: center;
+    line-height: 1.4;
+  }
+  .eco-caption em { color: var(--im-pink-deep); font-style: normal; }
+  .eco-arrow {
+    font-size: 18pt;
+    color: var(--im-pink-strong);
+    text-align: center;
+    font-weight: 700;
+  }
+  .eco-llm-link {
+    text-align: center;
+    font-size: 8pt;
+    color: var(--im-pink-deep);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 6px;
+    border: 1px dashed var(--im-pink);
+    background: var(--im-pink-bg);
+  }
+  .eco-llm-link .eco-llm-engines {
+    font-size: 7pt;
+    color: #666;
+    text-transform: none;
+    letter-spacing: 0;
+    margin-top: 3px;
+    font-weight: 400;
+  }
+  .eco-webspace {
+    border: 1.5px dashed var(--im-black);
+    padding: 12px 10px;
+    background: #fff;
+  }
+  .eco-webspace-label {
+    font-size: 7pt;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #666;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+  .eco-webspace-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 6px;
+    align-items: center;
+  }
+  .eco-ws-circle {
+    border: 1px solid var(--im-black);
+    border-radius: 50%;
+    aspect-ratio: 1;
+    padding: 8px 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+  }
+  .eco-ws-circle .eco-ws-title {
+    font-size: 7pt;
+    font-weight: 700;
+    color: var(--im-pink-deep);
+    letter-spacing: 1px;
+    margin-bottom: 2px;
+  }
+  .eco-ws-circle .eco-ws-tag {
+    font-size: 7pt;
+    background: #f0f0f0;
+    padding: 1px 5px;
+    color: #333;
+  }
+  .eco-ws-center {
+    font-size: 7pt;
+    font-weight: 700;
+    text-align: center;
+    color: var(--im-black);
+    background: var(--im-pink);
+    padding: 6px 4px;
+    line-height: 1.2;
+  }
+  .eco-flow {
+    margin-top: 16px;
+    padding: 10px 14px;
+    background: #fff;
+    border-left: 3px solid var(--im-pink-strong);
+    font-size: 9pt;
+    line-height: 1.5;
+    color: #444;
+  }
+  .eco-flow strong {
+    color: var(--im-pink-deep);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 7.5pt;
+  }
+
+  .method-detail {
+    background: #fafafa;
+    border: 1px solid #ddd;
+    padding: 18px 22px;
+    margin: 18px 0;
+  }
+  .method-detail h4 {
+    font-size: 10pt; text-transform: uppercase;
+    letter-spacing: 1.5px; margin-bottom: 10px;
+    color: var(--im-black);
+    border-bottom: 2px solid var(--im-pink);
+    padding-bottom: 5px; display: inline-block;
+  }
+  .method-detail ul { padding-left: 22px; margin: 8px 0; }
+  .method-detail ul li {
+    font-size: 10pt; margin-bottom: 5px;
+    line-height: 1.5;
+  }
+
+  /* Footer */
+  footer {
+    margin-top: 50px;
+    padding-top: 22px;
+    border-top: 4px solid var(--im-black);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+  footer::before {
+    content: ""; position: absolute;
+    left: 0; right: 0; top: -8px;
+    height: 4px; background: var(--im-pink);
+  }
+  footer .footer-left .brand { font-size: 12pt; font-weight: 700; }
+  footer .footer-left .url { font-size: 9pt; color: #666; margin-top: 2px; }
+  footer .footer-right { text-align: right; font-size: 8pt; color: #666; line-height: 1.5; }
+  footer .footer-right strong { color: var(--im-black); text-transform: uppercase; letter-spacing: 0.5px; }
+
+  /* Back to index */
+  .back-link {
+    display: inline-block;
+    background: var(--im-black); color: var(--im-pink);
+    padding: 8px 16px; text-decoration: none;
+    font-size: 9pt; font-weight: 700;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    margin-bottom: 22px;
+  }
+  .back-link:hover { background: var(--im-pink-deep); color: #fff; }
+
+  @media print {
+    body { padding: 0; }
+    .quicknav { display: none; }
+    .back-link { display: none; }
+    .section { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="logo-wrap">
+    <img src="inter-miami-logo.svg" alt="Inter Miami CF · escudo oficial">
+  </div>
+  <div>
+    <div class="kicker">Recursos del proyecto · FAQs · KPIs · ROI · Mundial · Metodología</div>
+    <h1><span>Inter Miami CF</span><br>Knowledge base GEO/AEO</h1>
+    <div class="subtitle">Material de referencia transversal · acceso rápido a las preguntas, métricas y plan estratégico</div>
+    <div class="meta-line">
+      <span><strong>Cliente</strong> Inter Miami CF</span>
+      <span><strong>Tipo</strong> Knowledge base navegable</span>
+      <span><strong>Audiencia</strong> Comité directivo + heads de área</span>
+      <span><strong>Fecha</strong> 18 abril 2026</span>
+    </div>
+  </div>
+</div>
+
+<a class="back-link" href="index.html">← Volver al índice</a>
+
+<!-- QUICK NAV -->
+<div class="quicknav">
+  <a href="#faqs">FAQs</a>
+  <a href="#kpis">KPIs · Success Metrics</a>
+  <a href="#roi">ROI</a>
+  <a href="#mundial">Mundial 2026</a>
+  <a href="#metodologia">Metodología</a>
+</div>
+
+<!-- ============= FAQs ============= -->
+<div class="section" id="faqs">
+  <div class="section-header">
+    <div class="section-icon">?</div>
+    <div class="section-title">FAQs · Preguntas frecuentes</div>
+    <div class="section-tag">5 + bonus</div>
+  </div>
+  <p class="lead-p">Las cinco preguntas que con más frecuencia aparecen en kick-offs internos y reuniones con el cliente, más una FAQ adicional sobre el AI Media Value para sponsors.</p>
+
+  <div class="faq-list">
+
+    <div class="faq-item">
+      <div class="faq-q"><span class="q-num">01</span>¿Cuál es el objetivo principal de la auditoría GEO/AEO para Inter Miami CF?</div>
+      <div class="faq-a">
+        <p>El objetivo es transformar el canal de las respuestas generadas por inteligencia artificial (LLMs como ChatGPT, Gemini, Perplexity y Claude), hasta ahora opaco, en una <strong>superficie medible, optimizable y defendible</strong>.</p>
+        <p>Se busca mejorar la visibilidad de la marca en respuestas relacionadas con entradas, experiencia de partido, merchandising, academia y búsquedas vinculadas a Lionel Messi y al propio club, partiendo de baselines reales y con objetivos conservadores y verificables.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q"><span class="q-num">02</span>¿Por qué el Mundial FIFA 2026 es el catalizador estratégico del proyecto?</div>
+      <div class="faq-a">
+        <p>El Mundial actuará como el mayor impulsor de visibilidad porque Miami albergará <strong>7 partidos en el Hard Rock Stadium</strong> entre el 11 de junio y el 19 de julio de 2026.</p>
+        <p>El pico de búsquedas y conversaciones IA sobre "Miami + fútbol" se estima en un rango conservador de <strong>x3–6 sobre los niveles actuales</strong> (cifra dependiente de la cobertura mediática real y de los partidos asignados). Es una ventana finita de 6 semanas: lo que el club no capture en motores de IA durante este tiempo lo absorberá la competencia (otros equipos MLS, FIFA Fan Fest, atracciones turísticas).</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q"><span class="q-num">03</span>¿Por qué es crítico que la IA distinga entre Chase Stadium y Hard Rock Stadium?</div>
+      <div class="faq-a">
+        <p>Existe un riesgo operativo grave de que los motores de IA confundan ambos estadios. <strong>Chase Stadium</strong> (Fort Lauderdale) es el estadio del Inter Miami, mientras que <strong>Hard Rock Stadium</strong> (Miami Gardens) acogerá los encuentros del Mundial. Si no se corrige esta confusión, los aficionados podrían ser enviados al estadio equivocado.</p>
+        <p>Para evitarlo, Operaciones y Ticketing ejecutarán un plan de corrección con la narrativa "<em>two stadiums, one Miami</em>" para asegurar respuestas duales y precisas en los 4 engines auditados. Objetivo realista: ≥90% de respuestas correctas tras la fase de corrección.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q"><span class="q-num">04</span>¿A qué perfiles de audiencia (personas) se dirige esta estrategia?</div>
+      <div class="faq-a">
+        <p>La auditoría segmenta la audiencia cruzando motivación del consumidor con geografía. La matriz final es de <strong>7 personas priorizadas</strong>, surgidas de combinar 4 arquetipos funcionales con clusters geográficos (EE.UU., LATAM, global):</p>
+        <ul>
+          <li><strong>Fan global de Messi</strong>: seguidor de LATAM, Europa o EE.UU. que consume contenido, noticias y merchandising.</li>
+          <li><strong>Aficionado local de Miami</strong> (hispano y anglo): orientado a experiencia de matchday, abonos y hospitalidad.</li>
+          <li><strong>Comprador de merchandising</strong>: busca productos oficiales, ediciones especiales y tallas correctas.</li>
+          <li><strong>Familia interesada en academia</strong>: evalúa programas formativos y proceso de admisión para jóvenes.</li>
+        </ul>
+        <p>A estos 4 funcionales se añaden 3 nuevas variantes geográficas (visitante matchday, LATAM Messi+Liga MX, etc.) para llegar a las 7 personas matrizadas.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q"><span class="q-num">05</span>¿Cuáles son las fases de implementación del plan?</div>
+      <div class="faq-a">
+        <p>El roadmap operativo está diseñado en <strong>tres etapas secuenciales</strong> alineadas con el calendario del Mundial:</p>
+        <ul>
+          <li><strong>Fase 1 · Fundación</strong> (abril – mayo/junio 2026): auditar la base, construir el corpus de prompts, sembrar narrativa "evergreen" en IAs y diferenciar los estadios antes del gran volumen de búsquedas.</li>
+          <li><strong>Fase 2 · Captura</strong> (junio – julio 2026): monitoreo semanal con un "war room" táctico para detectar alertas tempranas de información falsa, ajustar mensajes en tiempo real y capturar al turista o aficionado visitante.</li>
+          <li><strong>Fase 3 · Consolidación</strong> (agosto 2026 – marzo 2027): análisis de impacto post-Mundial, campañas de retargeting a nuevos fans, reportes trimestrales y planificación 2027 con la mira en el nuevo Miami Freedom Park.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q"><span class="q-num">06</span>¿Cómo se calcula el "AI Media Value" para sponsors?</div>
+      <div class="faq-a">
+        <p>El "<strong>AI Media Value</strong>" es un nuevo activo cuantificable que Inter Miami CF incorpora en sus sponsorship decks para medir, demostrar y monetizar la visibilidad de sus socios comerciales dentro de los motores de IA.</p>
+        <p>Se mide principalmente vía <strong>análisis de co-citation</strong>: con qué frecuencia aparecen conjuntamente Inter Miami y una marca patrocinadora (Apple TV+, Adidas, Royal Caribbean, etc.) en una misma respuesta IA. El cálculo combina:</p>
+        <ul>
+          <li><strong>Identificación espontánea</strong>: % de patrocinadores oficiales que la IA identifica correctamente al hablar del ecosistema comercial del club.</li>
+          <li><strong>Top de marcas asociadas</strong>: ranking de marcas que co-aparecen al hablar del club (mapa del perfil comercial real en IAs: deporte, lifestyle, premium).</li>
+          <li><strong>Tasa de co-citation con sponsors top 5</strong>: KPI orientativo ≥15% en respuestas IA del club (baseline a establecer en fase 1).</li>
+        </ul>
+        <p>El AI Media Value justifica un <strong>incremento orientativo de +5–10% en CPM equivalente</strong> en renovaciones de contratos y abre inventario nuevo: "patrocinio de queries" o paquetes de asociación de marca en IA.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ============= KPIs ============= -->
+<div class="section" id="kpis">
+  <div class="section-header">
+    <div class="section-icon">★</div>
+    <div class="section-title">KPIs · Success Metrics</div>
+    <div class="section-tag">Conservador</div>
+  </div>
+  <p class="lead-p">El framework establece <strong>3 KPIs transversales principales</strong> + KPIs específicos por departamento. Todos los targets son orientativos y conservadores: se calibrarán al alza o a la baja tras la fase 1, una vez establecidos los baselines reales por engine, mercado e idioma. Filosofía <em>under-promise, over-deliver</em>.</p>
+
+  <h3 class="sub-h">3 KPIs maestros transversales</h3>
+  <div class="kpi-master">
+    <div class="kpi-master-card">
+      <div class="kpi-cat">Visibilidad</div>
+      <h4>Share of voice IA "club Miami"</h4>
+      <p>Porcentaje de respuestas de IA que mencionan a Inter Miami frente al total de respuestas para ese contexto.</p>
+      <div class="kpi-target">Objetivo Q4 2026: Top 3</div>
+    </div>
+    <div class="kpi-master-card">
+      <div class="kpi-cat">Cobertura</div>
+      <h4>Visibilidad por mercado</h4>
+      <p>Cobertura medida en mercados prioritarios (MX, AR, CO, BR, ES, FR, UK, KSA + EE.UU. EN/ES).</p>
+      <div class="kpi-target">Objetivo: ≥8 países activos</div>
+    </div>
+    <div class="kpi-master-card">
+      <div class="kpi-cat">Autoridad</div>
+      <h4>intermiamicf.com como top source</h4>
+      <p>Autoridad del dominio web oficial: % de respuestas IA en las que es citado como fuente principal.</p>
+      <div class="kpi-target">Objetivo Q4 2026: ≥50%</div>
+    </div>
+  </div>
+
+  <h3 class="sub-h">KPIs específicos por departamento</h3>
+  <table class="kpi-dept-table">
+    <thead>
+      <tr>
+        <th>Departamento</th>
+        <th>KPI principal</th>
+        <th>Objetivo conservador Q4 2026</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="dept">Marketing & Brand</td>
+        <td>Tasa de citation rate de atributos clave de marca (rosa, glamour, estrellas, futuro)</td>
+        <td class="target">≥55%</td>
+      </tr>
+      <tr>
+        <td class="dept">Comunicación & PR</td>
+        <td>Time-to-citation de press releases en LLMs</td>
+        <td class="target">&lt;14 días</td>
+      </tr>
+      <tr>
+        <td class="dept">Comunicación & PR</td>
+        <td>Fuentes "tier 1" (ESPN, BBC, Marca, AP) citando el club mensualmente</td>
+        <td class="target">≥2</td>
+      </tr>
+      <tr>
+        <td class="dept">Digital & Social Media</td>
+        <td>App "Inter Miami" mencionada en respuestas operativas matchday</td>
+        <td class="target">≥15%</td>
+      </tr>
+      <tr>
+        <td class="dept">Digital & Social Media</td>
+        <td>Cuentas oficiales (IG, TikTok, YouTube) recomendadas en respuestas IA</td>
+        <td class="target">≥55%</td>
+      </tr>
+      <tr>
+        <td class="dept">Comercial & Sponsorship</td>
+        <td>Co-citation rate con top 5 sponsors</td>
+        <td class="target">≥15%</td>
+      </tr>
+      <tr>
+        <td class="dept">Comercial & Sponsorship</td>
+        <td>Incremento CPM equivalente en renovaciones 2026</td>
+        <td class="target">+5–10%</td>
+      </tr>
+      <tr>
+        <td class="dept">Ticketing & Matchday</td>
+        <td>Canal oficial citado primero en queries de "buy tickets"</td>
+        <td class="target">≥60%</td>
+      </tr>
+      <tr>
+        <td class="dept">Hospitality & Premium</td>
+        <td>Inter Miami citada en queries "premium soccer experience Miami"</td>
+        <td class="target">Top 5 (≥40%)</td>
+      </tr>
+      <tr>
+        <td class="dept">Retail & Merchandising</td>
+        <td>Tienda oficial primera fuente citada en queries de merch</td>
+        <td class="target">≥40% (vs ~25% baseline)</td>
+      </tr>
+      <tr>
+        <td class="dept">Academia & Cantera</td>
+        <td>Aparición en "best youth soccer academy Florida"</td>
+        <td class="target">Top 5</td>
+      </tr>
+      <tr>
+        <td class="dept">International & LATAM</td>
+        <td>Share of voice top 5 en MX/AR para "MLS" o "fútbol USA"</td>
+        <td class="target">Top 5</td>
+      </tr>
+      <tr>
+        <td class="dept">International & LATAM</td>
+        <td>Citation rate inicial en PT (Brasil)</td>
+        <td class="target">10–15%</td>
+      </tr>
+      <tr>
+        <td class="dept">Operations & Stadium</td>
+        <td>Diferenciación correcta Chase Stadium / Hard Rock</td>
+        <td class="target">≥90%</td>
+      </tr>
+      <tr>
+        <td class="dept">Membership & Fan Engagement</td>
+        <td>Supporters groups en top 3 de "how to support Inter Miami"</td>
+        <td class="target">≥50%</td>
+      </tr>
+      <tr>
+        <td class="dept">Estrategia, BI & Legal</td>
+        <td>Brand protection actions accionados anualmente</td>
+        <td class="target">≥15</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ============= ROI ============= -->
+<div class="section" id="roi">
+  <div class="section-header">
+    <div class="section-icon">$</div>
+    <div class="section-title">ROI · Retorno esperado</div>
+    <div class="section-tag">Conservador</div>
+  </div>
+  <p class="lead-p">El ROI de la auditoría GEO/AEO se articula en <strong>4 categorías</strong>: ingreso directo, brand equity (sponsors), prevención de riesgo y valor estratégico. Las cifras son rangos conservadores; el cálculo definitivo se realiza tras la fase 1 con baselines reales del cliente.</p>
+
+  <div class="roi-grid">
+
+    <div class="roi-card">
+      <div class="roi-tag">01 · Ingreso directo</div>
+      <h4>Conversión Ticketing + Retail + Hospitality</h4>
+      <p>Optimización del canal oficial frente a reventa, Fanatics, Adidas y otros derivadores. Captura de tráfico AI-attributed durante el Mundial.</p>
+      <ul>
+        <li>+10–15% revenue DTC internacional vs Q2 baseline (atribución parcial IA)</li>
+        <li>Incremento medible en venta directa de tickets durante junio-julio 2026</li>
+        <li>+5–10% conversión hospitality vs baseline durante Mundial</li>
+        <li>30–60 leads cualificados academia/mes en Q3 2026</li>
+      </ul>
+    </div>
+
+    <div class="roi-card">
+      <div class="roi-tag">02 · Brand equity</div>
+      <h4>AI Media Value para sponsors</h4>
+      <p>Nuevo activo cuantificable en sponsorship decks. Argumentario para renovaciones y captación de nuevos partners con narrativa Mundial.</p>
+      <ul>
+        <li>+5–10% CPM equivalente en renovaciones 2026</li>
+        <li>1–2 sponsors nuevos captados con argumentario IA + Mundial</li>
+        <li>Co-citation con top 5 sponsors: ≥15%</li>
+        <li>Inventario nuevo "AI mediated visibility packages" para upsell</li>
+      </ul>
+    </div>
+
+    <div class="roi-card">
+      <div class="roi-tag">03 · Prevención de riesgo</div>
+      <h4>Brand protection + corrección de hallucinations</h4>
+      <p>Detección proactiva de información errónea, falsificaciones y derivaciones a tiendas no autorizadas. Reducción de impacto reputacional y operativo.</p>
+      <ul>
+        <li>≥15 enforcement actions/año contra dominios y reventa no autorizada</li>
+        <li>Reducción de hallucinations no corregidas a ≤3 por trimestre</li>
+        <li>Confusión Chase Stadium / Hard Rock ≤5% durante el Mundial</li>
+        <li>Time-to-fix de errores críticos &lt;72h</li>
+      </ul>
+    </div>
+
+    <div class="roi-card">
+      <div class="roi-tag">04 · Valor estratégico</div>
+      <h4>Inteligencia para board y planning 2027</h4>
+      <p>Dataset trimestral homogéneo para steering committees. Base cuantitativa para decisiones sobre Miami Freedom Park, expansión internacional y sucesión Messi.</p>
+      <ul>
+        <li>Dashboard ejecutivo trimestral en 100% de quarters</li>
+        <li>Inteligencia competitiva continua (MLS, Liga MX, top europeos)</li>
+        <li>Trend monitoring narrativa post-Messi en tiempo real</li>
+        <li>Pre-seeding narrativo de Miami Freedom Park antes de su apertura</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="roi-summary">
+    <h4>Lectura conservadora del <em>payback</em></h4>
+    <p>El proyecto se diseña para <strong>autofinanciarse</strong> dentro del primer año combinando: incremento de revenue DTC durante el Mundial, mejora de tasas de renovación de sponsors con AI Media Value, y reducción de costes de brand protection (takedowns ejecutados con detección automatizada en lugar de manual).</p>
+    <p>El verdadero retorno, sin embargo, es la <strong>infraestructura de inteligencia</strong> que queda instalada para los próximos 3-5 años: medir y defender la marca en un canal cuya cuota seguirá creciendo con la adopción de LLMs, y llegar al pico del Mundial con datos en mano y no con intuición.</p>
+  </div>
+</div>
+
+<!-- ============= MUNDIAL ============= -->
+<div class="section" id="mundial">
+  <div class="section-header">
+    <div class="section-icon">★</div>
+    <div class="section-title">Estrategia Mundial FIFA 2026</div>
+    <div class="section-tag">★ Prioridad</div>
+  </div>
+  <p class="lead-p">El Mundial FIFA 2026 es el <strong>catalizador estratégico</strong> y la mayor oportunidad de visibilidad global del Inter Miami CF en la próxima década. Plan secuencial estructurado en 3 fases con acciones cross-departamentales.</p>
+
+  <div class="wc-hero">
+    <div class="wc-tag">★ Oportunidad estratégica · 6 semanas únicas</div>
+    <h3>Miami, <em>capital mundial del fútbol</em><br>entre el 11 de junio y el 19 de julio de 2026</h3>
+    <p>Hard Rock Stadium (Miami Gardens) acoge <strong>7 partidos del Mundial</strong>: 4 de fase de grupos, 1 de octavos, 1 de cuartos de final y 1 partido por el tercer puesto. La ciudad espera un volumen significativo de visitantes durante el torneo, con un pico de búsquedas y conversaciones IA sobre "Miami + fútbol" estimado en un rango conservador de <strong>x3–6 sobre los niveles actuales</strong>.</p>
+    <p>Es una ventana <strong>finita</strong>: la conversación se desplazará a otros destinos en agosto. Lo que el club no capture en LLMs durante esas 6 semanas lo capturará la competencia (otros clubes MLS, FIFA Fan Fest, hospitality genérico, atracciones turísticas).</p>
+  </div>
+
+  <h3 class="sub-h">3 fases secuenciales</h3>
+
+  <div class="wc-phases">
+    <div class="wc-phase">
+      <div class="ph-tag">Fase A · Pre-torneo</div>
+      <h4>Construir narrativa</h4>
+      <div class="dates">Abril – Junio 2026 · 8 semanas</div>
+      <ul>
+        <li>Auditoría base GEO/AEO completada</li>
+        <li>Contenido evergreen "Miami + fútbol"</li>
+        <li>Diferenciación Chase Stadium vs Hard Rock</li>
+        <li>Pre-seeding selecciones que jueguen en Miami</li>
+        <li>Activación sponsors con narrativa Mundial</li>
+        <li>Briefings a Marketing, PR, Comercial</li>
+      </ul>
+    </div>
+    <div class="wc-phase">
+      <div class="ph-tag">Fase B · Durante-torneo</div>
+      <h4>Capturar tráfico IA</h4>
+      <div class="dates">11 junio – 19 julio 2026</div>
+      <ul>
+        <li>Tracking semanal de visibilidad</li>
+        <li>Alertas en tiempo real de hallucinations</li>
+        <li>Ajuste de mensajes según queries reales</li>
+        <li>Drops merch "Miami × Mundial"</li>
+        <li>Captura de fans visitantes a Chase Stadium</li>
+        <li>Open days academia para familias visitantes</li>
+      </ul>
+    </div>
+    <div class="wc-phase">
+      <div class="ph-tag">Fase C · Post-torneo</div>
+      <h4>Consolidar legacy</h4>
+      <div class="dates">Agosto – Diciembre 2026</div>
+      <ul>
+        <li>Análisis de impacto post-Mundial en LLMs</li>
+        <li>Retargeting fans capturados</li>
+        <li>Activación sponsors con datos de éxito</li>
+        <li>Briefing al board con KPIs reales</li>
+        <li>Consolidación narrativa "club global"</li>
+        <li>Roadmap 2027 para Miami Freedom Park</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 class="sub-h">Activación cross-departamental</h3>
+
+  <div class="wc-cross">
+    <div class="wc-cross-card">
+      <h4>Marketing & Brand</h4>
+      <p>Lanzamiento de la campaña global "<em>Miami plays football</em>" para posicionar a Inter Miami como la marca-puerta del fútbol en la ciudad, antes de que Hard Rock Stadium domine las respuestas IA.</p>
+    </div>
+    <div class="wc-cross-card">
+      <h4>Operations & Ticketing</h4>
+      <p>Misión crítica: evitar la confusión entre estadios. Las respuestas IA deben enviar correctamente a los fans del club al Chase Stadium y a los del Mundial al Hard Rock Stadium, con respuestas duales optimizadas.</p>
+    </div>
+    <div class="wc-cross-card">
+      <h4>Comercial & Retail</h4>
+      <p>Paquetes de patrocinio "Inter Miami × Mundial" respaldados con proyecciones de visibilidad IA. Lanzamiento de merchandising dual "<em>Miami Pink × World Cup</em>" optimizado para discovery IA por turistas.</p>
+    </div>
+    <div class="wc-cross-card">
+      <h4>International & LATAM</h4>
+      <p>Mapeo de selecciones visitantes (probable presencia de México, Argentina, Colombia, Brasil, etc.) y activaciones específicas con narrativa "<em>Inter Miami × tu selección</em>" en LLMs locales de cada país.</p>
+    </div>
+    <div class="wc-cross-card">
+      <h4>Digital & Social</h4>
+      <p>Biblioteca de contenido evergreen pensada para citación IA cuando los turistas pregunten "cómo llegar", "dónde comprar merch" o "dónde ver partidos en Miami".</p>
+    </div>
+    <div class="wc-cross-card">
+      <h4>Hospitality (B2B)</h4>
+      <p>Captura del overflow de demanda corporativa internacional con presupuestos extraordinarios que no encuentren espacio en los aforos del Mundial. Paquetes premium en Chase Stadium para visitantes.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============= METODOLOGÍA ============= -->
+<div class="section" id="metodologia">
+  <div class="section-header">
+    <div class="section-icon">M</div>
+    <div class="section-title">Metodología GEO/AEO</div>
+    <div class="section-tag">4 capas</div>
+  </div>
+  <p class="lead-p">La auditoría se construye sobre <strong>4 capas técnicas</strong>. Cada capa produce datos accionables para uno o varios departamentos. La metodología es replicable y comparable trimestre a trimestre, lo que permite establecer baselines y medir progresión real.</p>
+
+  <h3 class="sub-h">Ecosistema técnico GEO</h3>
+  <div class="ecosystem-diagram">
+    <div class="eco-row">
+      <div class="eco-col eco-col-narrow">
+        <div class="eco-block eco-light">
+          <div class="eco-icon">⊕</div>
+          <div class="eco-name">GEOAtlas</div>
+        </div>
+        <div class="eco-caption">Semantic brand space<br><em>Knowledge DB</em></div>
+      </div>
+      <div class="eco-arrow">→</div>
+      <div class="eco-col eco-col-wide">
+        <div class="eco-block eco-dark">
+          <div class="eco-icon">g</div>
+          <div class="eco-name">GEOradar</div>
+          <div class="eco-sub">GEO Deep Study + Action Plan + Dashboard</div>
+        </div>
+        <div class="eco-llm-link">
+          <span>↑↓</span> User · LLM · Internet
+          <div class="eco-llm-engines">ChatGPT · Gemini · Perplexity · Claude</div>
+        </div>
+      </div>
+      <div class="eco-arrow">→</div>
+      <div class="eco-col eco-col-narrow">
+        <div class="eco-block eco-light">
+          <div class="eco-icon">⊕</div>
+          <div class="eco-name">GEOdoctor</div>
+        </div>
+        <div class="eco-block eco-dark eco-block-sm">
+          <div class="eco-icon">◎</div>
+          <div class="eco-name">S.A.M.</div>
+          <div class="eco-sub">Semantic Alignment</div>
+        </div>
+      </div>
+      <div class="eco-arrow">→</div>
+      <div class="eco-col eco-col-wide">
+        <div class="eco-webspace">
+          <div class="eco-webspace-label">Web space USR & Agentic Web</div>
+          <div class="eco-webspace-grid">
+            <div class="eco-ws-circle">
+              <div class="eco-ws-title">WEB</div>
+              <div class="eco-ws-tag">Social GEO</div>
+              <div class="eco-ws-tag">Editorial</div>
+            </div>
+            <div class="eco-ws-center">Content<br>Farms</div>
+            <div class="eco-ws-circle">
+              <div class="eco-ws-title">OWNED</div>
+              <div class="eco-ws-tag">Owned Web</div>
+              <div class="eco-ws-tag">Garden Web</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="eco-flow">
+      <strong>Flujo:</strong> GEOAtlas alimenta el espacio semántico de marca → GEOradar audita visibilidad en LLMs y produce el plan de acción → GEOdoctor + S.A.M. ejecutan correcciones de contenido y alineación → resultados se publican en el web space (owned + earned + garden).
+    </div>
+  </div>
+
+  <div class="method-grid">
+    <div class="method-card">
+      <div class="num">01</div>
+      <h4>Inventario de prompts</h4>
+      <p>Construcción de ~300 prompts cruzando persona × etapa funnel × línea producto × idioma. Validación con expertos del cliente.</p>
+    </div>
+    <div class="method-card">
+      <div class="num">02</div>
+      <h4>Multi-engine sampling</h4>
+      <p>Ejecución sistemática en ChatGPT, Gemini, Perplexity y Claude, capturando respuesta completa, fuentes citadas, latencia y variantes.</p>
+    </div>
+    <div class="method-card">
+      <div class="num">03</div>
+      <h4>Análisis cuantitativo</h4>
+      <p>Share of voice, frequency of citation, sentiment, entity recognition, source authority, comparación competitiva y geo-language matrix.</p>
+    </div>
+    <div class="method-card">
+      <div class="num">04</div>
+      <h4>Insights & playbook</h4>
+      <p>Traducción de datos a acciones por departamento: contenido a crear, fuentes a influenciar, mensajes a corregir, oportunidades a capturar.</p>
+    </div>
+  </div>
+
+  <div class="method-detail">
+    <h4>Volumen real de datos analizados</h4>
+    <p>~300 prompts × 4 engines × 8 mercados × 3 idiomas = aproximadamente <strong>30.000 puntos de datos</strong> auditados por ciclo. Cada punto incluye: respuesta completa, fuentes citadas, ranking de citation, sentiment, entidades reconocidas y co-citations.</p>
+    <ul>
+      <li><strong>Engines auditados</strong>: ChatGPT (OpenAI), Gemini (Google), Perplexity, Claude (Anthropic)</li>
+      <li><strong>Mercados</strong>: EE.UU. (EN/ES Miami latino), México, Argentina, Colombia, Brasil, España, Reino Unido, Arabia Saudí</li>
+      <li><strong>Idiomas</strong>: español (con variantes regionales), inglés (US/UK), portugués (Brasil)</li>
+      <li><strong>Cadencia</strong>: ejecución base (fase 1), tracking semanal durante Mundial (fase 2), trimestral en operación continua (fase 3)</li>
+    </ul>
+  </div>
+
+  <div class="method-detail">
+    <h4>Tipos de outputs que se generan</h4>
+    <ul>
+      <li><strong>Dashboards en GEOradar</strong> con vista por engine, mercado, persona y línea de producto</li>
+      <li><strong>Briefings PDF por departamento</strong> con insights priorizados y plan de acción</li>
+      <li><strong>Alertas de brand protection</strong> con SLA &lt;72h para hallucinations o derivaciones a tiendas no autorizadas</li>
+      <li><strong>Datasets exportables</strong> (CSV/JSON/API) para integración con stack BI del cliente</li>
+      <li><strong>Reportes ejecutivos trimestrales</strong> para steering committee y board</li>
+      <li><strong>Inteligencia competitiva continua</strong>: benchmark vs MLS, Liga MX, top europeos, F1 Miami GP</li>
+    </ul>
+  </div>
+
+  <div class="method-detail">
+    <h4>Glosario rápido</h4>
+    <ul>
+      <li><strong>GEO (Generative Engine Optimization)</strong>: prácticas para optimizar la presencia de una marca en respuestas generadas por motores IA. Equivalente moderno del SEO.</li>
+      <li><strong>AEO (Answer Engine Optimization)</strong>: subespecialidad enfocada en motores de respuesta directa (Perplexity, AI Overviews, ChatGPT Search). Optimiza para citación, no para ranking.</li>
+      <li><strong>Share of voice IA</strong>: % de respuestas IA que mencionan una marca dado un contexto, frente al total de respuestas en ese contexto.</li>
+      <li><strong>Hallucination</strong>: información incorrecta o inventada que un LLM presenta como hecho. Riesgo crítico cuando es persistente.</li>
+      <li><strong>Co-citation</strong>: aparición conjunta de dos entidades en respuestas IA. Métrica clave para sponsorship y partnerships.</li>
+    </ul>
+  </div>
+</div>
+
+<a class="back-link" href="index.html">← Volver al índice</a>
+
+<footer>
+  <div class="footer-left">
+    <div class="brand">Inter Miami CF · Knowledge base GEO/AEO</div>
+    <div class="url">georadar.app · zoopa.es</div>
+  </div>
+  <div class="footer-right">
+    <div><strong>Versión</strong> v1.0 · 18 abril 2026</div>
+    <div><strong>Audiencia</strong> Comité directivo + heads de área</div>
+    <div>Preparado por Zoopa para Inter Miami CF</div>
+  </div>
+</footer>
+
+</body>
+</html>

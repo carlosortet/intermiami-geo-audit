@@ -86,6 +86,136 @@
   .intro strong { color: var(--im-pink-deep); }
 
   .docs { display: grid; gap: 14px; margin-top: 28px; }
+
+  /* Resource cards */
+  .resources {
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 2px solid var(--im-black);
+  }
+  .resources-label {
+    font-size: 9pt;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--im-pink-deep);
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .resources-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  .resource-card {
+    border: 1.5px solid var(--im-black);
+    background: #fff;
+    padding: 14px 14px 12px;
+    text-decoration: none;
+    color: inherit;
+    transition: background .15s ease, transform .1s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    position: relative;
+    overflow: hidden;
+  }
+  .resource-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: var(--im-pink-strong);
+  }
+  .resource-card:hover {
+    background: var(--im-pink-bg);
+    transform: translateY(-1px);
+  }
+  .resource-card .rc-icon {
+    width: 32px; height: 32px;
+    background: var(--im-black);
+    color: var(--im-pink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14pt;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .resource-card .rc-title {
+    font-size: 11pt;
+    font-weight: 700;
+    color: var(--im-black);
+  }
+  .resource-card .rc-desc {
+    font-size: 8.5pt;
+    color: #666;
+    line-height: 1.4;
+  }
+
+  /* Mental map */
+  .mindmap {
+    margin-top: 32px;
+    padding: 22px 24px;
+    background: #fafafa;
+    border: 1px solid #ddd;
+    border-left: 4px solid var(--im-black);
+  }
+  .mindmap-label {
+    font-size: 9pt;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--im-pink-deep);
+    font-weight: 700;
+    margin-bottom: 14px;
+  }
+  .mm-tree {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 18px;
+    align-items: center;
+    margin: 8px 0;
+  }
+  .mm-root {
+    background: var(--im-black);
+    color: var(--im-pink);
+    padding: 14px 16px;
+    text-align: center;
+    font-size: 10pt;
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: 0.3px;
+  }
+  .mm-branches {
+    display: grid;
+    gap: 10px;
+  }
+  .mm-branch {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 12px;
+    align-items: center;
+  }
+  .mm-branch-l1 {
+    background: var(--im-pink-bg);
+    border: 1px solid var(--im-pink);
+    border-left: 4px solid var(--im-pink-strong);
+    padding: 8px 12px;
+    font-size: 9.5pt;
+    font-weight: 700;
+    color: var(--im-pink-deep);
+  }
+  .mm-leaves {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .mm-leaf {
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 4px 9px;
+    font-size: 8.5pt;
+    color: #444;
+  }
   .doc {
     display: flex;
     justify-content: space-between;
@@ -224,6 +354,94 @@
       <div class="doc-arrow">›</div>
     </a>
 
+  </div>
+
+  <div class="resources">
+    <div class="resources-label">Recursos rápidos · acceso directo a knowledge base</div>
+    <div class="resources-grid">
+      <a class="resource-card" href="intermiami-recursos.html#faqs">
+        <div class="rc-icon">?</div>
+        <div class="rc-title">FAQs</div>
+        <div class="rc-desc">5 preguntas clave + bonus AI Media Value</div>
+      </a>
+      <a class="resource-card" href="intermiami-recursos.html#kpis">
+        <div class="rc-icon">★</div>
+        <div class="rc-title">KPIs · Success Metrics</div>
+        <div class="rc-desc">3 KPIs maestros + métricas por departamento</div>
+      </a>
+      <a class="resource-card" href="intermiami-recursos.html#roi">
+        <div class="rc-icon">$</div>
+        <div class="rc-title">ROI</div>
+        <div class="rc-desc">4 categorías de retorno + lectura de payback</div>
+      </a>
+      <a class="resource-card" href="intermiami-recursos.html#mundial">
+        <div class="rc-icon">★</div>
+        <div class="rc-title">Mundial FIFA 2026</div>
+        <div class="rc-desc">Plan estratégico en 3 fases + cross-dpt</div>
+      </a>
+      <a class="resource-card" href="intermiami-recursos.html#metodologia">
+        <div class="rc-icon">M</div>
+        <div class="rc-title">Metodología</div>
+        <div class="rc-desc">4 capas técnicas + ~30k puntos de datos</div>
+      </a>
+      <a class="resource-card" href="intermiami-recursos.html">
+        <div class="rc-icon">›</div>
+        <div class="rc-title">Knowledge base completa</div>
+        <div class="rc-desc">Todo lo anterior en un solo documento navegable</div>
+      </a>
+    </div>
+  </div>
+
+  <div class="mindmap">
+    <div class="mindmap-label">Mapa mental · estructura del proyecto</div>
+    <div class="mm-tree">
+      <div class="mm-root">Argumentario<br>GEO/AEO<br>Inter Miami CF</div>
+      <div class="mm-branches">
+        <div class="mm-branch">
+          <div class="mm-branch-l1">Fundamentos metodológicos</div>
+          <div class="mm-leaves">
+            <span class="mm-leaf">4 capas técnicas</span>
+            <span class="mm-leaf">~30k puntos de datos</span>
+            <span class="mm-leaf">4 engines</span>
+          </div>
+        </div>
+        <div class="mm-branch">
+          <div class="mm-branch-l1">Estrategia Mundial FIFA 2026</div>
+          <div class="mm-leaves">
+            <span class="mm-leaf">Pre-torneo</span>
+            <span class="mm-leaf">Durante-torneo</span>
+            <span class="mm-leaf">Post-torneo</span>
+          </div>
+        </div>
+        <div class="mm-branch">
+          <div class="mm-branch-l1">Áreas críticas y beneficios</div>
+          <div class="mm-leaves">
+            <span class="mm-leaf">Marketing & Brand</span>
+            <span class="mm-leaf">Comercial & Sponsorship</span>
+            <span class="mm-leaf">Ticketing & Matchday</span>
+            <span class="mm-leaf">Retail</span>
+            <span class="mm-leaf">Comunicación & PR</span>
+          </div>
+        </div>
+        <div class="mm-branch">
+          <div class="mm-branch-l1">Configuración de auditoría</div>
+          <div class="mm-leaves">
+            <span class="mm-leaf">7 personas priorizadas</span>
+            <span class="mm-leaf">Funnel de conversión</span>
+            <span class="mm-leaf">Tesis estratégicas</span>
+          </div>
+        </div>
+        <div class="mm-branch">
+          <div class="mm-branch-l1">Framework de KPIs</div>
+          <div class="mm-leaves">
+            <span class="mm-leaf">Visibilidad (SoV IA)</span>
+            <span class="mm-leaf">Conversión (venta vía IA)</span>
+            <span class="mm-leaf">Calidad (sentiment)</span>
+            <span class="mm-leaf">Riesgo (hallucinations)</span>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="appendix">
