@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inter Miami CF · Customer Personas & Prompts Semilla</title>
+<style>
+  @page { size: A4; margin: 1.5cm; }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --im-black: #000000;
+    --im-pink: #F7B5CD;
+    --im-pink-strong: #E91E63;
+    --im-pink-deep: #B8005C;
+    --im-pink-soft: #FCE4EC;
+    --im-pink-bg: #FFF5F9;
+    --im-gold: #B38A00;
+    --im-gold-bg: #fffde7;
+    --text: #1a1a1a;
+    --muted: #555;
+    --border: #e0e0e0;
+  }
+
+  body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-size: 11pt;
+    line-height: 1.5;
+    color: var(--text);
+    background: #fff;
+    max-width: 210mm;
+    margin: 0 auto;
+    padding: 40px;
+  }
+
+  /* Header con logo */
+  .header {
+    border-bottom: 4px solid var(--im-black);
+    padding-bottom: 22px;
+    margin-bottom: 30px;
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 22px;
+    align-items: center;
+    position: relative;
+  }
+  .header::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -8px;
+    height: 4px;
+    background: var(--im-pink);
+  }
+  .header .logo-wrap {
+    width: 120px;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .header .logo-wrap img { width: 100%; height: 100%; object-fit: contain; }
+
+  .header .header-text .kicker {
+    font-size: 9pt;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    color: var(--im-pink-deep);
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .header h1 {
+    font-size: 24pt;
+    font-weight: 400;
+    letter-spacing: -0.5px;
+    line-height: 1.1;
+    margin-bottom: 8px;
+    color: var(--im-black);
+  }
+  .header h1 span { font-weight: 700; }
+  .header .subtitle {
+    font-size: 10.5pt;
+    color: var(--muted);
+    font-style: italic;
+    margin-bottom: 10px;
+  }
+  .header .meta-line {
+    font-size: 9pt;
+    color: #666;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .header .meta-line span strong {
+    color: var(--im-black);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 8pt;
+  }
+
+  /* Executive Summary */
+  .exec-summary {
+    background: var(--im-pink-bg);
+    padding: 20px 25px;
+    margin-bottom: 34px;
+    border-left: 4px solid var(--im-pink-strong);
+    border-right: 1px solid var(--im-pink);
+    border-top: 1px solid var(--im-pink);
+    border-bottom: 1px solid var(--im-pink);
+  }
+  .exec-summary h2 {
+    font-size: 10pt;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+    font-weight: 700;
+    color: var(--im-black);
+  }
+  .exec-summary ul { list-style: none; }
+  .exec-summary ul li {
+    font-size: 11pt;
+    padding: 6px 0 6px 22px;
+    position: relative;
+  }
+  .exec-summary ul li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--im-pink-strong);
+    font-weight: 700;
+  }
+  .exec-summary strong { color: var(--im-pink-deep); }
+
+  /* Sections */
+  .section { margin-bottom: 40px; page-break-inside: avoid; }
+  .section-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 18px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+  }
+  .section-number {
+    background: var(--im-black);
+    color: var(--im-pink);
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14pt;
+    font-weight: 700;
+    margin-right: 14px;
+    font-family: 'Georgia', serif;
+    border-radius: 50%;
+  }
+  .section-title {
+    font-size: 15pt;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+  }
+  .section-tag {
+    margin-left: auto;
+    font-size: 8pt;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--im-black);
+    background: var(--im-pink);
+    padding: 4px 10px;
+    font-weight: 700;
+  }
+  .lead-p {
+    font-size: 11pt;
+    color: #333;
+    margin-bottom: 14px;
+  }
+
+  /* Persona cards */
+  .persona-card {
+    border: 2px solid var(--im-black);
+    padding: 0;
+    margin-bottom: 26px;
+    background: #fff;
+    page-break-inside: avoid;
+    position: relative;
+    overflow: hidden;
+  }
+  .persona-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, var(--im-pink) 0%, var(--im-pink-strong) 100%);
+  }
+  .persona-card-inner { padding: 22px 22px 18px; }
+
+  .persona-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-bottom: 2px solid var(--im-black);
+    padding-bottom: 12px;
+    margin-bottom: 14px;
+  }
+  .persona-head h3 {
+    font-size: 15pt;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+  }
+  .persona-id {
+    font-size: 8pt;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #fff;
+    background: var(--im-pink-strong);
+    padding: 4px 10px;
+    font-weight: 700;
+  }
+  .persona-desc {
+    font-size: 10.5pt;
+    color: #444;
+    font-style: italic;
+    margin-bottom: 14px;
+    line-height: 1.5;
+  }
+  .persona-demo {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 14px;
+    padding: 12px 14px;
+    background: var(--im-pink-bg);
+    border: 1px dotted var(--im-pink);
+  }
+  .persona-demo .demo-item { font-size: 9pt; }
+  .persona-demo .demo-item strong {
+    display: block;
+    font-size: 7.5pt;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--im-pink-deep);
+    margin-bottom: 2px;
+  }
+
+  /* Ficha descripción persona */
+  .persona-ficha {
+    background: #fafafa;
+    border: 1px solid #ddd;
+    padding: 14px 18px;
+    margin-bottom: 14px;
+  }
+  .persona-ficha h4 {
+    font-size: 9pt;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--im-black);
+    margin-bottom: 8px;
+    border-bottom: 2px solid var(--im-pink);
+    padding-bottom: 4px;
+    display: inline-block;
+  }
+  .persona-ficha p {
+    font-size: 10pt;
+    color: #333;
+    line-height: 1.55;
+    margin-bottom: 8px;
+  }
+  .persona-ficha p:last-child { margin-bottom: 0; }
+  .persona-ficha p strong { color: var(--im-pink-deep); }
+
+  .persona-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 12px;
+  }
+  .persona-col h4 {
+    font-size: 9pt;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    color: var(--im-black);
+    border-bottom: 1px solid var(--im-black);
+    padding-bottom: 4px;
+  }
+
+  .checklist { list-style: none; }
+  .checklist li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 6px;
+    font-size: 9.5pt;
+    line-height: 1.4;
+  }
+  .checkbox {
+    width: 12px;
+    height: 12px;
+    border: 1.5px solid #333;
+    margin-right: 8px;
+    margin-top: 3px;
+    flex-shrink: 0;
+  }
+  .checkbox.checked { background: var(--im-black); position: relative; }
+  .checkbox.checked::after {
+    content: "✓";
+    color: var(--im-pink);
+    font-size: 9pt;
+    position: absolute;
+    top: -3px;
+    left: 1px;
+    font-weight: 700;
+  }
+
+  .persona-pain {
+    background: var(--im-pink-bg);
+    border-left: 3px solid var(--im-pink-strong);
+    padding: 10px 14px;
+    margin-top: 10px;
+  }
+  .persona-pain h4 {
+    font-size: 9pt;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--im-pink-deep);
+    margin-bottom: 6px;
+  }
+  .persona-pain ul { list-style: none; }
+  .persona-pain ul li {
+    font-size: 9.5pt;
+    padding: 3px 0 3px 14px;
+    position: relative;
+  }
+  .persona-pain ul li::before {
+    content: "!";
+    position: absolute;
+    left: 0;
+    color: var(--im-pink-strong);
+    font-weight: 700;
+  }
+
+  .persona-memories {
+    margin-top: 10px;
+    padding: 10px 14px;
+    background: var(--im-gold-bg);
+    border-left: 3px solid var(--im-gold);
+  }
+  .persona-memories h4 {
+    font-size: 9pt;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #996600;
+    margin-bottom: 6px;
+  }
+  .persona-memories p {
+    font-size: 9.5pt;
+    color: #333;
+    padding: 2px 0 2px 14px;
+    position: relative;
+    font-style: italic;
+  }
+  .persona-memories p::before {
+    content: "·";
+    position: absolute;
+    left: 4px;
+    color: #996600;
+    font-weight: 700;
+    font-size: 14pt;
+    top: -4px;
+  }
+
+  /* Prompts block dentro de persona */
+  .prompts-block {
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 2px dashed var(--im-pink);
+  }
+  .prompts-block h4 {
+    font-size: 10pt;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--im-black);
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .prompts-block h4::before {
+    content: "";
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background: var(--im-pink-strong);
+    border-radius: 50%;
+  }
+  .prompts-block .prompts-sub {
+    font-size: 9pt;
+    color: #777;
+    font-style: italic;
+    margin-bottom: 12px;
+    margin-left: 28px;
+  }
+  .prompts-list { counter-reset: prompt; }
+  .prompt-box {
+    background: #fafafa;
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--im-pink-strong);
+    padding: 12px 16px 12px 50px;
+    margin-bottom: 10px;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 10pt;
+    line-height: 1.5;
+    position: relative;
+  }
+  .prompt-box::before {
+    content: counter(prompt, decimal-leading-zero);
+    counter-increment: prompt;
+    position: absolute;
+    left: 14px;
+    top: 11px;
+    font-family: 'Georgia', serif;
+    font-size: 12pt;
+    font-weight: 700;
+    color: var(--im-pink-deep);
+  }
+  .prompt-box .lang-tag {
+    display: inline-block;
+    font-family: 'Georgia', serif;
+    font-size: 7pt;
+    background: var(--im-black);
+    color: var(--im-pink);
+    padding: 1px 6px;
+    margin-right: 8px;
+    letter-spacing: 1px;
+    vertical-align: middle;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-radius: 2px;
+  }
+  .prompt-box .stage-tag {
+    display: inline-block;
+    font-family: 'Georgia', serif;
+    font-size: 7pt;
+    background: var(--im-pink);
+    color: var(--im-black);
+    padding: 1px 6px;
+    margin-right: 8px;
+    letter-spacing: 1px;
+    vertical-align: middle;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-radius: 2px;
+  }
+
+  /* Insight / Notas */
+  .insight-box {
+    background: var(--im-pink-bg);
+    border: 1px solid var(--im-pink);
+    padding: 14px 18px;
+    margin: 16px 0;
+    font-size: 10.5pt;
+  }
+  .insight-box strong {
+    display: block;
+    text-transform: uppercase;
+    font-size: 8pt;
+    letter-spacing: 1.5px;
+    color: var(--im-pink-deep);
+    margin-bottom: 6px;
+    font-weight: 700;
+  }
+
+  /* Footer */
+  footer {
+    margin-top: 50px;
+    padding-top: 22px;
+    border-top: 4px solid var(--im-black);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+  footer::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -8px;
+    height: 4px;
+    background: var(--im-pink);
+  }
+  footer .footer-left .brand {
+    font-size: 12pt;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+  }
+  footer .footer-left .url {
+    font-size: 9pt;
+    color: #666;
+    margin-top: 2px;
+  }
+  footer .footer-right {
+    text-align: right;
+    font-size: 8pt;
+    color: #666;
+    line-height: 1.5;
+  }
+  footer .footer-right strong {
+    color: var(--im-black);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  @media print {
+    body { padding: 0; }
+    .section { page-break-inside: avoid; }
+    .persona-card { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="logo-wrap">
+    <img src="inter-miami-logo.svg" alt="Inter Miami CF · escudo oficial">
+  </div>
+  <div class="header-text">
+    <div class="kicker">GEO Audit · Customer Personas · Prompts semilla</div>
+    <h1><span>Inter Miami CF</span><br>Personas y prompts de auditoría</h1>
+    <div class="subtitle">5 prompts por persona × 4 personas funcionales · base para expansión a ~300 prompts</div>
+    <div class="meta-line">
+      <span><strong>Cliente</strong> Inter Miami CF</span>
+      <span><strong>Personas</strong> 4 activas</span>
+      <span><strong>Prompts</strong> 20 semilla</span>
+      <span><strong>Idiomas</strong> ES · EN</span>
+      <span><strong>Fecha</strong> 18 abril 2026</span>
+    </div>
+  </div>
+</div>
+
+<div class="exec-summary">
+  <h2>Resumen · qué incluye este documento</h2>
+  <ul>
+    <li><strong>Ficha descriptiva ampliada</strong> de cada customer persona (perfil, contexto, comportamiento, valor estratégico)</li>
+    <li><strong>5 prompts semilla</strong> por persona, etiquetados por idioma y etapa de funnel</li>
+    <li>Cobertura de las <strong>4 personas funcionales</strong>: Global Messi, Local Miami, Shopper merch, Familia academia</li>
+    <li>Prompts redactados como <strong>queries reales</strong> en ChatGPT/Gemini/Perplexity/Claude</li>
+    <li>Base para <strong>expansión automatizada</strong> a ~300 prompts (persona × funnel × producto × idioma)</li>
+  </ul>
+</div>
+
+<!-- ===================== PERSONA 01 ===================== -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-number">1</div>
+    <div class="section-title">Fan global de Messi e Inter Miami</div>
+    <div class="section-tag">Persona 01</div>
+  </div>
+
+  <div class="persona-card">
+    <div class="persona-card-inner">
+
+      <div class="persona-head">
+        <h3>Fan global de Messi e Inter Miami</h3>
+        <div class="persona-id">P01 · Global</div>
+      </div>
+
+      <div class="persona-desc">
+        Seguidor que llega al club por Messi o por la proyección internacional del equipo y consume noticias, partidos, merchandising y contenido social de forma intensiva.
+      </div>
+
+      <div class="persona-demo">
+        <div class="demo-item"><strong>Residencia</strong>LATAM · Europa · EE.UU.</div>
+        <div class="demo-item"><strong>Idioma</strong>Español · Inglés</div>
+        <div class="demo-item"><strong>Edad</strong>18 – 44</div>
+      </div>
+
+      <div class="persona-ficha">
+        <h4>Ficha descriptiva</h4>
+        <p><strong>Quién es.</strong> Aficionado al fútbol de alto consumo digital, normalmente fan histórico de Messi (etapa Barça/Argentina) que ha trasladado su afinidad a Inter Miami. Suele combinar el seguimiento del club con la selección argentina y otras ligas europeas.</p>
+        <p><strong>Cómo se comporta.</strong> Consume contenido en móvil, sigue cuentas oficiales y de creators, busca highlights en YouTube/TikTok inmediatamente después de cada partido y compara fuentes para confirmar noticias. Activo en grupos de WhatsApp/Telegram y comunidades de fans.</p>
+        <p><strong>Qué espera del club.</strong> Acceso ágil a calendario, resultados, alineaciones y contenido behind-the-scenes. Quiere comprar producto oficial sin dudas de autenticidad y sentirse parte de una <strong>comunidad global</strong>, no sólo local de Miami.</p>
+        <p><strong>Valor estratégico.</strong> Mayor volumen de búsquedas LLM por persona; principal fuente de tráfico internacional, ventas DTC fuera de EE.UU. y crecimiento social. Determinante para la <strong>marca global</strong> post-Messi.</p>
+      </div>
+
+      <div class="persona-cols">
+        <div class="persona-col">
+          <h4>Prioridades</h4>
+          <ul class="checklist">
+            <li><span class="checkbox checked"></span>Seguir a Messi y otras estrellas</li>
+            <li><span class="checkbox checked"></span>Ver calendario y resultados</li>
+            <li><span class="checkbox checked"></span>Comprar merchandising oficial</li>
+            <li><span class="checkbox checked"></span>Encontrar contenidos y highlights fiables</li>
+            <li><span class="checkbox checked"></span>Sentirse parte de una comunidad global</li>
+          </ul>
+        </div>
+        <div class="persona-col">
+          <h4>Objetivos</h4>
+          <ul class="checklist">
+            <li><span class="checkbox checked"></span>Mantenerse al día con el club</li>
+            <li><span class="checkbox checked"></span>Consumir partidos y resúmenes</li>
+            <li><span class="checkbox checked"></span>Comprar productos oficiales</li>
+            <li><span class="checkbox checked"></span>Compartir contenido en redes</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="persona-pain">
+        <h4>Pain points</h4>
+        <ul>
+          <li>Información dispersa entre medios</li>
+          <li>Confusión sobre horarios y competiciones</li>
+          <li>Dudas sobre tienda oficial y productos auténticos</li>
+          <li>Ruido mediático y noticias poco fiables</li>
+        </ul>
+      </div>
+
+      <div class="persona-memories">
+        <h4>Memories</h4>
+        <p>El usuario sigue el fútbol a través de figuras muy reconocibles.</p>
+        <p>El usuario valora información rápida y fácil de verificar.</p>
+        <p>El usuario conecta con marcas deportivas que combinan rendimiento y espectáculo.</p>
+      </div>
+
+      <div class="prompts-block">
+        <h4>5 Prompts semilla · Persona 01</h4>
+        <div class="prompts-sub">Queries reales tal y como las formularía el fan global en un LLM</div>
+        <div class="prompts-list">
+          <div class="prompt-box"><span class="lang-tag">ES</span><span class="stage-tag">Awareness</span>¿Dónde puedo ver hoy el partido de Inter Miami con Messi en directo desde España/México y a qué hora empieza?</div>
+          <div class="prompt-box"><span class="lang-tag">ES</span><span class="stage-tag">Consideration</span>¿Qué jugadores destacados tiene Inter Miami esta temporada además de Messi y cuál es su próximo calendario en MLS y Concacaf?</div>
+          <div class="prompt-box"><span class="lang-tag">ES</span><span class="stage-tag">Decision</span>¿Cuál es la tienda oficial de Inter Miami para comprar la camiseta de Messi auténtica con envío internacional?</div>
+          <div class="prompt-box"><span class="lang-tag">ES</span><span class="stage-tag">Awareness</span>Resúmeme los últimos resultados y noticias fiables de Inter Miami de la última semana, sin rumores.</div>
+          <div class="prompt-box"><span class="lang-tag">ES</span><span class="stage-tag">Consideration</span>¿Qué cuentas oficiales de Inter Miami debería seguir en Instagram, TikTok y YouTube para no perderme highlights?</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ===================== PERSONA 02 ===================== -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-number">2</div>
+    <div class="section-title">Aficionado local de Miami</div>
+    <div class="section-tag">Persona 02</div>
+  </div>
+
+  <div class="persona-card">
+    <div class="persona-card-inner">
+
+      <div class="persona-head">
+        <h3>Aficionado local de Miami</h3>
+        <div class="persona-id">P02 · Local</div>
+      </div>
+
+      <div class="persona-desc">
+        Persona que vive en Miami o Florida y considera al club una opción de ocio, identidad local y experiencia social compartida.
+      </div>
+
+      <div class="persona-demo">
+        <div class="demo-item"><strong>Residencia</strong>Miami · Florida</div>
+        <div class="demo-item"><strong>Idioma</strong>Inglés · Español</div>
+        <div class="demo-item"><strong>Edad</strong>25 – 54</div>
+      </div>
+
+      <div class="persona-ficha">
+        <h4>Ficha descriptiva</h4>
+        <p><strong>Quién es.</strong> Residente de Miami-Dade, Broward o Palm Beach con poder adquisitivo medio-alto. Mezcla de anglos, latinos de segunda generación y expatriados LATAM/europeos asentados. El partido de Inter Miami compite en su agenda con NBA (Heat), NFL (Dolphins), eventos culturales y restauración.</p>
+        <p><strong>Cómo se comporta.</strong> Planifica el matchday con 1–3 semanas de antelación, evalúa precio, parking, gastronomía cercana y experiencia familiar/social. Compra entradas online, compara reventa vs oficial y consulta apps del estadio.</p>
+        <p><strong>Qué espera del club.</strong> Información operativa muy clara (horarios de puerta, accesos, normativa de bolsos, parking, lluvia), zonas premium y planes para repetir asistencia. Trato de <strong>club local</strong>, no sólo de fenómeno global Messi.</p>
+        <p><strong>Valor estratégico.</strong> Núcleo del ingreso recurrente: abonos, hospitality, F&B, partners locales. Determinante para el <strong>llenado del Chase Stadium</strong> y, a futuro, del nuevo Miami Freedom Park.</p>
+      </div>
+
+      <div class="persona-cols">
+        <div class="persona-col">
+          <h4>Prioridades</h4>
+          <ul class="checklist">
+            <li><span class="checkbox checked"></span>Comprar entradas sin fricción</li>
+            <li><span class="checkbox checked"></span>Saber qué esperar el día de partido</li>
+            <li><span class="checkbox checked"></span>Encontrar planes premium o familiares</li>
+            <li><span class="checkbox checked"></span>Acceder a información oficial del estadio</li>
+            <li><span class="checkbox checked"></span>Apoyar a un club con identidad local</li>
+          </ul>
+        </div>
+        <div class="persona-col">
+          <h4>Objetivos</h4>
+          <ul class="checklist">
+            <li><span class="checkbox checked"></span>Ir a partidos</li>
+            <li><span class="checkbox checked"></span>Vivir una buena experiencia matchday</li>
+            <li><span class="checkbox checked"></span>Repetir la asistencia</li>
+            <li><span class="checkbox checked"></span>Recomendar el plan a otros</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="persona-pain">
+        <h4>Pain points</h4>
+        <ul>
+          <li>Dudas sobre precios y disponibilidad</li>
+          <li>Información poco clara sobre accesos, parking o normas</li>
+          <li>Alta demanda en partidos grandes</li>
+          <li>Confusión entre ofertas oficiales y reventa</li>
+        </ul>
+      </div>
+
+      <div class="persona-memories">
+        <h4>Memories</h4>
+        <p>El usuario prioriza planes fáciles de organizar.</p>
+        <p>El usuario agradece información práctica y sin rodeos.</p>
+        <p>El usuario evita riesgos cuando una compra implica bastante dinero o coordinación.</p>
+      </div>
+
+      <div class="prompts-block">
+        <h4>5 Prompts semilla · Persona 02</h4>
+        <div class="prompts-sub">Queries del aficionado local con foco en matchday y experiencia</div>
+        <div class="prompts-list">
+          <div class="prompt-box"><span class="lang-tag">EN</span><span class="stage-tag">Decision</span>How do I buy official Inter Miami tickets for the next home game at Chase Stadium without getting scammed by resellers?</div>
+          <div class="prompt-box"><span class="lang-tag">ES</span><span class="stage-tag">Consideration</span>¿Cuánto cuesta una entrada familiar para un partido de Inter Miami y qué zonas son las mejores para ir con niños?</div>
+          <div class="prompt-box"><span class="lang-tag">EN</span><span class="stage-tag">Decision</span>What's parking, gate opening time and bag policy at Chase Stadium for an Inter Miami matchday?</div>
+          <div class="prompt-box"><span class="lang-tag">ES</span><span class="stage-tag">Consideration</span>¿Existen abonos de temporada o paquetes premium / hospitality de Inter Miami y cómo se contratan?</div>
+          <div class="prompt-box"><span class="lang-tag">EN</span><span class="stage-tag">Awareness</span>Best restaurants, bars and pre-game plans near Chase Stadium in Fort Lauderdale before an Inter Miami game.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ===================== PERSONA 03 ===================== -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-number">3</div>
+    <div class="section-title">Comprador de merchandising</div>
+    <div class="section-tag">Persona 03</div>
+  </div>
+
+  <div class="persona-card">
+    <div class="persona-card-inner">
+
+      <div class="persona-head">
+        <h3>Comprador de merchandising</h3>
+        <div class="persona-id">P03 · Shopper</div>
+      </div>
+
+      <div class="persona-desc">
+        Usuario que quiere camisetas, equipaciones y producto oficial del club, motivado por pasión deportiva, moda streetwear o coleccionismo.
+      </div>
+
+      <div class="persona-demo">
+        <div class="demo-item"><strong>Residencia</strong>Global</div>
+        <div class="demo-item"><strong>Idioma</strong>Español · Inglés</div>
+        <div class="demo-item"><strong>Edad</strong>16 – 40</div>
+      </div>
+
+      <div class="persona-ficha">
+        <h4>Ficha descriptiva</h4>
+        <p><strong>Quién es.</strong> Mezcla tres perfiles superpuestos: el fan que quiere la camiseta titular de Messi/jugador, el aficionado al streetwear que ve la equipación rosa como pieza de moda (efecto Miami Vice / Bad Bunny / Drake) y el coleccionista de kits que busca tercera equipación, ediciones limitadas y firmadas.</p>
+        <p><strong>Cómo se comporta.</strong> Investiga antes de comprar: compara MLS Store, Adidas.com, Fanatics y tienda oficial; lee reviews sobre tallaje (US vs EU); consulta Reddit y TikTok para detectar falsificaciones; sigue lanzamientos en cuentas de leaks (Footy Headlines, FootyKitNews).</p>
+        <p><strong>Qué espera del club.</strong> Garantía de autenticidad, claridad versión Authentic vs Replica, guía de tallas internacional, plazos y costes de envío transparentes, y disponibilidad real (no agotados constantes en tallas populares).</p>
+        <p><strong>Valor estratégico.</strong> Línea más global e internacional del club. Inter Miami es <strong>top 3 mundial</strong> en venta de camisetas desde 2023; vector clave de monetización fuera de EE.UU. y de extensión cultural de la marca.</p>
+      </div>
+
+      <div class="persona-cols">
+        <div class="persona-col">
+          <h4>Prioridades</h4>
+          <ul class="checklist">
+            <li><span class="checkbox checked"></span>Autenticidad del producto</li>
+            <li><span class="checkbox checked"></span>Diseños atractivos y ediciones especiales</li>
+            <li><span class="checkbox checked"></span>Facilidad de compra</li>
+            <li><span class="checkbox checked"></span>Información clara de tallas y envíos</li>
+            <li><span class="checkbox checked"></span>Relación emocional con jugadores y club</li>
+          </ul>
+        </div>
+        <div class="persona-col">
+          <h4>Objetivos</h4>
+          <ul class="checklist">
+            <li><span class="checkbox checked"></span>Comprar producto oficial</li>
+            <li><span class="checkbox checked"></span>Acertar con la talla o versión</li>
+            <li><span class="checkbox checked"></span>Conseguir artículos icónicos</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="persona-pain">
+        <h4>Pain points</h4>
+        <ul>
+          <li>Miedo a falsificaciones</li>
+          <li>Falta de stock en productos populares</li>
+          <li>Costes de envío o plazos poco claros</li>
+          <li>Dudas entre versión fan y jugador</li>
+        </ul>
+      </div>
+
+      <div class="persona-memories">
+        <h4>Memories</h4>
+        <p>El usuario presta atención a los detalles antes de comprar.</p>
+        <p>El usuario valora productos oficiales y bien presentados.</p>
+        <p>El usuario se mueve por afinidad emocional con marcas y símbolos culturales.</p>
+      </div>
+
+      <div class="prompts-block">
+        <h4>5 Prompts semilla · Persona 03</h4>
+        <div class="prompts-sub">Queries del shopper centradas en autenticidad, tallaje y comparación</div>
+        <div class="prompts-list">
+          <div class="prompt-box"><span class="lang-tag">ES</span><span class="stage-tag">Consideration</span>¿Cuál es la diferencia entre la camiseta versión jugador y versión fan de Inter Miami y cuál merece la pena?</div>
+          <div class="prompt-box"><span class="lang-tag">EN</span><span class="stage-tag">Decision</span>Where can I buy the authentic Inter Miami Messi #10 jersey and how do I spot a fake one?</div>
+          <div class="prompt-box"><span class="lang-tag">ES</span><span class="stage-tag">Decision</span>¿Qué guía de tallas debo usar para la equipación de Inter Miami Adidas y cómo son los plazos de envío a Europa / LATAM?</div>
+          <div class="prompt-box"><span class="lang-tag">ES</span><span class="stage-tag">Awareness</span>¿Qué ediciones especiales o limitadas ha sacado Inter Miami esta temporada (away, third kit, colaboraciones)?</div>
+          <div class="prompt-box"><span class="lang-tag">EN</span><span class="stage-tag">Consideration</span>Compare prices and shipping times: Inter Miami official store vs Adidas vs Fanatics for the home jersey.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ===================== PERSONA 04 ===================== -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-number">4</div>
+    <div class="section-title">Familia interesada en academia</div>
+    <div class="section-tag">Persona 04</div>
+  </div>
+
+  <div class="persona-card">
+    <div class="persona-card-inner">
+
+      <div class="persona-head">
+        <h3>Familia interesada en academia</h3>
+        <div class="persona-id">P04 · Academy</div>
+      </div>
+
+      <div class="persona-desc">
+        Padre, madre o tutor que evalúa programas de academia, formación o entorno deportivo serio para un menor con proyección.
+      </div>
+
+      <div class="persona-demo">
+        <div class="demo-item"><strong>Residencia</strong>Florida y mercados cercanos</div>
+        <div class="demo-item"><strong>Idioma</strong>Español · Inglés</div>
+        <div class="demo-item"><strong>Edad</strong>30 – 50</div>
+      </div>
+
+      <div class="persona-ficha">
+        <h4>Ficha descriptiva</h4>
+        <p><strong>Quién es.</strong> Familia con hijos entre 6 y 17 años con orientación deportiva clara. Predominio hispano (cubano, venezolano, colombiano, mexicano, argentino) y angloamericano de clase media-alta. Ya invierte en clubes locales (Weston FC, Kendall Soccer, Boca United) o academias premium (IMG, Barça Academy Miami).</p>
+        <p><strong>Cómo se comporta.</strong> Investiga durante semanas: web oficial, foros, Reddit r/MLSAcademy, redes de scouts, recomendaciones de entrenadores. Pide información a varias academias en paralelo, asiste a tryouts y compara metodología, costes, becas, transporte y posibilidades reales de promoción.</p>
+        <p><strong>Qué espera del club.</strong> Transparencia total: precios, requisitos, calendario, perfil de coaches, ratio de promoción a MLS Next Pro / primer equipo, política de tryouts para no residentes y compatibilidad con la escuela. Busca que la marca Inter Miami sea <strong>garantía formativa</strong>, no sólo marketing.</p>
+        <p><strong>Valor estratégico.</strong> Pipeline de cantera, ingresos por academia / camps / clinics, vinculación familiar de larga duración con el club (cada niño en academia = unidad familiar fidelizada durante años) y posicionamiento institucional frente a IMG y Barça Academy.</p>
+      </div>
+
+      <div class="persona-cols">
+        <div class="persona-col">
+          <h4>Prioridades</h4>
+          <ul class="checklist">
+            <li><span class="checkbox checked"></span>Calidad formativa</li>
+            <li><span class="checkbox checked"></span>Entorno serio y motivador</li>
+            <li><span class="checkbox checked"></span>Prestigio del club</li>
+            <li><span class="checkbox checked"></span>Información clara sobre acceso y requisitos</li>
+            <li><span class="checkbox checked"></span>Compatibilidad con objetivos del menor</li>
+          </ul>
+        </div>
+        <div class="persona-col">
+          <h4>Objetivos</h4>
+          <ul class="checklist">
+            <li><span class="checkbox checked"></span>Encontrar una academia de confianza</li>
+            <li><span class="checkbox checked"></span>Valorar metodología y oportunidades</li>
+            <li><span class="checkbox checked"></span>Tomar una decisión segura</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="persona-pain">
+        <h4>Pain points</h4>
+        <ul>
+          <li>Información incompleta sobre programas</li>
+          <li>Dudas sobre nivel de exigencia y encaje</li>
+          <li>Proceso de admisión poco claro</li>
+          <li>Incertidumbre sobre valor real frente a alternativas</li>
+        </ul>
+      </div>
+
+      <div class="persona-memories">
+        <h4>Memories</h4>
+        <p>El usuario prefiere decisiones bien informadas cuando afectan a la familia.</p>
+        <p>El usuario valora entornos estructurados y de confianza.</p>
+        <p>El usuario busca equilibrio entre ambición y seguridad.</p>
+      </div>
+
+      <div class="prompts-block">
+        <h4>5 Prompts semilla · Persona 04</h4>
+        <div class="prompts-sub">Queries de familia evaluando academia con criterio comparativo</div>
+        <div class="prompts-list">
+          <div class="prompt-box"><span class="lang-tag">ES</span><span class="stage-tag">Awareness</span>¿Cómo funciona la academia de Inter Miami CF, qué edades acepta y cuál es el proceso de admisión o tryouts?</div>
+          <div class="prompt-box"><span class="lang-tag">EN</span><span class="stage-tag">Consideration</span>What's the cost, schedule and commitment of Inter Miami Academy programs for youth players in Florida?</div>
+          <div class="prompt-box"><span class="lang-tag">ES</span><span class="stage-tag">Consideration</span>¿Qué metodología y entrenadores tiene la academia de Inter Miami y qué jugadores ha promocionado al primer equipo?</div>
+          <div class="prompt-box"><span class="lang-tag">EN</span><span class="stage-tag">Decision</span>Compare Inter Miami Academy vs IMG Academy vs Weston FC for a 12-year-old serious about soccer in South Florida.</div>
+          <div class="prompt-box"><span class="lang-tag">ES</span><span class="stage-tag">Awareness</span>¿Existen campus de verano, clinics o programas de prueba de Inter Miami para niños que no son residentes de Miami?</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Cierre -->
+<div class="insight-box">
+  <strong>Próximo paso · expansión a corpus completo</strong>
+  Estos 20 prompts semilla (5 × 4 personas) son la base para la generación automatizada de ~300 prompts cruzando persona × etapa de funnel × línea de producto × idioma (ES, EN, PT). El siguiente entregable incluirá la ampliación a las 7 personas matrizadas (motivación × geografía) y el etiquetado completo para carga en GEOradar.
+</div>
+
+<footer>
+  <div class="footer-left">
+    <div class="brand">Inter Miami CF · GEO Audit</div>
+    <div class="url">georadar.app · zoopa.es</div>
+  </div>
+  <div class="footer-right">
+    <div><strong>Documento</strong> Customer Personas & Prompts</div>
+    <div><strong>Versión</strong> v1.0 · 18 abril 2026</div>
+    <div>Preparado por Zoopa para Inter Miami CF</div>
+  </div>
+</footer>
+
+</body>
+</html>

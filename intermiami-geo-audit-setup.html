@@ -1,0 +1,1989 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inter Miami · Setup auditoría GEO · Documento preliminar</title>
+<style>
+  @page { size: A4; margin: 1.5cm; }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-size: 11pt;
+    line-height: 1.5;
+    color: #1a1a1a;
+    background: #fff;
+    max-width: 210mm;
+    margin: 0 auto;
+    padding: 40px;
+  }
+
+  /* Header */
+  .header {
+    border-bottom: 3px solid #000;
+    padding-bottom: 22px;
+    margin-bottom: 30px;
+    position: relative;
+  }
+  .header .kicker {
+    font-size: 9pt;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #c00;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .header h1 {
+    font-size: 26pt;
+    font-weight: 400;
+    letter-spacing: -0.5px;
+    line-height: 1.1;
+    margin-bottom: 10px;
+  }
+  .header h1 span { font-weight: 700; }
+  .header .subtitle {
+    font-size: 11pt;
+    color: #555;
+    font-style: italic;
+  }
+  .header .meta-line {
+    margin-top: 14px;
+    font-size: 9pt;
+    color: #666;
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+  .header .meta-line span strong { color: #000; text-transform: uppercase; letter-spacing: 0.5px; font-size: 8pt; }
+
+  /* Executive Summary */
+  .exec-summary {
+    background: #f7f7f7;
+    padding: 20px 25px;
+    margin-bottom: 34px;
+    border-left: 4px solid #000;
+  }
+  .exec-summary h2 {
+    font-size: 10pt;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+    font-weight: 700;
+  }
+  .exec-summary ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .exec-summary ul li {
+    font-size: 11pt;
+    padding: 6px 0 6px 22px;
+    position: relative;
+  }
+  .exec-summary ul li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #c00;
+    font-weight: 700;
+  }
+  .exec-summary strong { color: #c00; }
+
+  /* Sections */
+  .section { margin-bottom: 40px; page-break-inside: avoid; }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 18px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+  }
+  .section-number {
+    background: #000;
+    color: #fff;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13pt;
+    font-weight: 700;
+    margin-right: 14px;
+    font-family: 'Georgia', serif;
+  }
+  .section-title {
+    font-size: 15pt;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+  }
+  .section-tag {
+    margin-left: auto;
+    font-size: 8pt;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #fff;
+    background: #c00;
+    padding: 4px 10px;
+    font-weight: 700;
+  }
+  .section-tag.neutral { background: #666; }
+  .section-tag.ok { background: #060; }
+
+  /* Client approval checkbox */
+  .section-approve {
+    margin-left: 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1.5px solid #000;
+    padding: 4px 12px 4px 10px;
+    font-size: 8pt;
+    font-weight: 700;
+    cursor: pointer;
+    background: #fff;
+    user-select: none;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  }
+  .section-approve input[type="checkbox"] {
+    width: 14px;
+    height: 14px;
+    margin: 0;
+    cursor: pointer;
+    accent-color: #060;
+  }
+  .section-approve span {
+    color: #000;
+    line-height: 1;
+  }
+  .section-approve:hover { background: #f7f7f7; }
+  .section-approve:has(input:checked) {
+    background: #e8f5e9;
+    border-color: #060;
+  }
+  .section-approve:has(input:checked) span {
+    color: #060;
+  }
+  .section-approve:has(input:checked) span::before {
+    content: "✓ ";
+  }
+  @media print {
+    .section-approve { background: #fff !important; }
+  }
+
+  .lead-p {
+    font-size: 11pt;
+    color: #333;
+    margin-bottom: 14px;
+  }
+
+  /* Brief table */
+  .brief-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0 18px;
+    font-size: 10pt;
+  }
+  .brief-table td {
+    padding: 9px 12px;
+    border-bottom: 1px solid #e0e0e0;
+    vertical-align: top;
+  }
+  .brief-table tr:nth-child(even) { background: #fafafa; }
+  .brief-table td.label {
+    font-weight: 700;
+    width: 26%;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 9pt;
+    color: #444;
+  }
+
+  /* Attribute chips */
+  .chip-wrap { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0; }
+  .chip {
+    display: inline-block;
+    padding: 3px 10px;
+    background: #000;
+    color: #fff;
+    font-size: 9pt;
+    font-family: 'Georgia', serif;
+    letter-spacing: 0.3px;
+  }
+  .chip.outline {
+    background: #fff;
+    color: #000;
+    border: 1px solid #000;
+  }
+  .chip.red { background: #c00; }
+
+  /* Persona cards */
+  .persona-card {
+    border: 1px solid #000;
+    padding: 18px 20px;
+    margin-bottom: 18px;
+    background: #fff;
+    page-break-inside: avoid;
+  }
+  .persona-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-bottom: 2px solid #000;
+    padding-bottom: 10px;
+    margin-bottom: 14px;
+  }
+  .persona-head h3 {
+    font-size: 14pt;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+  }
+  .persona-id {
+    font-size: 8pt;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #c00;
+    font-weight: 700;
+  }
+  .persona-desc {
+    font-size: 10pt;
+    color: #444;
+    font-style: italic;
+    margin-bottom: 12px;
+  }
+  .persona-demo {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 14px;
+    padding: 10px 0;
+    border-top: 1px dotted #ccc;
+    border-bottom: 1px dotted #ccc;
+  }
+  .persona-demo .demo-item {
+    font-size: 9pt;
+  }
+  .persona-demo .demo-item strong {
+    display: block;
+    font-size: 7.5pt;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #c00;
+    margin-bottom: 2px;
+  }
+
+  .persona-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 12px;
+  }
+  .persona-col h4 {
+    font-size: 9pt;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    color: #000;
+    border-bottom: 1px solid #000;
+    padding-bottom: 4px;
+  }
+
+  .checklist {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .checklist li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 6px;
+    font-size: 9.5pt;
+    line-height: 1.4;
+  }
+  .checkbox {
+    width: 12px;
+    height: 12px;
+    border: 1.5px solid #333;
+    margin-right: 8px;
+    margin-top: 3px;
+    flex-shrink: 0;
+  }
+  .checkbox.checked { background: #000; position: relative; }
+  .checkbox.checked::after {
+    content: "✓";
+    color: #fff;
+    font-size: 9pt;
+    position: absolute;
+    top: -3px;
+    left: 1px;
+    font-weight: 700;
+  }
+
+  .persona-pain {
+    background: #fff5f5;
+    border-left: 3px solid #c00;
+    padding: 10px 14px;
+    margin-top: 10px;
+  }
+  .persona-pain h4 {
+    font-size: 9pt;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #c00;
+    margin-bottom: 6px;
+  }
+  .persona-pain ul { list-style: none; }
+  .persona-pain ul li {
+    font-size: 9.5pt;
+    padding: 3px 0 3px 14px;
+    position: relative;
+  }
+  .persona-pain ul li::before {
+    content: "!";
+    position: absolute;
+    left: 0;
+    color: #c00;
+    font-weight: 700;
+  }
+
+  .persona-memories {
+    margin-top: 10px;
+    padding: 10px 14px;
+    background: #fffde7;
+    border-left: 3px solid #b38a00;
+  }
+  .persona-memories h4 {
+    font-size: 9pt;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #996600;
+    margin-bottom: 6px;
+  }
+  .persona-memories p {
+    font-size: 9.5pt;
+    color: #333;
+    padding: 2px 0 2px 14px;
+    position: relative;
+    font-style: italic;
+  }
+  .persona-memories p::before {
+    content: "·";
+    position: absolute;
+    left: 4px;
+    color: #996600;
+    font-weight: 700;
+    font-size: 14pt;
+    top: -4px;
+  }
+
+  /* Funnel */
+  .funnel-wrap {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    margin: 20px 0;
+  }
+  .funnel-stage {
+    padding: 20px 22px;
+    border: 1px solid #000;
+    border-right: none;
+    position: relative;
+    background: #fff;
+  }
+  .funnel-stage:last-child { border-right: 1px solid #000; }
+  .funnel-stage::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -12px;
+    width: 22px;
+    height: 22px;
+    background: #000;
+    transform: translateY(-50%) rotate(45deg);
+    z-index: 2;
+    border-right: 1px solid #000;
+    border-top: 1px solid #000;
+  }
+  .funnel-stage:last-child::after { display: none; }
+  .funnel-stage .stage-num {
+    font-size: 22pt;
+    font-weight: 700;
+    color: #c00;
+    line-height: 1;
+    margin-bottom: 6px;
+    font-family: 'Georgia', serif;
+  }
+  .funnel-stage .stage-name {
+    font-size: 13pt;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .funnel-stage .stage-desc {
+    font-size: 9.5pt;
+    color: #555;
+    line-height: 1.4;
+  }
+
+  /* Product lines */
+  .product-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin: 16px 0;
+  }
+  .product-card {
+    border: 1px solid #ccc;
+    padding: 14px 16px;
+    background: #fff;
+    page-break-inside: avoid;
+  }
+  .product-card.featured {
+    grid-column: span 2;
+    border: 2px solid #000;
+    background: #fafafa;
+  }
+  .product-card h3 {
+    font-size: 12pt;
+    font-weight: 700;
+    margin-bottom: 4px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #c00;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .product-card h3 .count {
+    font-size: 8pt;
+    color: #999;
+    font-weight: 400;
+    letter-spacing: 1px;
+  }
+  .product-card .checklist li { font-size: 9.5pt; }
+
+  /* Prompts */
+  .prompts-section { margin: 20px 0; }
+  .prompt-box {
+    background: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    padding: 12px 16px 12px 50px;
+    margin-bottom: 10px;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 10pt;
+    line-height: 1.5;
+    position: relative;
+  }
+  .prompt-box::before {
+    content: counter(prompt, decimal-leading-zero);
+    counter-increment: prompt;
+    position: absolute;
+    left: 14px;
+    top: 12px;
+    font-family: 'Georgia', serif;
+    font-size: 11pt;
+    font-weight: 700;
+    color: #c00;
+  }
+  .prompts-section { counter-reset: prompt; }
+
+  /* Insight boxes */
+  .insight-box {
+    background: #fff9e6;
+    border: 1px solid #ffe066;
+    padding: 14px 18px;
+    margin: 16px 0;
+    font-size: 10.5pt;
+  }
+  .insight-box strong {
+    display: block;
+    text-transform: uppercase;
+    font-size: 8pt;
+    letter-spacing: 1.5px;
+    color: #996600;
+    margin-bottom: 6px;
+    font-weight: 700;
+  }
+
+  /* Next steps */
+  .next-steps {
+    background: #f0f4f8;
+    border: 1px solid #d0d8e0;
+    padding: 18px 22px;
+    margin: 18px 0;
+  }
+  .next-steps h3 {
+    font-size: 10pt;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+    color: #000;
+    font-weight: 700;
+  }
+  .next-steps .step-row {
+    display: flex;
+    align-items: flex-start;
+    padding: 8px 0;
+    border-bottom: 1px dotted #ccc;
+    font-size: 10pt;
+  }
+  .next-steps .step-row:last-child { border-bottom: none; }
+  .next-steps .step-row .step-label {
+    background: #000;
+    color: #fff;
+    font-size: 8pt;
+    padding: 2px 8px;
+    margin-right: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 700;
+    white-space: nowrap;
+    min-width: 75px;
+    text-align: center;
+  }
+  .next-steps .step-row .step-content { flex: 1; }
+
+  /* Footer */
+  footer {
+    margin-top: 50px;
+    padding-top: 22px;
+    border-top: 3px solid #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  footer .footer-left .brand {
+    font-size: 12pt;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+  }
+  footer .footer-left .url {
+    font-size: 9pt;
+    color: #666;
+    margin-top: 2px;
+  }
+  footer .footer-right {
+    text-align: right;
+    font-size: 8pt;
+    color: #666;
+    line-height: 1.5;
+  }
+  footer .footer-right strong { color: #000; text-transform: uppercase; letter-spacing: 0.5px; }
+
+  /* Geographic section */
+  .geo-cluster {
+    margin: 18px 0 22px;
+    page-break-inside: avoid;
+  }
+  .geo-cluster-head {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #000;
+  }
+  .geo-cluster-head .cluster-label {
+    font-size: 9pt;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    color: #000;
+  }
+  .geo-cluster-head .cluster-count {
+    margin-left: auto;
+    font-size: 8pt;
+    color: #666;
+    letter-spacing: 0.5px;
+  }
+  .geo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .geo-card {
+    border: 1px solid #ccc;
+    padding: 12px 14px;
+    background: #fff;
+    font-size: 9.5pt;
+    page-break-inside: avoid;
+    display: flex;
+    flex-direction: column;
+  }
+  .geo-card.core { border: 2px solid #000; background: #fafafa; }
+  .geo-card-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 6px;
+    gap: 8px;
+  }
+  .geo-card-head h4 {
+    font-size: 11pt;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #000;
+  }
+  .geo-card-head .flag {
+    font-size: 8pt;
+    color: #666;
+    white-space: nowrap;
+    font-family: 'Georgia', serif;
+    letter-spacing: 0.3px;
+  }
+  .geo-prio {
+    display: inline-block;
+    font-size: 7pt;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    padding: 2px 7px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    width: fit-content;
+  }
+  .geo-prio.high { background: #c00; color: #fff; }
+  .geo-prio.med  { background: #b38a00; color: #fff; }
+  .geo-prio.low  { background: #888; color: #fff; }
+  .geo-card p {
+    font-size: 9pt;
+    color: #444;
+    margin-bottom: 6px;
+    line-height: 1.4;
+  }
+  .geo-meta {
+    font-size: 8.5pt;
+    color: #666;
+    padding-top: 6px;
+    margin-top: auto;
+    border-top: 1px dotted #ccc;
+    line-height: 1.5;
+  }
+  .geo-meta strong {
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 7.5pt;
+  }
+  .geo-link {
+    margin-top: 4px;
+    font-size: 8.5pt;
+    color: #c00;
+    font-weight: 600;
+  }
+
+  /* Matrix */
+  .matrix-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 9pt;
+  }
+  .matrix-table th, .matrix-table td {
+    border: 1px solid #ddd;
+    padding: 6px 8px;
+    text-align: center;
+    vertical-align: middle;
+  }
+  .matrix-table th {
+    background: #000;
+    color: #fff;
+    font-size: 8pt;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+  }
+  .matrix-table td.row-label {
+    text-align: left;
+    font-weight: 700;
+    font-size: 8.5pt;
+    background: #fafafa;
+    letter-spacing: 0.2px;
+  }
+  .dot { display: inline-block; width: 12px; height: 12px; border-radius: 50%; }
+  .dot-h { background: #c00; }
+  .dot-m { background: #b38a00; }
+  .dot-l { background: #ccc; }
+  .dot-none { color: #ccc; font-size: 12pt; }
+  .matrix-legend {
+    display: flex;
+    gap: 16px;
+    font-size: 8pt;
+    color: #666;
+    margin-top: 6px;
+    justify-content: flex-end;
+  }
+  .matrix-legend span { display: flex; align-items: center; gap: 4px; }
+
+  /* Theses */
+  .thesis-card {
+    border: 1px solid #000;
+    background: #fff;
+    margin: 14px 0;
+    padding: 0;
+    page-break-inside: avoid;
+    display: grid;
+    grid-template-columns: 70px 1fr;
+  }
+  .thesis-number {
+    background: #000;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28pt;
+    font-weight: 700;
+    font-family: 'Georgia', serif;
+    letter-spacing: -1px;
+  }
+  .thesis-body { padding: 16px 20px; }
+  .thesis-label {
+    font-size: 8pt;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #c00;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .thesis-body h3 {
+    font-size: 13pt;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    color: #000;
+  }
+  .thesis-hypothesis {
+    background: #fff9e6;
+    border-left: 3px solid #b38a00;
+    padding: 10px 14px;
+    font-size: 10pt;
+    margin: 10px 0;
+    line-height: 1.45;
+  }
+  .thesis-hypothesis strong {
+    display: block;
+    font-size: 8pt;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #996600;
+    margin-bottom: 4px;
+    font-weight: 700;
+  }
+  .thesis-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 10px;
+  }
+  .thesis-col h4 {
+    font-size: 8pt;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 6px;
+    color: #000;
+    border-bottom: 1px solid #000;
+    padding-bottom: 3px;
+    font-weight: 700;
+  }
+  .thesis-col p {
+    font-size: 9.5pt;
+    color: #333;
+    line-height: 1.45;
+    margin: 0;
+  }
+  .thesis-col ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .thesis-col ul li {
+    font-size: 9pt;
+    color: #333;
+    padding: 3px 0 3px 14px;
+    position: relative;
+  }
+  .thesis-col ul li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #c00;
+    font-size: 8pt;
+  }
+
+  /* Recommendation */
+  .reco-box {
+    background: #f0f4f8;
+    border: 1px solid #d0d8e0;
+    border-left: 4px solid #000;
+    padding: 20px 24px;
+    margin: 20px 0;
+  }
+  .reco-box h3 {
+    font-size: 10pt;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 14px;
+    color: #000;
+    font-weight: 700;
+  }
+  .reco-box .reco-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    margin: 10px 0 6px;
+  }
+  .reco-box .reco-card {
+    background: #fff;
+    border: 1px solid #d0d8e0;
+    padding: 12px 14px;
+  }
+  .reco-box .reco-card .reco-n {
+    font-size: 8pt;
+    color: #c00;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+  }
+  .reco-box .reco-card h4 {
+    font-size: 11pt;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .reco-box .reco-card p {
+    font-size: 9pt;
+    color: #444;
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  @media print {
+    body { padding: 0; }
+    .section { page-break-inside: avoid; }
+    .persona-card { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="kicker">Proyecto GEO · Setup preliminar · Auditoría</div>
+  <h1><span>Inter Miami CF</span><br>Auditoría de visibilidad en IA</h1>
+  <div class="subtitle">Documento de setup · brief, personas, funnel, líneas de producto y prompts semilla</div>
+  <div class="meta-line">
+    <span><strong>Cliente</strong> Inter Miami CF</span>
+    <span><strong>Categoría</strong> Deporte / MLS</span>
+    <span><strong>Ámbito</strong> EE.UU. + internacional</span>
+    <span><strong>Engines</strong> ChatGPT · Gemini · Perplexity · Claude</span>
+    <span><strong>Fecha</strong> 17 abril 2026</span>
+  </div>
+</div>
+
+<div class="exec-summary">
+  <h2>Resumen ejecutivo · setup completado</h2>
+  <ul>
+    <li>Brief de marca <strong>Inter Miami CF</strong> completado y validado</li>
+    <li><strong>4 personas funcionales</strong> cargadas (fan global Messi, aficionado local, comprador merch, familia academia)</li>
+    <li><strong>10 clusters geográficos</strong> mapeados y propuesta final de <strong>7 personas matrizadas</strong> motivación × contexto</li>
+    <li><strong>Funnel de 3 etapas</strong> configurado (Awareness → Consideration → Decision)</li>
+    <li><strong>5 líneas de producto</strong> creadas (entradas, merchandising, academia, contenido, hospitality)</li>
+    <li><strong>10 prompts semilla</strong> generados para expansión automatizada</li>
+    <li><strong>5 tesis estratégicas</strong> definidas para orientar el estudio y estructurar el deliverable</li>
+  </ul>
+</div>
+
+<!-- SECTION 1 -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-number">1</div>
+    <div class="section-title">Brief de marca</div>
+    <div class="section-tag ok">Validado</div>
+    <label class="section-approve"><input type="checkbox" data-section="1"><span>Aprobado</span></label>
+  </div>
+
+  <table class="brief-table">
+    <tr><td class="label">Marca</td><td>Inter Miami CF</td></tr>
+    <tr><td class="label">Sector</td><td>Deporte y entretenimiento deportivo</td></tr>
+    <tr><td class="label">Subsector</td><td>Club de fútbol profesional · Franquicia MLS</td></tr>
+    <tr><td class="label">Ámbito geográfico</td><td>Estados Unidos, con foco en Miami y alcance internacional</td></tr>
+    <tr><td class="label">Objetivos GEO</td><td>Mejorar la visibilidad del club en respuestas de IA sobre entradas, experiencia de partido, merchandising, academia, actualidad del equipo y búsquedas vinculadas a Messi e Inter Miami.</td></tr>
+    <tr><td class="label">Líneas de negocio</td><td>Entradas y matchday · Merchandising oficial · Membresías y hospitality · Academia y cantera · Contenidos y actualidad · Patrocinios y experiencias de marca</td></tr>
+    <tr>
+      <td class="label">Atributos de marca</td>
+      <td>
+        <div class="chip-wrap">
+          <span class="chip red">Ambicioso</span>
+          <span class="chip red">Aspiracional</span>
+          <span class="chip">Global</span>
+          <span class="chip">Latino</span>
+          <span class="chip">Vibrante</span>
+          <span class="chip">Premium</span>
+          <span class="chip">Espectáculo</span>
+          <span class="chip">Competitivo</span>
+          <span class="chip">Culturalmente relevante</span>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="label">Valores clave</td>
+      <td>
+        <div class="chip-wrap">
+          <span class="chip outline">Pasión por el fútbol</span>
+          <span class="chip outline">Entretenimiento</span>
+          <span class="chip outline">Comunidad</span>
+          <span class="chip outline">Orgullo local</span>
+          <span class="chip outline">Proyección global</span>
+          <span class="chip outline">Excelencia deportiva</span>
+          <span class="chip outline">Conexión cultural latina</span>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="label">Competidores directos</td>
+      <td>Orlando City SC · LA Galaxy · Los Angeles FC · Atlanta United · New York City FC · clubes europeos y marcas deportivas que compiten por atención global</td>
+    </tr>
+    <tr>
+      <td class="label">Comportamiento del consumidor</td>
+      <td>Búsquedas centradas en resultados, calendario, entradas, precios, merchandising, noticias, highlights, experiencias de estadio y contenido de estrellas (especialmente Messi).</td>
+    </tr>
+    <tr>
+      <td class="label">Estacionalidad</td>
+      <td>Inicio y cierre de temporada, playoffs, fichajes, partidos clave, Leagues Cup, Champions Cup, momentos virales vinculados a estrellas.</td>
+    </tr>
+    <tr>
+      <td class="label">Terminología</td>
+      <td>
+        <div class="chip-wrap">
+          <span class="chip outline">MLS</span>
+          <span class="chip outline">Matchday</span>
+          <span class="chip outline">Fixtures</span>
+          <span class="chip outline">Roster</span>
+          <span class="chip outline">Playoffs</span>
+          <span class="chip outline">Supporters Shield</span>
+          <span class="chip outline">Leagues Cup</span>
+          <span class="chip outline">Academy</span>
+          <span class="chip outline">Hospitality</span>
+          <span class="chip outline">Season tickets</span>
+          <span class="chip outline">Official store</span>
+          <span class="chip outline">Highlights</span>
+          <span class="chip outline">Herons</span>
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <div class="insight-box">
+    <strong>Insight estratégico</strong>
+    El caso Inter Miami es único en la categoría MLS: el club compite simultáneamente como franquicia local (Miami/Florida) y como fenómeno global (vínculo Messi). Esa dualidad obliga a cubrir dos ejes de visibilidad en IA — idioma (ES/EN), geografía (local/global) y motivación (ocio vs fandom) — con tratamientos distintos.
+  </div>
+</div>
+
+<!-- SECTION 2 -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-number">2</div>
+    <div class="section-title">Personas · 4 perfiles activos</div>
+    <div class="section-tag ok">Cargadas</div>
+    <label class="section-approve"><input type="checkbox" data-section="2"><span>Aprobado</span></label>
+  </div>
+
+  <p class="lead-p">Cuatro arquetipos de consumidor priorizados cubren los principales modos de entrada al club. Cada persona incluye prioridades, objetivos, pain points y memories activos para guiar la generación de prompts.</p>
+
+  <!-- PERSONA 1 -->
+  <div class="persona-card">
+    <div class="persona-head">
+      <h3>Fan global de Messi e Inter Miami</h3>
+      <div class="persona-id">Persona 01 · Global</div>
+    </div>
+    <div class="persona-desc">Seguidor que llega por Messi o por la proyección internacional del club y consume noticias, partidos, merchandising y contenido social.</div>
+    <div class="persona-demo">
+      <div class="demo-item"><strong>Residencia</strong>LATAM · Europa · EE.UU.</div>
+      <div class="demo-item"><strong>Idioma</strong>Español · Inglés</div>
+      <div class="demo-item"><strong>Edad</strong>18 – 44</div>
+    </div>
+    <div class="persona-cols">
+      <div class="persona-col">
+        <h4>Prioridades</h4>
+        <ul class="checklist">
+          <li><span class="checkbox checked"></span>Seguir a Messi y otras estrellas</li>
+          <li><span class="checkbox checked"></span>Ver calendario y resultados</li>
+          <li><span class="checkbox checked"></span>Comprar merchandising oficial</li>
+          <li><span class="checkbox checked"></span>Encontrar contenidos y highlights fiables</li>
+          <li><span class="checkbox checked"></span>Sentirse parte de una comunidad global</li>
+        </ul>
+      </div>
+      <div class="persona-col">
+        <h4>Objetivos</h4>
+        <ul class="checklist">
+          <li><span class="checkbox checked"></span>Mantenerse al día con el club</li>
+          <li><span class="checkbox checked"></span>Consumir partidos y resúmenes</li>
+          <li><span class="checkbox checked"></span>Comprar productos oficiales</li>
+          <li><span class="checkbox checked"></span>Compartir contenido en redes</li>
+        </ul>
+      </div>
+    </div>
+    <div class="persona-pain">
+      <h4>Pain points</h4>
+      <ul>
+        <li>Información dispersa entre medios</li>
+        <li>Confusión sobre horarios y competiciones</li>
+        <li>Dudas sobre tienda oficial y productos auténticos</li>
+        <li>Ruido mediático y noticias poco fiables</li>
+      </ul>
+    </div>
+    <div class="persona-memories">
+      <h4>Memories</h4>
+      <p>El usuario sigue el fútbol a través de figuras muy reconocibles.</p>
+      <p>El usuario valora información rápida y fácil de verificar.</p>
+      <p>El usuario conecta mucho con marcas deportivas que combinan rendimiento y espectáculo.</p>
+    </div>
+  </div>
+
+  <!-- PERSONA 2 -->
+  <div class="persona-card">
+    <div class="persona-head">
+      <h3>Aficionado local de Miami</h3>
+      <div class="persona-id">Persona 02 · Local</div>
+    </div>
+    <div class="persona-desc">Persona que vive en Miami o Florida y considera al club una opción de ocio, identidad local y experiencia social.</div>
+    <div class="persona-demo">
+      <div class="demo-item"><strong>Residencia</strong>Miami · Florida</div>
+      <div class="demo-item"><strong>Idioma</strong>Inglés · Español</div>
+      <div class="demo-item"><strong>Edad</strong>25 – 54</div>
+    </div>
+    <div class="persona-cols">
+      <div class="persona-col">
+        <h4>Prioridades</h4>
+        <ul class="checklist">
+          <li><span class="checkbox checked"></span>Comprar entradas sin fricción</li>
+          <li><span class="checkbox checked"></span>Saber qué esperar el día de partido</li>
+          <li><span class="checkbox checked"></span>Encontrar planes premium o familiares</li>
+          <li><span class="checkbox checked"></span>Acceder a información oficial del estadio</li>
+          <li><span class="checkbox checked"></span>Apoyar a un club con identidad local</li>
+        </ul>
+      </div>
+      <div class="persona-col">
+        <h4>Objetivos</h4>
+        <ul class="checklist">
+          <li><span class="checkbox checked"></span>Ir a partidos</li>
+          <li><span class="checkbox checked"></span>Vivir una buena experiencia matchday</li>
+          <li><span class="checkbox checked"></span>Repetir la asistencia</li>
+          <li><span class="checkbox checked"></span>Recomendar el plan a otros</li>
+        </ul>
+      </div>
+    </div>
+    <div class="persona-pain">
+      <h4>Pain points</h4>
+      <ul>
+        <li>Dudas sobre precios y disponibilidad</li>
+        <li>Información poco clara sobre accesos, parking o normas</li>
+        <li>Alta demanda en partidos grandes</li>
+        <li>Confusión entre ofertas oficiales y reventa</li>
+      </ul>
+    </div>
+    <div class="persona-memories">
+      <h4>Memories</h4>
+      <p>El usuario prioriza planes fáciles de organizar.</p>
+      <p>El usuario agradece información práctica y sin rodeos.</p>
+      <p>El usuario evita riesgos cuando una compra implica bastante dinero o coordinación.</p>
+    </div>
+  </div>
+
+  <!-- PERSONA 3 -->
+  <div class="persona-card">
+    <div class="persona-head">
+      <h3>Comprador de merchandising</h3>
+      <div class="persona-id">Persona 03 · Shopper</div>
+    </div>
+    <div class="persona-desc">Usuario que quiere camisetas, equipaciones y productos oficiales del club, por pasión, moda o coleccionismo.</div>
+    <div class="persona-demo">
+      <div class="demo-item"><strong>Residencia</strong>Global</div>
+      <div class="demo-item"><strong>Idioma</strong>Español · Inglés</div>
+      <div class="demo-item"><strong>Edad</strong>16 – 40</div>
+    </div>
+    <div class="persona-cols">
+      <div class="persona-col">
+        <h4>Prioridades</h4>
+        <ul class="checklist">
+          <li><span class="checkbox checked"></span>Autenticidad del producto</li>
+          <li><span class="checkbox checked"></span>Diseños atractivos y ediciones especiales</li>
+          <li><span class="checkbox checked"></span>Facilidad de compra</li>
+          <li><span class="checkbox checked"></span>Información clara de tallas y envíos</li>
+          <li><span class="checkbox checked"></span>Relación emocional con jugadores y club</li>
+        </ul>
+      </div>
+      <div class="persona-col">
+        <h4>Objetivos</h4>
+        <ul class="checklist">
+          <li><span class="checkbox checked"></span>Comprar producto oficial</li>
+          <li><span class="checkbox checked"></span>Acertar con la talla o versión</li>
+          <li><span class="checkbox checked"></span>Conseguir artículos icónicos</li>
+        </ul>
+      </div>
+    </div>
+    <div class="persona-pain">
+      <h4>Pain points</h4>
+      <ul>
+        <li>Miedo a falsificaciones</li>
+        <li>Falta de stock en productos populares</li>
+        <li>Costes de envío o plazos poco claros</li>
+        <li>Dudas entre versión fan y jugador</li>
+      </ul>
+    </div>
+    <div class="persona-memories">
+      <h4>Memories</h4>
+      <p>El usuario presta atención a los detalles antes de comprar.</p>
+      <p>El usuario valora productos oficiales y bien presentados.</p>
+      <p>El usuario se mueve por afinidad emocional con marcas y símbolos culturales.</p>
+    </div>
+  </div>
+
+  <!-- PERSONA 4 -->
+  <div class="persona-card">
+    <div class="persona-head">
+      <h3>Familia interesada en academia</h3>
+      <div class="persona-id">Persona 04 · Academy</div>
+    </div>
+    <div class="persona-desc">Padre, madre o tutor que evalúa programas de academia, formación o entorno deportivo para menores.</div>
+    <div class="persona-demo">
+      <div class="demo-item"><strong>Residencia</strong>Florida y mercados cercanos</div>
+      <div class="demo-item"><strong>Idioma</strong>Español · Inglés</div>
+      <div class="demo-item"><strong>Edad</strong>30 – 50</div>
+    </div>
+    <div class="persona-cols">
+      <div class="persona-col">
+        <h4>Prioridades</h4>
+        <ul class="checklist">
+          <li><span class="checkbox checked"></span>Calidad formativa</li>
+          <li><span class="checkbox checked"></span>Entorno serio y motivador</li>
+          <li><span class="checkbox checked"></span>Prestigio del club</li>
+          <li><span class="checkbox checked"></span>Información clara sobre acceso y requisitos</li>
+          <li><span class="checkbox checked"></span>Compatibilidad con objetivos del menor</li>
+        </ul>
+      </div>
+      <div class="persona-col">
+        <h4>Objetivos</h4>
+        <ul class="checklist">
+          <li><span class="checkbox checked"></span>Encontrar una academia de confianza</li>
+          <li><span class="checkbox checked"></span>Valorar metodología y oportunidades</li>
+          <li><span class="checkbox checked"></span>Tomar una decisión segura</li>
+        </ul>
+      </div>
+    </div>
+    <div class="persona-pain">
+      <h4>Pain points</h4>
+      <ul>
+        <li>Información incompleta sobre programas</li>
+        <li>Dudas sobre nivel de exigencia y encaje</li>
+        <li>Proceso de admisión poco claro</li>
+        <li>Incertidumbre sobre valor real frente a alternativas</li>
+      </ul>
+    </div>
+    <div class="persona-memories">
+      <h4>Memories</h4>
+      <p>El usuario prefiere decisiones bien informadas cuando afectan a la familia.</p>
+      <p>El usuario valora entornos estructurados y de confianza.</p>
+      <p>El usuario busca equilibrio entre ambición y seguridad.</p>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 3 · GEOGRAFÍA (complementario) -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-number">3</div>
+    <div class="section-title">Geografía y situación · expansión de personas</div>
+    <div class="section-tag neutral">Complementario</div>
+    <label class="section-approve"><input type="checkbox" data-section="3"><span>Aprobado</span></label>
+  </div>
+
+  <p class="lead-p">Las 4 personas funcionales cubren <em>qué motiva</em> al consumidor (fandom, matchday, merch, academia). Inter Miami, por su dualidad local/global y el efecto Messi, exige una capa adicional de <strong>geografía y situación</strong>. La propuesta final de personas se obtiene cruzando ambos ejes: motivación × contexto geográfico. Esta sección mapea los 10 clusters geográficos más relevantes y termina con la recomendación de segmentación.</p>
+
+  <!-- CLUSTER A: USA -->
+  <div class="geo-cluster">
+    <div class="geo-cluster-head">
+      <div class="cluster-label">Cluster A · Estados Unidos</div>
+      <div class="cluster-count">6 segmentos · mercado core</div>
+    </div>
+    <div class="geo-grid">
+
+      <div class="geo-card core">
+        <div class="geo-card-head">
+          <h4>Miami local · Hispanic / Cuban-American</h4>
+          <div class="flag">Miami-Dade, FL</div>
+        </div>
+        <span class="geo-prio high">Prioridad alta · core</span>
+        <p>Base social histórica del club. Bilingüe por defecto, alta afinidad cultural con identidad latina del club. Consumidor de season tickets, merch y matchday recurrente.</p>
+        <div class="geo-meta">
+          <strong>Idioma</strong> ES (dominante) + EN · <strong>Edad</strong> 25-65<br>
+          <strong>Volumen</strong> Alto · <strong>Valor unitario</strong> Alto
+        </div>
+        <div class="geo-link">↳ Refuerza P02 (aficionado local) + P04 (academia)</div>
+      </div>
+
+      <div class="geo-card core">
+        <div class="geo-card-head">
+          <h4>Miami local · Anglo / general US</h4>
+          <div class="flag">Miami-Dade, FL</div>
+        </div>
+        <span class="geo-prio high">Prioridad alta · core</span>
+        <p>Residente anglosajón en Miami o sur de Florida. Más orientado a entretenimiento deportivo que a identidad cultural. Valor en matchday como plan de ocio.</p>
+        <div class="geo-meta">
+          <strong>Idioma</strong> EN · <strong>Edad</strong> 25-54<br>
+          <strong>Volumen</strong> Medio-alto · <strong>Valor unitario</strong> Alto
+        </div>
+        <div class="geo-link">↳ Refuerza P02 (aficionado local)</div>
+      </div>
+
+      <div class="geo-card">
+        <div class="geo-card-head">
+          <h4>Turista americano en Miami</h4>
+          <div class="flag">Resto USA · visita Miami</div>
+        </div>
+        <span class="geo-prio high">Prioridad alta</span>
+        <p>Visitante USA que planifica un viaje de ocio a Miami y considera ir a un partido como parte del viaje. Alta sensibilidad a prompts no-branded ("qué hacer en Miami").</p>
+        <div class="geo-meta">
+          <strong>Idioma</strong> EN · <strong>Edad</strong> 25-55<br>
+          <strong>Volumen</strong> Alto estacional · <strong>Valor</strong> Medio (ticket + F&B)
+        </div>
+        <div class="geo-link">↳ Persona nueva: "Visitante matchday"</div>
+      </div>
+
+      <div class="geo-card">
+        <div class="geo-card-head">
+          <h4>Fly-in weekender · Costa Este</h4>
+          <div class="flag">NY, NJ, DC, Boston, Atlanta</div>
+        </div>
+        <span class="geo-prio med">Prioridad media</span>
+        <p>Fan consolidado que vuela a Miami específicamente para partidos clave (Messi, playoffs, Leagues Cup). Alta propensión a hospitality y paquetes premium.</p>
+        <div class="geo-meta">
+          <strong>Idioma</strong> EN + ES · <strong>Edad</strong> 30-55<br>
+          <strong>Volumen</strong> Medio · <strong>Valor</strong> Alto (hospitality)
+        </div>
+        <div class="geo-link">↳ Cruce P01 + P02 · segmento premium</div>
+      </div>
+
+      <div class="geo-card">
+        <div class="geo-card-head">
+          <h4>Fan digital · resto USA</h4>
+          <div class="flag">Texas, California, Midwest</div>
+        </div>
+        <span class="geo-prio med">Prioridad media</span>
+        <p>Sigue el club vía streaming, redes y contenido. Sin planes de viajar. Conversión esperada en merchandising y suscripciones (Apple TV MLS, etc.).</p>
+        <div class="geo-meta">
+          <strong>Idioma</strong> EN · <strong>Edad</strong> 20-45<br>
+          <strong>Volumen</strong> Alto · <strong>Valor</strong> Bajo-medio
+        </div>
+        <div class="geo-link">↳ Refuerza P01 (fan global) + P03 (merch)</div>
+      </div>
+
+      <div class="geo-card">
+        <div class="geo-card-head">
+          <h4>Latinx USA · diaspora</h4>
+          <div class="flag">NY, LA, Chicago, Houston, TX</div>
+        </div>
+        <span class="geo-prio high">Prioridad alta</span>
+        <p>Comunidad hispana fuera de Miami con vínculo cultural al club. Alta afinidad con mensaje latino, idiomas mixtos, consumo de contenido bilingüe.</p>
+        <div class="geo-meta">
+          <strong>Idioma</strong> ES + EN (bicultural) · <strong>Edad</strong> 18-50<br>
+          <strong>Volumen</strong> Alto · <strong>Valor</strong> Medio
+        </div>
+        <div class="geo-link">↳ Cruce P01 + P03 · segmento cultural</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- CLUSTER B: LATAM -->
+  <div class="geo-cluster">
+    <div class="geo-cluster-head">
+      <div class="cluster-label">Cluster B · Latinoamérica</div>
+      <div class="cluster-count">3 segmentos · mercado de expansión</div>
+    </div>
+    <div class="geo-grid">
+
+      <div class="geo-card">
+        <div class="geo-card-head">
+          <h4>Mexicano</h4>
+          <div class="flag">CDMX, Monterrey, Guadalajara</div>
+        </div>
+        <span class="geo-prio high">Prioridad alta</span>
+        <p>Mercado clave por Leagues Cup y rivalidad deportiva con Liga MX. Alto volumen de búsquedas, alta conversación en redes, turismo estacional a Miami.</p>
+        <div class="geo-meta">
+          <strong>Idioma</strong> ES · <strong>Edad</strong> 18-50<br>
+          <strong>Volumen</strong> Muy alto · <strong>Valor</strong> Medio (merch + tourism)
+        </div>
+        <div class="geo-link">↳ Persona nueva o variante P01 "LATAM Messi + Liga MX"</div>
+      </div>
+
+      <div class="geo-card">
+        <div class="geo-card-head">
+          <h4>Argentino</h4>
+          <div class="flag">Buenos Aires, Córdoba, Rosario</div>
+        </div>
+        <span class="geo-prio high">Prioridad alta</span>
+        <p>Conexión emocional profunda por Messi. Alta lealtad, consumo de contenido en ES, propensión a merch de edición y productos ligados a hitos (campeonatos, retiros).</p>
+        <div class="geo-meta">
+          <strong>Idioma</strong> ES · <strong>Edad</strong> 18-55<br>
+          <strong>Volumen</strong> Alto · <strong>Valor</strong> Medio (merch internacional)
+        </div>
+        <div class="geo-link">↳ Refuerza P01 (fan Messi) + P03 (merch)</div>
+      </div>
+
+      <div class="geo-card">
+        <div class="geo-card-head">
+          <h4>LATAM general</h4>
+          <div class="flag">Colombia, Brasil, Chile, Perú</div>
+        </div>
+        <span class="geo-prio med">Prioridad media</span>
+        <p>Fans por Messi, MLS o jugadores locales del club. Incluye Brasil (único segmento no-hispano de LATAM, PT). Consumo digital predominante.</p>
+        <div class="geo-meta">
+          <strong>Idioma</strong> ES + PT (Brasil) · <strong>Edad</strong> 18-45<br>
+          <strong>Volumen</strong> Medio · <strong>Valor</strong> Bajo-medio
+        </div>
+        <div class="geo-link">↳ Refuerza P01 · requiere prompts en PT para Brasil</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- CLUSTER C: INTERNACIONAL -->
+  <div class="geo-cluster">
+    <div class="geo-cluster-head">
+      <div class="cluster-label">Cluster C · internacional y situaciones específicas</div>
+      <div class="cluster-count">3 segmentos · halo global</div>
+    </div>
+    <div class="geo-grid">
+
+      <div class="geo-card">
+        <div class="geo-card-head">
+          <h4>Europeo / global</h4>
+          <div class="flag">España, Reino Unido, Italia</div>
+        </div>
+        <span class="geo-prio med">Prioridad media</span>
+        <p>Seguidor global por Messi o curiosidad por la MLS. Consumidor de contenido en EN/ES. Merch internacional. Segundo residencia ocasional en Florida en algunos perfiles.</p>
+        <div class="geo-meta">
+          <strong>Idioma</strong> EN + ES (España) · <strong>Edad</strong> 25-55<br>
+          <strong>Volumen</strong> Medio · <strong>Valor</strong> Bajo-medio
+        </div>
+        <div class="geo-link">↳ Refuerza P01 (fan global) + P03 (merch)</div>
+      </div>
+
+      <div class="geo-card">
+        <div class="geo-card-head">
+          <h4>Turista internacional en Miami</h4>
+          <div class="flag">UK, Canadá, Europa, Caribe</div>
+        </div>
+        <span class="geo-prio low">Prioridad baja-media</span>
+        <p>Visitante internacional (cruceros, turismo urbano, negocios) que considera matchday como experiencia cultural americana. Monetización puntual.</p>
+        <div class="geo-meta">
+          <strong>Idioma</strong> EN (dominante) · <strong>Edad</strong> 30-60<br>
+          <strong>Volumen</strong> Medio estacional · <strong>Valor</strong> Medio
+        </div>
+        <div class="geo-link">↳ Variante de "Visitante matchday"</div>
+      </div>
+
+      <div class="geo-card">
+        <div class="geo-card-head">
+          <h4>Snowbird / residente estacional</h4>
+          <div class="flag">Canadá + norte USA en FL</div>
+        </div>
+        <span class="geo-prio low">Prioridad baja</span>
+        <p>Residente temporal en Florida durante invierno (oct-abr), coincide con la temporada MLS. Perfil senior, alto poder adquisitivo, consumo hospitality y experiencias premium.</p>
+        <div class="geo-meta">
+          <strong>Idioma</strong> EN · <strong>Edad</strong> 55-75<br>
+          <strong>Volumen</strong> Bajo · <strong>Valor</strong> Alto (hospitality)
+        </div>
+        <div class="geo-link">↳ Nicho premium estacional</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MATRIX -->
+  <h3 style="font-size:12pt; font-weight:700; margin:26px 0 8px;">Matriz de relevancia · segmento geográfico × línea de producto</h3>
+  <p class="lead-p" style="font-size:10pt;">Dónde enfocar la inversión GEO según el cluster geográfico.</p>
+
+  <table class="matrix-table">
+    <thead>
+      <tr>
+        <th style="width:28%; text-align:left; padding-left:10px;">Segmento</th>
+        <th>Entradas / Matchday</th>
+        <th>Merchandising</th>
+        <th>Academia</th>
+        <th>Contenido / Actualidad</th>
+        <th>Premium / Hospitality</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="row-label">Miami local (Hispanic + Anglo)</td>
+        <td><span class="dot dot-h"></span></td>
+        <td><span class="dot dot-h"></span></td>
+        <td><span class="dot dot-h"></span></td>
+        <td><span class="dot dot-m"></span></td>
+        <td><span class="dot dot-h"></span></td>
+      </tr>
+      <tr>
+        <td class="row-label">Turista americano en Miami</td>
+        <td><span class="dot dot-h"></span></td>
+        <td><span class="dot dot-m"></span></td>
+        <td><span class="dot dot-none">—</span></td>
+        <td><span class="dot dot-m"></span></td>
+        <td><span class="dot dot-m"></span></td>
+      </tr>
+      <tr>
+        <td class="row-label">Fly-in costa este USA</td>
+        <td><span class="dot dot-h"></span></td>
+        <td><span class="dot dot-m"></span></td>
+        <td><span class="dot dot-none">—</span></td>
+        <td><span class="dot dot-m"></span></td>
+        <td><span class="dot dot-h"></span></td>
+      </tr>
+      <tr>
+        <td class="row-label">Fan digital resto USA</td>
+        <td><span class="dot dot-l"></span></td>
+        <td><span class="dot dot-h"></span></td>
+        <td><span class="dot dot-none">—</span></td>
+        <td><span class="dot dot-h"></span></td>
+        <td><span class="dot dot-l"></span></td>
+      </tr>
+      <tr>
+        <td class="row-label">Latinx USA diaspora</td>
+        <td><span class="dot dot-m"></span></td>
+        <td><span class="dot dot-h"></span></td>
+        <td><span class="dot dot-l"></span></td>
+        <td><span class="dot dot-h"></span></td>
+        <td><span class="dot dot-l"></span></td>
+      </tr>
+      <tr>
+        <td class="row-label">Mexicano</td>
+        <td><span class="dot dot-m"></span></td>
+        <td><span class="dot dot-h"></span></td>
+        <td><span class="dot dot-none">—</span></td>
+        <td><span class="dot dot-h"></span></td>
+        <td><span class="dot dot-l"></span></td>
+      </tr>
+      <tr>
+        <td class="row-label">Argentino</td>
+        <td><span class="dot dot-l"></span></td>
+        <td><span class="dot dot-h"></span></td>
+        <td><span class="dot dot-none">—</span></td>
+        <td><span class="dot dot-h"></span></td>
+        <td><span class="dot dot-none">—</span></td>
+      </tr>
+      <tr>
+        <td class="row-label">LATAM general</td>
+        <td><span class="dot dot-l"></span></td>
+        <td><span class="dot dot-m"></span></td>
+        <td><span class="dot dot-none">—</span></td>
+        <td><span class="dot dot-h"></span></td>
+        <td><span class="dot dot-none">—</span></td>
+      </tr>
+      <tr>
+        <td class="row-label">Europeo / global</td>
+        <td><span class="dot dot-l"></span></td>
+        <td><span class="dot dot-m"></span></td>
+        <td><span class="dot dot-none">—</span></td>
+        <td><span class="dot dot-h"></span></td>
+        <td><span class="dot dot-none">—</span></td>
+      </tr>
+      <tr>
+        <td class="row-label">Turista internacional en Miami</td>
+        <td><span class="dot dot-m"></span></td>
+        <td><span class="dot dot-l"></span></td>
+        <td><span class="dot dot-none">—</span></td>
+        <td><span class="dot dot-l"></span></td>
+        <td><span class="dot dot-m"></span></td>
+      </tr>
+      <tr>
+        <td class="row-label">Snowbird / estacional</td>
+        <td><span class="dot dot-m"></span></td>
+        <td><span class="dot dot-l"></span></td>
+        <td><span class="dot dot-none">—</span></td>
+        <td><span class="dot dot-l"></span></td>
+        <td><span class="dot dot-h"></span></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="matrix-legend">
+    <span><span class="dot dot-h"></span>Alta relevancia</span>
+    <span><span class="dot dot-m"></span>Media</span>
+    <span><span class="dot dot-l"></span>Baja</span>
+    <span><span class="dot-none">—</span>No aplica</span>
+  </div>
+
+  <!-- RECOMMENDATION -->
+  <div class="reco-box">
+    <h3>Propuesta final · personas priorizadas (matriz 4×3)</h3>
+    <p style="font-size:10pt; color:#333; margin-bottom:12px;">Combinando las 4 personas funcionales con los 3 clusters geográficos, proponemos una <strong>matriz activa de 7 personas priorizadas</strong> (no las 4×10 teóricas) para la auditoría inicial. El resto se cubre en rondas posteriores.</p>
+
+    <div class="reco-grid">
+      <div class="reco-card">
+        <div class="reco-n">Persona 01</div>
+        <h4>Fan global Messi · LATAM + Europa</h4>
+        <p>Base original + variante argentina/mexicana. Idiomas ES/EN/PT. Foco: contenido, merch internacional.</p>
+      </div>
+      <div class="reco-card">
+        <div class="reco-n">Persona 02A</div>
+        <h4>Aficionado local Miami · Hispanic</h4>
+        <p>Cuban-American y comunidad hispana local. Bilingüe. Foco: matchday, season tickets, hospitality.</p>
+      </div>
+      <div class="reco-card">
+        <div class="reco-n">Persona 02B</div>
+        <h4>Aficionado local Miami · Anglo</h4>
+        <p>Residente anglo Miami/FL. EN. Foco: entretenimiento deportivo, plan matchday, experiencia estadio.</p>
+      </div>
+      <div class="reco-card">
+        <div class="reco-n">Persona 03</div>
+        <h4>Shopper internacional · merchandising</h4>
+        <p>Argentina, México, Europa, Latinx USA. Foco: autenticidad, ediciones especiales, envíos.</p>
+      </div>
+      <div class="reco-card">
+        <div class="reco-n">Persona 04</div>
+        <h4>Familia academia · Florida + frontera</h4>
+        <p>Residentes Florida + familias LATAM evaluando academia. ES/EN. Foco: metodología y acceso.</p>
+      </div>
+      <div class="reco-card">
+        <div class="reco-n">Persona 05 · NUEVA</div>
+        <h4>Visitante matchday · USA + internacional</h4>
+        <p>Turista en Miami (USA + Canadá + Europa) que plantea partido como parte del viaje. Foco: planificación, hospitality, prompts no-branded.</p>
+      </div>
+      <div class="reco-card" style="grid-column: span 2;">
+        <div class="reco-n">Persona 06 · NUEVA (opcional)</div>
+        <h4>Fly-in fan premium · costa este USA + snowbirds</h4>
+        <p>Fans fly-in de NY/DC/Boston + residentes estacionales en Florida. Foco único: hospitality, paquetes premium, experiencias exclusivas. Valor unitario alto, volumen bajo. Activar solo si el cliente quiere profundizar en la vertical premium.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="insight-box">
+    <strong>Nota sobre prompts multilingües</strong>
+    La matriz de 7 personas implica generar prompts en al menos <strong>tres idiomas</strong> (ES, EN, PT) y segmentar por mercado geográfico dentro del mismo idioma (ES Miami vs ES México vs ES Argentina tienen búsquedas distintas). Esto multiplica el corpus de prompts pero es condición necesaria para que la auditoría refleje la realidad global del club.
+  </div>
+</div>
+
+<!-- SECTION 4 -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-number">4</div>
+    <div class="section-title">Funnel · 3 etapas</div>
+    <div class="section-tag ok">Activo</div>
+    <label class="section-approve"><input type="checkbox" data-section="4"><span>Aprobado</span></label>
+  </div>
+
+  <p class="lead-p">Funnel clásico de conversión configurado para segmentar los prompts según intención del usuario. Cada prompt semilla se etiqueta con la etapa de funnel correspondiente para medir visibilidad en cada fase del viaje.</p>
+
+  <div class="funnel-wrap">
+    <div class="funnel-stage">
+      <div class="stage-num">1</div>
+      <div class="stage-name">Awareness</div>
+      <div class="stage-desc">Descubrimiento del club, contexto MLS, fenómeno Messi, identidad de marca. El usuario aún no tiene intención concreta.</div>
+    </div>
+    <div class="funnel-stage">
+      <div class="stage-num">2</div>
+      <div class="stage-name">Consideration</div>
+      <div class="stage-desc">Evaluación de opciones: entradas vs hospitality, camiseta fan vs jugador, academia vs alternativas, planes matchday.</div>
+    </div>
+    <div class="funnel-stage">
+      <div class="stage-num">3</div>
+      <div class="stage-name">Decision</div>
+      <div class="stage-desc">Intención de compra o acción: dónde comprar oficial, cómo acceder al estadio, proceso de admisión academia, hospitality específico.</div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 5 -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-number">5</div>
+    <div class="section-title">Líneas de producto · 5 categorías</div>
+    <div class="section-tag ok">Configuradas</div>
+    <label class="section-approve"><input type="checkbox" data-section="5"><span>Aprobado</span></label>
+  </div>
+
+  <p class="lead-p">Cinco líneas de producto cubren la superficie comercial y editorial del club. Los prompts de auditoría se generarán cruzando líneas × personas × etapas de funnel para obtener cobertura total.</p>
+
+  <div class="product-grid">
+
+    <div class="product-card featured">
+      <h3>Entradas y matchday <span class="count">5 elementos</span></h3>
+      <ul class="checklist">
+        <li><span class="checkbox checked"></span>Entradas oficiales</li>
+        <li><span class="checkbox checked"></span>Calendario de partidos</li>
+        <li><span class="checkbox checked"></span>Experiencia en estadio</li>
+        <li><span class="checkbox checked"></span>Hospitality</li>
+        <li><span class="checkbox checked"></span>Información práctica de acceso</li>
+      </ul>
+    </div>
+
+    <div class="product-card">
+      <h3>Merchandising oficial <span class="count">5</span></h3>
+      <ul class="checklist">
+        <li><span class="checkbox checked"></span>Productos oficiales</li>
+        <li><span class="checkbox checked"></span>Camisetas y equipaciones</li>
+        <li><span class="checkbox checked"></span>Ediciones especiales</li>
+        <li><span class="checkbox checked"></span>Guía de tallas</li>
+        <li><span class="checkbox checked"></span>Compra online</li>
+      </ul>
+    </div>
+
+    <div class="product-card">
+      <h3>Academia y formación <span class="count">5</span></h3>
+      <ul class="checklist">
+        <li><span class="checkbox checked"></span>Formación deportiva</li>
+        <li><span class="checkbox checked"></span>Metodología</li>
+        <li><span class="checkbox checked"></span>Entorno competitivo</li>
+        <li><span class="checkbox checked"></span>Programas para jóvenes</li>
+        <li><span class="checkbox checked"></span>Prestigio del club</li>
+      </ul>
+    </div>
+
+    <div class="product-card">
+      <h3>Contenido y actualidad <span class="count">5</span></h3>
+      <ul class="checklist">
+        <li><span class="checkbox checked"></span>Noticias oficiales</li>
+        <li><span class="checkbox checked"></span>Resultados y calendario</li>
+        <li><span class="checkbox checked"></span>Contenido de jugadores</li>
+        <li><span class="checkbox checked"></span>Highlights</li>
+        <li><span class="checkbox checked"></span>Cobertura de competiciones</li>
+      </ul>
+    </div>
+
+    <div class="product-card">
+      <h3>Membresías y premium <span class="count">5</span></h3>
+      <ul class="checklist">
+        <li><span class="checkbox checked"></span>Experiencias premium</li>
+        <li><span class="checkbox checked"></span>Hospitality</li>
+        <li><span class="checkbox checked"></span>Beneficios exclusivos</li>
+        <li><span class="checkbox checked"></span>Mayor cercanía con el club</li>
+        <li><span class="checkbox checked"></span>Propuesta aspiracional</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<!-- SECTION 6 -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-number">6</div>
+    <div class="section-title">Prompts semilla · 10 ejemplos</div>
+    <div class="section-tag neutral">Preliminar</div>
+    <label class="section-approve"><input type="checkbox" data-section="6"><span>Aprobado</span></label>
+  </div>
+
+  <p class="lead-p">Prompts iniciales que cubren las principales superficies de visibilidad del club. Sirven de semilla para expandir a ~300 prompts vía generación automatizada (persona × funnel × línea de producto × idioma).</p>
+
+  <div class="prompts-section">
+    <div class="prompt-box">¿Dónde comprar entradas oficiales de Inter Miami y qué incluye la experiencia de partido?</div>
+    <div class="prompt-box">¿Qué camiseta oficial de Inter Miami me conviene comprar y cómo sé si es auténtica?</div>
+    <div class="prompt-box">¿Qué ofrece la academia de Inter Miami para jóvenes jugadores y cómo funciona el acceso?</div>
+    <div class="prompt-box">¿Dónde encontrar la actualidad, el calendario y los resultados de Inter Miami de forma oficial?</div>
+    <div class="prompt-box">¿Qué opciones premium o hospitality ofrece Inter Miami para vivir un partido de forma especial?</div>
+    <div class="prompt-box">¿Por qué Inter Miami genera tanta conversación a nivel global más allá de la MLS?</div>
+    <div class="prompt-box">¿Cómo planificar un matchday de Inter Miami si voy con mi familia o con mis amigos?</div>
+    <div class="prompt-box">¿Qué productos de merchandising de Inter Miami suelen interesar más a un fan internacional?</div>
+    <div class="prompt-box">Si viajo a Miami con mi familia, ¿qué debería visitar?</div>
+    <div class="prompt-box">Si estoy de vacaciones en Miami, ¿qué eventos deportivos me recomiendas para disfrutar con mi familia?</div>
+  </div>
+
+  <div class="insight-box">
+    <strong>Sobre los prompts transversales</strong>
+    Los dos últimos prompts ("Si viajo a Miami…") son deliberadamente <em>no-branded</em>. Sirven para medir si Inter Miami aparece espontáneamente cuando la IA responde a consultas genéricas sobre planes en Miami — métrica clave de visibilidad ganada.
+  </div>
+</div>
+
+<!-- SECTION 7 · TESIS A VALIDAR -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-number">7</div>
+    <div class="section-title">Tesis estratégicas a validar en el estudio</div>
+    <div class="section-tag neutral">Hipótesis de trabajo</div>
+    <label class="section-approve"><input type="checkbox" data-section="7"><span>Aprobado</span></label>
+  </div>
+
+  <p class="lead-p">Toda auditoría GEO seria parte de <strong>hipótesis explícitas</strong> que el estudio debe confirmar, matizar o refutar. A continuación, las cinco tesis priorizadas para Inter Miami. Los prompts del corpus final se diseñarán para responder a estas preguntas de forma medible.</p>
+
+  <div class="thesis-card">
+    <div class="thesis-number">1</div>
+    <div class="thesis-body">
+      <div class="thesis-label">Tesis 1 · liderazgo categorial local</div>
+      <h3>Inter Miami es la máxima atracción futbolística de Florida (y del sureste de EE.UU.)</h3>
+      <div class="thesis-hypothesis">
+        <strong>Hipótesis</strong>
+        Cuando una IA responde a preguntas genéricas sobre fútbol, planes deportivos u ocio en Miami/Florida, el club aparece como primera referencia y se describe como opción principal por encima de otras franquicias MLS (Orlando City SC) y de equipos universitarios o competiciones alternativas.
+      </div>
+      <div class="thesis-grid">
+        <div class="thesis-col">
+          <h4>Cómo se valida</h4>
+          <ul>
+            <li>Prompts no-branded tipo "qué hacer en Miami con niños"</li>
+            <li>"Eventos deportivos en Florida esta temporada"</li>
+            <li>"Dónde ver fútbol en Estados Unidos"</li>
+            <li>Comparativa con Orlando City SC y equipos NCAA</li>
+          </ul>
+        </div>
+        <div class="thesis-col">
+          <h4>Métricas objetivo</h4>
+          <ul>
+            <li>Share of Voice en prompts geográficos Florida</li>
+            <li>Ranking ordinal (1º, 2º, 3º…) en respuestas</li>
+            <li>Sentimiento general asociado</li>
+            <li>Cobertura por idioma (ES vs EN)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="thesis-card">
+    <div class="thesis-number">2</div>
+    <div class="thesis-body">
+      <div class="thesis-label">Tesis 2 · efecto Messi y atribución</div>
+      <h3>¿Qué parte del reconocimiento del club proviene directamente de Messi?</h3>
+      <div class="thesis-hypothesis">
+        <strong>Hipótesis</strong>
+        La visibilidad del Inter Miami en las IA está fuertemente sustentada por Messi. Cuantificar esa dependencia permite diseñar estrategia de reducción de riesgo ante un eventual retiro o salida, y también aprovechar el halo mientras dure. La hipótesis es que <em>más del 50% de respuestas sobre el club mencionan a Messi</em>, y que <em>una porción significativa de respuestas sobre Messi mencionan al club</em>.
+      </div>
+      <div class="thesis-grid">
+        <div class="thesis-col">
+          <h4>Cómo se valida</h4>
+          <ul>
+            <li>Co-occurrence Messi ↔ Inter Miami en respuestas</li>
+            <li>Prompts sobre Messi sin citar al club</li>
+            <li>Prompts sobre el club sin citar a Messi</li>
+            <li>Prompts sobre otros jugadores del roster</li>
+            <li>Evolución temporal (si tenemos runs seriados)</li>
+          </ul>
+        </div>
+        <div class="thesis-col">
+          <h4>Métricas objetivo</h4>
+          <ul>
+            <li>% menciones del club que citan a Messi</li>
+            <li>% menciones de Messi que citan al club</li>
+            <li>Share of Voice de otros jugadores (Busquets, Alba, Suárez)</li>
+            <li>Índice de dependencia Messi (Messi-SoV / Club-SoV)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="thesis-card">
+    <div class="thesis-number">3</div>
+    <div class="thesis-body">
+      <div class="thesis-label">Tesis 3 · club universalmente aconsejable</div>
+      <h3>Las IA retratan al Inter Miami como un club recomendable para cualquier aficionado al fútbol</h3>
+      <div class="thesis-hypothesis">
+        <strong>Hipótesis</strong>
+        Más allá del efecto Messi, el club es descrito por las IA como destino accesible, con identidad fuerte, experiencia matchday de calidad y propuesta de valor clara para fans sin vínculo previo (turistas, neófitos MLS, familias). La IA actúa como prescriptor positivo de forma orgánica.
+      </div>
+      <div class="thesis-grid">
+        <div class="thesis-col">
+          <h4>Cómo se valida</h4>
+          <ul>
+            <li>Prompts de recomendación ("merece la pena ir a…")</li>
+            <li>Prompts para fans neófitos ("empezar a seguir MLS")</li>
+            <li>Prompts de planes turísticos en Miami</li>
+            <li>Análisis cualitativo de tono y adjetivos</li>
+          </ul>
+        </div>
+        <div class="thesis-col">
+          <h4>Métricas objetivo</h4>
+          <ul>
+            <li>% respuestas que recomiendan activamente al club</li>
+            <li>Sentimiento medio ponderado</li>
+            <li>Atributos positivos vs negativos (ambición, experiencia, precio)</li>
+            <li>Comparativa frente a otros clubs MLS en recomendación</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="thesis-card">
+    <div class="thesis-number">4</div>
+    <div class="thesis-body">
+      <div class="thesis-label">Tesis 4 · percepción y recomendación de merchandising</div>
+      <h3>Las IA recomiendan el merchandising oficial del Inter Miami y dirigen correctamente hacia canales oficiales</h3>
+      <div class="thesis-hypothesis">
+        <strong>Hipótesis</strong>
+        Cuando un usuario pregunta por camisetas, equipaciones o merchandising del club, las IA señalan canales oficiales (tienda Inter Miami, MLS Store, Adidas oficial) por encima de canales no oficiales o de reventa. Además, las IA describen positivamente diseños, ediciones y autenticidad, y son capaces de diferenciar versión fan vs jugador.
+      </div>
+      <div class="thesis-grid">
+        <div class="thesis-col">
+          <h4>Cómo se valida</h4>
+          <ul>
+            <li>Prompts de compra ("dónde comprar camiseta Inter Miami")</li>
+            <li>Prompts de autenticidad ("cómo sé si es oficial")</li>
+            <li>Prompts de versión ("fan vs jugador", "ediciones especiales")</li>
+            <li>Análisis de dominios citados como fuente (oficiales vs no)</li>
+          </ul>
+        </div>
+        <div class="thesis-col">
+          <h4>Métricas objetivo</h4>
+          <ul>
+            <li>% respuestas que apuntan a canal oficial como 1ª opción</li>
+            <li>Riesgo de mención de canales no oficiales/reventa</li>
+            <li>Sentimiento del producto (diseño, calidad percibida)</li>
+            <li>Cobertura por producto (camiseta, equipación, accesorios)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="thesis-card">
+    <div class="thesis-number">5</div>
+    <div class="thesis-body">
+      <div class="thesis-label">Tesis 5 · ecosistema de patrocinadores y marca</div>
+      <h3>Las IA conocen, valoran y asocian correctamente a los patrocinadores y marcas del entorno del club</h3>
+      <div class="thesis-hypothesis">
+        <strong>Hipótesis</strong>
+        Las IA identifican a los principales patrocinadores (Apple TV+, Royal Caribbean, Adidas, Baptist Health, etc.) cuando se pregunta por el ecosistema comercial del club. Además, se puede observar <em>qué otras marcas aparecen por asociación natural</em> — marcas deportivas, lifestyle, hospitality — que dibujan el posicionamiento real del club según la IA, útil para cualquier negociación futura de patrocinio.
+      </div>
+      <div class="thesis-grid">
+        <div class="thesis-col">
+          <h4>Cómo se valida</h4>
+          <ul>
+            <li>Prompts directos sobre patrocinadores</li>
+            <li>Prompts sobre retransmisión y broadcast partners</li>
+            <li>Prompts sobre naming rights / estadio</li>
+            <li>Análisis de entidades-marca que co-aparecen espontáneamente</li>
+          </ul>
+        </div>
+        <div class="thesis-col">
+          <h4>Métricas objetivo</h4>
+          <ul>
+            <li>% patrocinadores oficiales correctamente identificados</li>
+            <li>Top 10 marcas asociadas por co-occurrence</li>
+            <li>Perfil de asociación: deporte, lifestyle, premium, latino</li>
+            <li>Oportunidad: categorías de patrocinador con espacio IA</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="insight-box">
+    <strong>Uso de las tesis en el resto del proyecto</strong>
+    Cada tesis debe tener al menos <strong>15-25 prompts específicos</strong> dedicados a su validación, con trazabilidad explícita prompt→tesis. El deliverable final del estudio se estructurará en cinco capítulos, uno por tesis, con veredicto (confirmada / matizada / refutada) y recomendación accionable por cada una.
+  </div>
+</div>
+
+<!-- SECTION 8 -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-number">8</div>
+    <div class="section-title">Checklist de setup · estado actual</div>
+    <div class="section-tag ok">Preliminar completo</div>
+    <label class="section-approve"><input type="checkbox" data-section="8"><span>Aprobado</span></label>
+  </div>
+
+  <div class="product-grid">
+    <div class="product-card">
+      <h3>Completado</h3>
+      <ul class="checklist">
+        <li><span class="checkbox checked"></span>Brief de marca validado</li>
+        <li><span class="checkbox checked"></span>4 personas cargadas en GEOradar</li>
+        <li><span class="checkbox checked"></span>Funnel 3 etapas configurado</li>
+        <li><span class="checkbox checked"></span>5 líneas de producto creadas</li>
+        <li><span class="checkbox checked"></span>10 prompts semilla definidos</li>
+        <li><span class="checkbox checked"></span>Competidores identificados</li>
+        <li><span class="checkbox checked"></span>Terminología categórica mapeada</li>
+      </ul>
+    </div>
+    <div class="product-card">
+      <h3>Pendiente · próximos pasos</h3>
+      <ul class="checklist">
+        <li><span class="checkbox"></span>Expansión a ~300 prompts (prompt generation)</li>
+        <li><span class="checkbox"></span>Etiquetado por tags (persona, funnel, producto, idioma)</li>
+        <li><span class="checkbox"></span>Selección de engines objetivo</li>
+        <li><span class="checkbox"></span>Preflight + estimate del run</li>
+        <li><span class="checkbox"></span>Lanzamiento de la auditoría inicial</li>
+        <li><span class="checkbox"></span>Validación de entity detection (Messi, jugadores clave)</li>
+        <li><span class="checkbox"></span>Kick-off review con cliente</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="next-steps">
+    <h3>Hoja de ruta · próximas 3 semanas</h3>
+    <div class="step-row">
+      <div class="step-label">Semana 1</div>
+      <div class="step-content">Expansión automatizada de prompts (~300), revisión editorial, etiquetado por persona × funnel × producto × idioma.</div>
+    </div>
+    <div class="step-row">
+      <div class="step-label">Semana 2</div>
+      <div class="step-content">Preflight técnico, estimación de coste por engine, lanzamiento de auditoría base (ChatGPT + Gemini prioritarios).</div>
+    </div>
+    <div class="step-row">
+      <div class="step-label">Semana 3</div>
+      <div class="step-content">Análisis preliminar, detección de gaps, deliverable ejecutivo + reunión de kick-off con cliente.</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-left">
+    <div class="brand">GEOradar · Zoopa</div>
+    <div class="url">georadar.app · zoopa.es</div>
+  </div>
+  <div class="footer-right">
+    <strong>Documento preliminar</strong><br>
+    Proyecto GEO Inter Miami CF · 17 abril 2026<br>
+    Confidencial · uso interno<br>
+    <span id="approvalCounter" style="display:inline-block; margin-top:6px; padding:3px 8px; background:#000; color:#fff; font-size:7.5pt; letter-spacing:0.5px;">Aprobadas: 0 / 8</span>
+  </div>
+</footer>
+
+<script>
+  (function() {
+    const STORAGE_KEY = 'intermiami-geo-setup-approvals-v1';
+    const checkboxes = document.querySelectorAll('.section-approve input[type="checkbox"]');
+    const counter = document.getElementById('approvalCounter');
+
+    function loadState() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) return {};
+        return JSON.parse(raw);
+      } catch (e) { return {}; }
+    }
+
+    function saveState(state) {
+      try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch (e) {}
+    }
+
+    function updateCounter() {
+      const total = checkboxes.length;
+      const checked = Array.from(checkboxes).filter(cb => cb.checked).length;
+      counter.textContent = 'Aprobadas: ' + checked + ' / ' + total;
+      if (checked === total && total > 0) {
+        counter.style.background = '#060';
+      } else if (checked > 0) {
+        counter.style.background = '#b38a00';
+      } else {
+        counter.style.background = '#000';
+      }
+    }
+
+    const state = loadState();
+    checkboxes.forEach(cb => {
+      const id = cb.dataset.section;
+      if (state[id]) cb.checked = true;
+      cb.addEventListener('change', () => {
+        const current = loadState();
+        current[cb.dataset.section] = cb.checked;
+        saveState(current);
+        updateCounter();
+      });
+    });
+    updateCounter();
+  })();
+</script>
+
+</body>
+</html>

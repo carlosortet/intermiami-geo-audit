@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inter Miami CF · GEO Audit · Documentos</title>
+<style>
+  :root {
+    --im-black: #000;
+    --im-pink: #F7B5CD;
+    --im-pink-strong: #E91E63;
+    --im-pink-deep: #B8005C;
+    --im-pink-bg: #FFF5F9;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    background: var(--im-pink-bg);
+    color: #1a1a1a;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+  }
+  .wrap {
+    max-width: 760px;
+    width: 100%;
+    background: #fff;
+    border: 2px solid var(--im-black);
+    box-shadow: 0 12px 40px rgba(0,0,0,.08);
+    padding: 40px 44px;
+    position: relative;
+  }
+  .wrap::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 8px;
+    background: linear-gradient(90deg, var(--im-pink) 0%, var(--im-pink-strong) 100%);
+  }
+  header {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 22px;
+    align-items: center;
+    border-bottom: 3px solid var(--im-black);
+    padding-bottom: 22px;
+    margin-bottom: 28px;
+  }
+  header img { width: 100%; height: auto; }
+  .kicker {
+    font-size: 9pt;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    color: var(--im-pink-deep);
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  h1 {
+    font-size: 22pt;
+    line-height: 1.15;
+    font-weight: 400;
+  }
+  h1 strong { font-weight: 700; }
+  .subtitle {
+    font-size: 11pt;
+    color: #666;
+    font-style: italic;
+    margin-top: 6px;
+  }
+  .docs { display: grid; gap: 14px; margin-top: 20px; }
+  .doc {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-left: 4px solid var(--im-pink-strong);
+    padding: 16px 20px;
+    text-decoration: none;
+    color: inherit;
+    transition: background .15s ease, border-color .15s ease;
+  }
+  .doc:hover {
+    background: var(--im-pink-bg);
+    border-left-color: var(--im-black);
+  }
+  .doc-info .doc-tag {
+    font-size: 8pt;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--im-pink-deep);
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .doc-info h3 {
+    font-size: 13pt;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .doc-info p {
+    font-size: 10pt;
+    color: #666;
+  }
+  .doc-arrow {
+    font-size: 22pt;
+    color: var(--im-pink-strong);
+    font-weight: 700;
+    margin-left: 16px;
+  }
+  footer {
+    margin-top: 32px;
+    padding-top: 20px;
+    border-top: 2px solid var(--im-black);
+    font-size: 9pt;
+    color: #666;
+    text-align: center;
+  }
+  footer strong { color: var(--im-black); letter-spacing: .5px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <img src="inter-miami-logo.svg" alt="Inter Miami CF">
+    <div>
+      <div class="kicker">GEO Audit · Documentos preliminares</div>
+      <h1><strong>Inter Miami CF</strong><br>Auditoría de visibilidad en IA</h1>
+      <div class="subtitle">Material de trabajo · setup, personas y análisis de fuentes</div>
+    </div>
+  </header>
+
+  <div class="docs">
+
+    <a class="doc" href="intermiami-geo-audit-setup.html">
+      <div class="doc-info">
+        <div class="doc-tag">Documento 01 · Setup</div>
+        <h3>Setup auditoría GEO · brief, personas, funnel, prompts</h3>
+        <p>Documento principal de setup con brief, 4 personas funcionales, 10 clusters geográficos, funnel de 3 etapas, 5 líneas de producto y prompts semilla.</p>
+      </div>
+      <div class="doc-arrow">›</div>
+    </a>
+
+    <a class="doc" href="intermiami-personas-prompts.html">
+      <div class="doc-info">
+        <div class="doc-tag">Documento 02 · Personas & Prompts</div>
+        <h3>Customer personas + 5 prompts semilla por persona</h3>
+        <p>Ficha descriptiva ampliada de cada persona (perfil, comportamiento, expectativas, valor estratégico) y 5 prompts etiquetados por idioma y etapa de funnel.</p>
+      </div>
+      <div class="doc-arrow">›</div>
+    </a>
+
+    <a class="doc" href="ugc-llm-sources-analysis.html">
+      <div class="doc-info">
+        <div class="doc-tag">Documento 03 · Fuentes UGC</div>
+        <h3>Análisis de fuentes UGC en respuestas de LLMs</h3>
+        <p>Estudio sobre el peso del contenido generado por usuarios (Reddit, foros, reviews) en las respuestas de los modelos de IA generativa.</p>
+      </div>
+      <div class="doc-arrow">›</div>
+    </a>
+
+  </div>
+
+  <footer>
+    <div><strong>Preparado por Zoopa</strong> para Inter Miami CF · GEO Audit · abril 2026</div>
+    <div style="margin-top:6px;">georadar.app · zoopa.es</div>
+  </footer>
+</div>
+</body>
+</html>
