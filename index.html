@@ -108,6 +108,49 @@
     font-weight: 700;
     margin-left: 16px;
   }
+  .appendix {
+    margin-top: 28px;
+    padding-top: 18px;
+    border-top: 1px dashed #ccc;
+  }
+  .appendix-label {
+    font-size: 8pt;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #999;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .appendix-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: #666;
+    font-size: 9.5pt;
+    line-height: 1.4;
+    padding: 6px 0;
+    transition: color .15s ease;
+  }
+  .appendix-link:hover { color: var(--im-pink-deep); }
+  .appendix-tag {
+    background: #eee;
+    color: #555;
+    font-size: 7.5pt;
+    font-weight: 700;
+    padding: 2px 7px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    flex-shrink: 0;
+  }
+  .appendix-link:hover .appendix-tag {
+    background: var(--im-pink);
+    color: var(--im-black);
+  }
+  .appendix-text { flex: 1; font-style: italic; }
+  .appendix-arrow { color: #ccc; font-size: 14pt; }
+  .appendix-link:hover .appendix-arrow { color: var(--im-pink-strong); }
+
   footer {
     margin-top: 32px;
     padding-top: 20px;
@@ -159,6 +202,15 @@
       <div class="doc-arrow">›</div>
     </a>
 
+  </div>
+
+  <div class="appendix">
+    <div class="appendix-label">Apéndice técnico · sólo uso interno</div>
+    <a href="intermiami-geo-argumentario-extenso.html" class="appendix-link">
+      <span class="appendix-tag">A1</span>
+      <span class="appendix-text">Doc 04 · Argumentario exhaustivo (12 departamentos, metodología, plan Mundial detallado, roadmap por fases, framework KPIs)</span>
+      <span class="appendix-arrow">›</span>
+    </a>
   </div>
 
   <footer>
