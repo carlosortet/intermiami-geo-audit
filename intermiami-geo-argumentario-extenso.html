@@ -506,6 +506,141 @@
   <p class="lead-p">Cada capa metodológica genera entregables concretos para los equipos: dashboards en GEOradar, briefings PDF por área, alertas de brand protection, datasets exportables para BI.</p>
 </div>
 
+<!-- 01.B MESSI -->
+<div class="section" id="messi">
+  <div class="section-header">
+    <div class="section-number">1</div>
+    <div class="section-title" style="font-size:14pt;">Tratamiento de Messi como entidad medida (no promovida)</div>
+    <div class="section-tag">Decisión metodológica</div>
+  </div>
+
+  <p class="lead-p">Lionel Messi es el activo intangible más importante del club, pero <strong>no debe convertirse en el centro del prompt set</strong>. Si la mayoría de prompts mencionan a Messi, su aparición en las respuestas es tautológica y la auditoría no medirá nada útil sobre la autoridad autónoma de la marca Inter Miami CF. La pregunta estratégica de fondo —<strong>¿existe Inter Miami en la conversación IA sin Messi como muleta?</strong>— sólo puede responderse con un diseño de prompt set deliberadamente equilibrado.</p>
+
+  <h3 class="sub-h">Por qué importa esta decisión</h3>
+  <ul style="padding-left:22px; margin-bottom:18px;">
+    <li style="font-size:10.5pt; line-height:1.55; margin-bottom:6px;"><strong>Resiliencia post-Messi</strong>: el contrato actual tiene fecha de caducidad y la edad del jugador acota la ventana. La pregunta de board no es "¿está Messi visible?" sino "¿qué pasa con la marca cuando ya no esté?".</li>
+    <li style="font-size:10.5pt; line-height:1.55; margin-bottom:6px;"><strong>Insights accionables = gaps</strong>: los hallazgos más valiosos vienen de prompts donde la IA <em>debería</em> mencionar a Inter Miami y no lo hace. Esos gaps son la lista de tareas para Marketing, PR y Digital. Confirmar que la IA menciona a Inter Miami cuando preguntamos por Messi no genera trabajo nuevo.</li>
+    <li style="font-size:10.5pt; line-height:1.55; margin-bottom:6px;"><strong>Riesgo de falso éxito</strong>: un dashboard con 90% de co-citación Messi+club puede llevar al comité directivo a declarar victoria mientras la marca tiene cero identidad autónoma en IA. La auditoría está diseñada para evitar este sesgo.</li>
+    <li style="font-size:10.5pt; line-height:1.55;"><strong>Hallucinations sobre Messi</strong>: información incorrecta (equipo equivocado, contrato, número, salario, lesiones) daña al club. Hay que monitorearla — pero con un sub-set acotado de prompts, no con el corpus entero.</li>
+  </ul>
+
+  <h3 class="sub-h">Distribución del prompt set · 4 buckets</h3>
+  <table class="kpi-table" style="margin-top:8px;">
+    <thead>
+      <tr>
+        <th style="width:14%;">Bucket</th>
+        <th style="width:30%;">Tipo de prompt</th>
+        <th style="width:14%;">% del corpus</th>
+        <th style="width:14%;">Menciona Messi</th>
+        <th>Qué mide</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="cat-name">A · Brand-only</td>
+        <td>Sin nombrar jugadores. Marca, club, ciudad, estadio, academia, tickets, merch, hospitality.</td>
+        <td class="target">60–65%</td>
+        <td class="target">No</td>
+        <td>Autoridad autónoma de Inter Miami CF en IAs</td>
+      </tr>
+      <tr>
+        <td class="cat-name">B · Player-diversificado</td>
+        <td>Menciona jugadores rotando: Messi, Suárez, Busquets, jóvenes promesas, fichajes recientes.</td>
+        <td class="target">20–25%</td>
+        <td class="target">A veces</td>
+        <td>Ecosistema de estrellas vs dependencia mono-Messi</td>
+      </tr>
+      <tr>
+        <td class="cat-name">C · Messi-anchored</td>
+        <td>Explícitamente Messi: dónde juega, contrato, partidos, futuro post-retiro.</td>
+        <td class="target">10–15%</td>
+        <td class="target">Sí</td>
+        <td>Exactitud factual + narrativa post-Messi</td>
+      </tr>
+      <tr>
+        <td class="cat-name">D · Control / Competitivo</td>
+        <td>Pregunta por LAFC, NYCFC, Boca, Real Madrid, F1 Miami sin mencionar Inter Miami.</td>
+        <td class="target">~5%</td>
+        <td class="target">No</td>
+        <td>¿Aparece Inter Miami como referencia comparable?</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3 class="sub-h">Ejemplos por bucket</h3>
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:14px 0;">
+    <div style="border:1px solid #ddd; padding:12px 16px; background:#fff;">
+      <div style="font-size:8pt; text-transform:uppercase; letter-spacing:1.2px; color:#b8005c; font-weight:700; margin-bottom:8px;">Bucket A · Brand-only (60–65%)</div>
+      <ul style="padding-left:18px; margin:0;">
+        <li style="font-size:9.5pt; line-height:1.5; margin-bottom:4px;">Recommend a soccer experience in Miami</li>
+        <li style="font-size:9.5pt; line-height:1.5; margin-bottom:4px;">¿Dónde comprar entradas para un partido en Chase Stadium?</li>
+        <li style="font-size:9.5pt; line-height:1.5; margin-bottom:4px;">Best youth soccer academy in Florida</li>
+        <li style="font-size:9.5pt; line-height:1.5;">¿Qué club juega en Fort Lauderdale en MLS?</li>
+      </ul>
+    </div>
+    <div style="border:1px solid #ddd; padding:12px 16px; background:#fff;">
+      <div style="font-size:8pt; text-transform:uppercase; letter-spacing:1.2px; color:#b8005c; font-weight:700; margin-bottom:8px;">Bucket B · Player-diversificado (20–25%)</div>
+      <ul style="padding-left:18px; margin:0;">
+        <li style="font-size:9.5pt; line-height:1.5; margin-bottom:4px;">¿Qué estrellas juegan en la MLS esta temporada?</li>
+        <li style="font-size:9.5pt; line-height:1.5; margin-bottom:4px;">Where can I see top international players in USA?</li>
+        <li style="font-size:9.5pt; line-height:1.5; margin-bottom:4px;">¿Quiénes son los referentes de Inter Miami?</li>
+        <li style="font-size:9.5pt; line-height:1.5;">Best soccer team in Florida right now</li>
+      </ul>
+    </div>
+    <div style="border:1px solid #ddd; padding:12px 16px; background:#fff;">
+      <div style="font-size:8pt; text-transform:uppercase; letter-spacing:1.2px; color:#b8005c; font-weight:700; margin-bottom:8px;">Bucket C · Messi-anchored (10–15%)</div>
+      <ul style="padding-left:18px; margin:0;">
+        <li style="font-size:9.5pt; line-height:1.5; margin-bottom:4px;">¿Dónde juega Messi actualmente?</li>
+        <li style="font-size:9.5pt; line-height:1.5; margin-bottom:4px;">How can I see Messi play live?</li>
+        <li style="font-size:9.5pt; line-height:1.5; margin-bottom:4px;">¿Cuándo termina el contrato de Messi con Inter Miami?</li>
+        <li style="font-size:9.5pt; line-height:1.5;">¿Qué hará Inter Miami cuando Messi se retire?</li>
+      </ul>
+    </div>
+    <div style="border:1px solid #ddd; padding:12px 16px; background:#fff;">
+      <div style="font-size:8pt; text-transform:uppercase; letter-spacing:1.2px; color:#b8005c; font-weight:700; margin-bottom:8px;">Bucket D · Control / Competitivo (~5%)</div>
+      <ul style="padding-left:18px; margin:0;">
+        <li style="font-size:9.5pt; line-height:1.5; margin-bottom:4px;">Best MLS teams in 2026</li>
+        <li style="font-size:9.5pt; line-height:1.5; margin-bottom:4px;">¿Cuál es el equipo con más estrellas internacionales en EE.UU.?</li>
+        <li style="font-size:9.5pt; line-height:1.5; margin-bottom:4px;">Compare LAFC vs other top MLS clubs</li>
+        <li style="font-size:9.5pt; line-height:1.5;">What's the most-followed soccer club in the Americas?</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 class="sub-h">KPIs derivados específicos para Messi</h3>
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:14px 0;">
+    <div style="background:#000; color:#fff; padding:16px 18px;">
+      <div style="font-size:8pt; text-transform:uppercase; letter-spacing:1.5px; color:#f7b5cd; font-weight:700; margin-bottom:6px;">KPI 1 · Halo effect</div>
+      <h4 style="font-size:11pt; margin-bottom:8px; color:#fff;">Spontaneous Messi-Inter Miami association rate</h4>
+      <p style="font-size:9.5pt; color:#ddd; line-height:1.5; margin-bottom:8px;">% de prompts brand-only (Bucket A) donde la IA menciona a Messi sin que se lo pidamos.</p>
+      <div style="font-size:9.5pt; color:#f7b5cd; font-weight:700;">Baseline esperado: muy alto (&gt;75%) hoy. Track decay over time como termómetro de transición narrativa.</div>
+    </div>
+    <div style="background:#000; color:#fff; padding:16px 18px;">
+      <div style="font-size:8pt; text-transform:uppercase; letter-spacing:1.5px; color:#f7b5cd; font-weight:700; margin-bottom:6px;">KPI 2 · Brand autonomy</div>
+      <h4 style="font-size:11pt; margin-bottom:8px; color:#fff;">Brand autonomy score</h4>
+      <p style="font-size:9.5pt; color:#ddd; line-height:1.5; margin-bottom:8px;">% de prompts brand-only donde la IA da una respuesta completa sobre Inter Miami <em>sin necesitar mencionar a Messi</em>.</p>
+      <div style="font-size:9.5pt; color:#f7b5cd; font-weight:700;">Baseline esperado: bajo hoy. Es el KPI estratégico a hacer crecer en 2026–2028.</div>
+    </div>
+    <div style="background:#000; color:#fff; padding:16px 18px;">
+      <div style="font-size:8pt; text-transform:uppercase; letter-spacing:1.5px; color:#f7b5cd; font-weight:700; margin-bottom:6px;">KPI 3 · Exactitud factual</div>
+      <h4 style="font-size:11pt; margin-bottom:8px; color:#fff;">Messi factual accuracy rate</h4>
+      <p style="font-size:9.5pt; color:#ddd; line-height:1.5; margin-bottom:8px;">% de respuestas con datos correctos sobre Messi en Inter Miami: equipo, contrato, número, partidos, eventos.</p>
+      <div style="font-size:9.5pt; color:#f7b5cd; font-weight:700;">Objetivo Q4 2026: ≥95% exactitud. Hallucinations corregidas en &lt;72h.</div>
+    </div>
+    <div style="background:#000; color:#fff; padding:16px 18px;">
+      <div style="font-size:8pt; text-transform:uppercase; letter-spacing:1.5px; color:#f7b5cd; font-weight:700; margin-bottom:6px;">KPI 4 · Post-Messi readiness</div>
+      <h4 style="font-size:11pt; margin-bottom:8px; color:#fff;">Forward-looking narrative coverage</h4>
+      <p style="font-size:9.5pt; color:#ddd; line-height:1.5; margin-bottom:8px;">Calidad y cobertura de respuestas a "¿qué hará Inter Miami después de Messi?": presencia de proyecto, ownership, academia, ciudad, futuro estadio.</p>
+      <div style="font-size:9.5pt; color:#f7b5cd; font-weight:700;">Objetivo: pasar de respuesta vaga a respuesta estructurada con ≥3 pilares no-Messi.</div>
+    </div>
+  </div>
+
+  <div class="annex" style="border-left:4px solid #b8005c;">
+    <h3 style="border-bottom:2px solid #f7b5cd;">Lectura estratégica</h3>
+    <p>Este tratamiento convierte a Messi en <strong>instrumento de medición</strong>, no en respuesta. La auditoría aprovecha su halo effect para diagnosticar la salud autónoma de la marca, monitoriza su exactitud factual como activo crítico, y construye desde ahora la base de datos para gestionar la transición narrativa cuando llegue. El club no está restando importancia a Messi — está protegiendo el valor de marca que viene <em>después</em>.</p>
+  </div>
+</div>
+
 <!-- 02 MUNDIAL -->
 <div class="section" id="mundial">
   <div class="section-header">
