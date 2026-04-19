@@ -510,18 +510,19 @@
 <div class="section" id="messi">
   <div class="section-header">
     <div class="section-number">1</div>
-    <div class="section-title" style="font-size:14pt;">Tratamiento de Messi como entidad medida (no promovida)</div>
+    <div class="section-title" style="font-size:14pt;">Halo effect de Messi + mapeo 360° de la marca Inter Miami</div>
     <div class="section-tag">Decisión metodológica</div>
   </div>
 
-  <p class="lead-p">Lionel Messi es el activo intangible más importante del club, pero <strong>no debe convertirse en el centro del prompt set</strong>. Si la mayoría de prompts mencionan a Messi, su aparición en las respuestas es tautológica y la auditoría no medirá nada útil sobre la autoridad autónoma de la marca Inter Miami CF. La pregunta estratégica de fondo —<strong>¿existe Inter Miami en la conversación IA sin Messi como muleta?</strong>— sólo puede responderse con un diseño de prompt set deliberadamente equilibrado.</p>
+  <p class="lead-p">Lionel Messi es el activo más visible del club y <strong>co-propietario del proyecto</strong>. Es lógico que aparezca en cualquier respuesta de IA sobre Inter Miami. La pregunta interesante para la auditoría no es <em>si</em> aparece, sino <strong>cuánta marca existe alrededor de él</strong>: qué otros pilares (estrellas, ciudad, academia, ownership, infraestructura, sponsors) están entrando en la conversación IA. Por eso diseñamos un prompt set equilibrado que mide el halo effect con precisión y al mismo tiempo mapea toda la superficie de marca que se construye a su alrededor.</p>
 
-  <h3 class="sub-h">Por qué importa esta decisión</h3>
+  <h3 class="sub-h">Por qué este diseño es el correcto</h3>
   <ul style="padding-left:22px; margin-bottom:18px;">
-    <li style="font-size:10.5pt; line-height:1.55; margin-bottom:6px;"><strong>Resiliencia post-Messi</strong>: el contrato actual tiene fecha de caducidad y la edad del jugador acota la ventana. La pregunta de board no es "¿está Messi visible?" sino "¿qué pasa con la marca cuando ya no esté?".</li>
-    <li style="font-size:10.5pt; line-height:1.55; margin-bottom:6px;"><strong>Insights accionables = gaps</strong>: los hallazgos más valiosos vienen de prompts donde la IA <em>debería</em> mencionar a Inter Miami y no lo hace. Esos gaps son la lista de tareas para Marketing, PR y Digital. Confirmar que la IA menciona a Inter Miami cuando preguntamos por Messi no genera trabajo nuevo.</li>
-    <li style="font-size:10.5pt; line-height:1.55; margin-bottom:6px;"><strong>Riesgo de falso éxito</strong>: un dashboard con 90% de co-citación Messi+club puede llevar al comité directivo a declarar victoria mientras la marca tiene cero identidad autónoma en IA. La auditoría está diseñada para evitar este sesgo.</li>
-    <li style="font-size:10.5pt; line-height:1.55;"><strong>Hallucinations sobre Messi</strong>: información incorrecta (equipo equivocado, contrato, número, salario, lesiones) daña al club. Hay que monitorearla — pero con un sub-set acotado de prompts, no con el corpus entero.</li>
+    <li style="font-size:10.5pt; line-height:1.55; margin-bottom:6px;"><strong>Maximizar el valor del halo Messi</strong>: medir con precisión cuánta visibilidad genera Messi sobre el resto del activo de marca. Saber dónde su halo está funcionando con fuerza y dónde se diluye permite amplificar lo que funciona y reforzar lo que no.</li>
+    <li style="font-size:10.5pt; line-height:1.55; margin-bottom:6px;"><strong>Visión 360° de la marca</strong>: Inter Miami CF es Messi + Suárez + Busquets + jóvenes promesas + Beckham ownership + Chase Stadium + Miami Freedom Park + academia + ciudad + Apple TV+ + Adidas. Un corpus equilibrado captura toda esa superficie, no sólo el vector más obvio.</li>
+    <li style="font-size:10.5pt; line-height:1.55; margin-bottom:6px;"><strong>Insights accionables = gaps</strong>: los hallazgos más valiosos vienen de prompts donde la IA <em>debería</em> mencionar pilares del club y no lo hace. Esos gaps son la lista de tareas para Marketing, PR y Digital. Confirmar lo evidente no genera trabajo nuevo; identificar gaps sí.</li>
+    <li style="font-size:10.5pt; line-height:1.55; margin-bottom:6px;"><strong>Exactitud factual sobre Messi</strong>: información incorrecta (equipo, contrato, número, lesiones) daña al club y al jugador como co-propietario. El sub-set Messi-anchored garantiza monitoreo dedicado de exactitud.</li>
+    <li style="font-size:10.5pt; line-height:1.55;"><strong>Cobertura narrativa completa</strong>: la marca está creciendo en múltiples dimensiones simultáneamente (Mundial 2026, nuevo estadio, expansión LATAM, academia internacional). El estudio captura todas, con Messi como hilo principal y los demás pilares como tejido de soporte.</li>
   </ul>
 
   <h3 class="sub-h">Distribución del prompt set · 4 buckets</h3>
@@ -538,10 +539,10 @@
     <tbody>
       <tr>
         <td class="cat-name">A · Brand-only</td>
-        <td>Sin nombrar jugadores. Marca, club, ciudad, estadio, academia, tickets, merch, hospitality.</td>
+        <td>Sin nombrar jugadores. Marca, club, ciudad, estadio, academia, tickets, merch, hospitality, ownership.</td>
         <td class="target">60–65%</td>
         <td class="target">No</td>
-        <td>Autoridad autónoma de Inter Miami CF en IAs</td>
+        <td>Mapeo 360° de la superficie de marca + medición del halo de Messi (aparece o no espontáneamente)</td>
       </tr>
       <tr>
         <td class="cat-name">B · Player-diversificado</td>
@@ -552,10 +553,10 @@
       </tr>
       <tr>
         <td class="cat-name">C · Messi-anchored</td>
-        <td>Explícitamente Messi: dónde juega, contrato, partidos, futuro post-retiro.</td>
+        <td>Explícitamente Messi: dónde juega, contrato, partidos, ownership, legado.</td>
         <td class="target">10–15%</td>
         <td class="target">Sí</td>
-        <td>Exactitud factual + narrativa post-Messi</td>
+        <td>Exactitud factual + cobertura narrativa de su rol (jugador + co-propietario)</td>
       </tr>
       <tr>
         <td class="cat-name">D · Control / Competitivo</td>
@@ -592,8 +593,8 @@
       <ul style="padding-left:18px; margin:0;">
         <li style="font-size:9.5pt; line-height:1.5; margin-bottom:4px;">¿Dónde juega Messi actualmente?</li>
         <li style="font-size:9.5pt; line-height:1.5; margin-bottom:4px;">How can I see Messi play live?</li>
-        <li style="font-size:9.5pt; line-height:1.5; margin-bottom:4px;">¿Cuándo termina el contrato de Messi con Inter Miami?</li>
-        <li style="font-size:9.5pt; line-height:1.5;">¿Qué hará Inter Miami cuando Messi se retire?</li>
+        <li style="font-size:9.5pt; line-height:1.5; margin-bottom:4px;">¿Qué rol tiene Messi en la propiedad de Inter Miami?</li>
+        <li style="font-size:9.5pt; line-height:1.5;">¿Qué proyecto está construyendo Messi con Inter Miami?</li>
       </ul>
     </div>
     <div style="border:1px solid #ddd; padding:12px 16px; background:#fff;">
@@ -612,14 +613,14 @@
     <div style="background:#000; color:#fff; padding:16px 18px;">
       <div style="font-size:8pt; text-transform:uppercase; letter-spacing:1.5px; color:#f7b5cd; font-weight:700; margin-bottom:6px;">KPI 1 · Halo effect</div>
       <h4 style="font-size:11pt; margin-bottom:8px; color:#fff;">Spontaneous Messi-Inter Miami association rate</h4>
-      <p style="font-size:9.5pt; color:#ddd; line-height:1.5; margin-bottom:8px;">% de prompts brand-only (Bucket A) donde la IA menciona a Messi sin que se lo pidamos.</p>
-      <div style="font-size:9.5pt; color:#f7b5cd; font-weight:700;">Baseline esperado: muy alto (&gt;75%) hoy. Track decay over time como termómetro de transición narrativa.</div>
+      <p style="font-size:9.5pt; color:#ddd; line-height:1.5; margin-bottom:8px;">% de prompts brand-only (Bucket A) donde la IA menciona a Messi sin que se lo pidamos. Mide la potencia y el alcance del halo effect.</p>
+      <div style="font-size:9.5pt; color:#f7b5cd; font-weight:700;">Baseline esperado: muy alto (&gt;75%). Indicador clave de la fuerza con la que Messi proyecta a la marca en cualquier conversación IA sobre el club.</div>
     </div>
     <div style="background:#000; color:#fff; padding:16px 18px;">
-      <div style="font-size:8pt; text-transform:uppercase; letter-spacing:1.5px; color:#f7b5cd; font-weight:700; margin-bottom:6px;">KPI 2 · Brand autonomy</div>
-      <h4 style="font-size:11pt; margin-bottom:8px; color:#fff;">Brand autonomy score</h4>
-      <p style="font-size:9.5pt; color:#ddd; line-height:1.5; margin-bottom:8px;">% de prompts brand-only donde la IA da una respuesta completa sobre Inter Miami <em>sin necesitar mencionar a Messi</em>.</p>
-      <div style="font-size:9.5pt; color:#f7b5cd; font-weight:700;">Baseline esperado: bajo hoy. Es el KPI estratégico a hacer crecer en 2026–2028.</div>
+      <div style="font-size:8pt; text-transform:uppercase; letter-spacing:1.5px; color:#f7b5cd; font-weight:700; margin-bottom:6px;">KPI 2 · Amplitud de marca</div>
+      <h4 style="font-size:11pt; margin-bottom:8px; color:#fff;">Brand surface coverage score</h4>
+      <p style="font-size:9.5pt; color:#ddd; line-height:1.5; margin-bottom:8px;">% de prompts brand-only donde la IA construye una respuesta rica sobre Inter Miami con <em>múltiples pilares</em> (Messi + estrellas + ciudad + academia + ownership + estadio + sponsors).</p>
+      <div style="font-size:9.5pt; color:#f7b5cd; font-weight:700;">Objetivo: que el halo de Messi se complemente con cobertura amplia del resto del activo de marca. Mide riqueza narrativa, no sólo asociación.</div>
     </div>
     <div style="background:#000; color:#fff; padding:16px 18px;">
       <div style="font-size:8pt; text-transform:uppercase; letter-spacing:1.5px; color:#f7b5cd; font-weight:700; margin-bottom:6px;">KPI 3 · Exactitud factual</div>
@@ -628,16 +629,16 @@
       <div style="font-size:9.5pt; color:#f7b5cd; font-weight:700;">Objetivo Q4 2026: ≥95% exactitud. Hallucinations corregidas en &lt;72h.</div>
     </div>
     <div style="background:#000; color:#fff; padding:16px 18px;">
-      <div style="font-size:8pt; text-transform:uppercase; letter-spacing:1.5px; color:#f7b5cd; font-weight:700; margin-bottom:6px;">KPI 4 · Post-Messi readiness</div>
-      <h4 style="font-size:11pt; margin-bottom:8px; color:#fff;">Forward-looking narrative coverage</h4>
-      <p style="font-size:9.5pt; color:#ddd; line-height:1.5; margin-bottom:8px;">Calidad y cobertura de respuestas a "¿qué hará Inter Miami después de Messi?": presencia de proyecto, ownership, academia, ciudad, futuro estadio.</p>
-      <div style="font-size:9.5pt; color:#f7b5cd; font-weight:700;">Objetivo: pasar de respuesta vaga a respuesta estructurada con ≥3 pilares no-Messi.</div>
+      <div style="font-size:8pt; text-transform:uppercase; letter-spacing:1.5px; color:#f7b5cd; font-weight:700; margin-bottom:6px;">KPI 4 · Cobertura de proyecto</div>
+      <h4 style="font-size:11pt; margin-bottom:8px; color:#fff;">Long-term project narrative coverage</h4>
+      <p style="font-size:9.5pt; color:#ddd; line-height:1.5; margin-bottom:8px;">Calidad y cobertura de respuestas sobre el proyecto de largo plazo de Inter Miami: ownership Messi+Beckham+Mas, academia, Miami Freedom Park, expansión internacional.</p>
+      <div style="font-size:9.5pt; color:#f7b5cd; font-weight:700;">Objetivo: respuestas estructuradas con ≥3 pilares de proyecto, mostrando un club que se construye desde múltiples vectores complementarios.</div>
     </div>
   </div>
 
   <div class="annex" style="border-left:4px solid #b8005c;">
     <h3 style="border-bottom:2px solid #f7b5cd;">Lectura estratégica</h3>
-    <p>Este tratamiento convierte a Messi en <strong>instrumento de medición</strong>, no en respuesta. La auditoría aprovecha su halo effect para diagnosticar la salud autónoma de la marca, monitoriza su exactitud factual como activo crítico, y construye desde ahora la base de datos para gestionar la transición narrativa cuando llegue. El club no está restando importancia a Messi — está protegiendo el valor de marca que viene <em>después</em>.</p>
+    <p>Este tratamiento permite ver con precisión <strong>cuánto valor está generando Messi</strong> sobre la marca y, al mismo tiempo, <strong>qué otros pilares del club están entrando en la conversación IA</strong>. La auditoría amplifica el halo effect del activo más visible y monitoriza su exactitud factual con prioridad, mientras mapea toda la superficie de marca que crece a su alrededor: ownership (Messi + Beckham + Mas), estrellas, ciudad, academia, infraestructura, sponsors. Una <strong>visión 360°</strong> que protege y multiplica el valor del activo más completo de la MLS.</p>
   </div>
 </div>
 
