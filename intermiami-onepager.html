@@ -290,6 +290,60 @@
     line-height: 1.35;
   }
 
+  /* PRICING */
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.5fr;
+    gap: 10px;
+  }
+  .price-card {
+    border: 2px solid var(--im-black);
+    background: #fff;
+    padding: 10px 12px;
+    text-align: center;
+    position: relative;
+  }
+  .price-card::before {
+    content: ""; position: absolute;
+    top: 0; left: 0; right: 0; height: 4px;
+    background: var(--im-black);
+  }
+  .price-card-pink::before { background: var(--im-pink-strong); }
+  .price-tag {
+    font-size: 7pt; text-transform: uppercase;
+    letter-spacing: 1.2px; color: var(--im-pink-deep);
+    font-weight: 700; margin-bottom: 4px;
+  }
+  .price-amount {
+    font-family: 'Georgia', serif;
+    font-size: 22pt; font-weight: 700;
+    color: var(--im-black); line-height: 1;
+    margin-bottom: 6px;
+  }
+  .price-detail {
+    font-size: 7.5pt; color: #555;
+    line-height: 1.4;
+  }
+  .price-info {
+    background: var(--im-pink-bg);
+    border-left: 3px solid var(--im-pink-strong);
+    padding: 10px 12px;
+    display: flex; flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+  }
+  .info-line {
+    font-size: 8pt; color: #333;
+    line-height: 1.4;
+  }
+  .info-line strong {
+    color: var(--im-pink-deep);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    font-size: 7pt; display: inline-block;
+    min-width: 65px;
+  }
+
   /* FOOTER */
   footer {
     border-top: 2px solid var(--im-black);
@@ -343,8 +397,8 @@
     <div class="block-title">02 · Propuesta</div>
     <div class="prop-box">
       <div class="prop-grid">
-        <div class="prop-item"><strong>~30.000 puntos de datos</strong> auditados</div>
-        <div class="prop-item"><strong>4 engines</strong> (GPT, Gemini, Perplexity, Claude)</div>
+        <div class="prop-item"><strong>~22.000 puntos de datos</strong> (~30k con Claude)</div>
+        <div class="prop-item"><strong>3 engines</strong> (GPT, Gemini, Perplexity) + Claude opcional</div>
         <div class="prop-item"><strong>8 mercados</strong> prioritarios</div>
         <div class="prop-item"><strong>3 idiomas</strong> (ES, EN, PT)</div>
         <div class="prop-item"><strong>12 departamentos</strong> cubiertos</div>
@@ -461,6 +515,7 @@
     <a class="qa-pill" href="intermiami-geo-audit-setup.html">Setup completo <span class="qa-arrow">›</span></a>
     <a class="qa-pill" href="intermiami-geo-argumentario-extenso.html#roadmap">Roadmap <span class="qa-arrow">›</span></a>
     <a class="qa-pill" href="intermiami-geo-argumentario-extenso.html#kpis">Framework KPIs <span class="qa-arrow">›</span></a>
+    <a class="qa-pill" href="intermiami-geo-argumentario-extenso.html#propuesta">Propuesta económica <span class="qa-arrow">›</span></a>
     <a class="qa-pill" href="index.html">Knowledge base <span class="qa-arrow">›</span></a>
   </div>
 </div>
@@ -483,6 +538,29 @@
       <div class="step-num">3</div>
       <h5>Primer dashboard</h5>
       <p>Entregable inicial con baselines reales por engine, mercado, persona y línea de producto.</p>
+    </div>
+  </div>
+</div>
+
+<!-- PROPUESTA ECONÓMICA -->
+<div class="block">
+  <div class="block-title">09 · Propuesta económica · 5 semanas de ejecución</div>
+  <div class="pricing-grid">
+    <div class="price-card">
+      <div class="price-tag">Configuración base</div>
+      <div class="price-amount">45.000 €</div>
+      <div class="price-detail">3 engines: ChatGPT · Gemini · Perplexity<br>~22.000 puntos de datos auditados</div>
+    </div>
+    <div class="price-card price-card-pink">
+      <div class="price-tag">Con Claude (opcional)</div>
+      <div class="price-amount">50.000 €</div>
+      <div class="price-detail">4 engines: + Claude<br>~30.000 puntos de datos auditados</div>
+    </div>
+    <div class="price-info">
+      <div class="info-line"><strong>Ejecución</strong> 5 semanas (incluye 2 semanas de lanzamiento continuado del dataset)</div>
+      <div class="info-line"><strong>Incluye</strong> Sesiones de consultoría, plan de acción, informe completo, benchmark competitivo, análisis de atributos por IA</div>
+      <div class="info-line"><strong>On top</strong> Actualización bimensual del estudio + fee de agencia para ejecutar el plan de acción (contenidos, técnica, insights, consultoría)</div>
+      <div class="info-line"><strong>Validez</strong> 1 mes — los costes de los LLMs están en alza constante y la disponibilidad de cómputo es limitada</div>
     </div>
   </div>
 </div>

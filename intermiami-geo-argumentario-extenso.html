@@ -456,8 +456,9 @@
     <a href="#departamentos"><span><span class="toc-num">03</span>Beneficios por departamento (12)</span><span class="toc-page">p.5</span></a>
     <a href="#roadmap"><span><span class="toc-num">04</span>Roadmap por fases</span><span class="toc-page">p.18</span></a>
     <a href="#kpis"><span><span class="toc-num">05</span>Framework KPIs</span><span class="toc-page">p.20</span></a>
-    <a href="#anexos"><span><span class="toc-num">06</span>Anexos técnicos</span><span class="toc-page">p.22</span></a>
-    <a href="#cierre"><span><span class="toc-num">07</span>Cierre y próximos pasos</span><span class="toc-page">p.23</span></a>
+    <a href="#propuesta"><span><span class="toc-num">06</span>Propuesta económica y plan</span><span class="toc-page">p.22</span></a>
+    <a href="#anexos"><span><span class="toc-num">07</span>Anexos técnicos</span><span class="toc-page">p.24</span></a>
+    <a href="#cierre"><span><span class="toc-num">08</span>Cierre y próximos pasos</span><span class="toc-page">p.25</span></a>
   </div>
 </div>
 
@@ -466,7 +467,7 @@
   <h2>00 · Resumen ejecutivo</h2>
   <p>Este documento es la <strong>versión técnica completa</strong> del argumentario GEO/AEO para Inter Miami CF, complementaria al ejecutivo (Doc 03). Está pensado para uso interno de los <strong>heads de cada departamento y sus equipos operativos</strong>: detalla pain points, beneficios, entregables específicos, KPIs accionables y angulación Mundial 2026 para cada área del club.</p>
   <p>Los <strong>LLMs ya intermedian un porcentaje creciente de las decisiones</strong> de aficionados, compradores, familias, sponsors y partners. La auditoría GEO/AEO transforma ese canal —hasta ahora opaco— en una superficie medible, optimizable y defendible. El Mundial FIFA 2026 (junio-julio) es el catalizador estratégico que convierte esta auditoría en <strong>prioridad de negocio</strong>, no en proyecto experimental: las dos instalaciones del club (NU Stadium para competiciones y ex-Chase como base de entrenamiento) son la sede física del Mundial en Miami, lo que dispara la exposición de marca pero también el riesgo si los LLMs no asocian correctamente las instalaciones con Inter Miami CF.</p>
-  <p>El alcance: <strong>12 departamentos cubiertos</strong>, <strong>3 fases operativas</strong> (auditoría base · activación Mundial · operación continua), <strong>~300 prompts</strong> auditados en <strong>4 engines</strong> (ChatGPT, Gemini, Perplexity, Claude), <strong>3 idiomas</strong> (ES, EN, PT) y <strong>8 mercados</strong> prioritarios.</p>
+  <p>El alcance: <strong>12 departamentos cubiertos</strong>, <strong>3 fases operativas</strong> (auditoría base · activación Mundial · operación continua), <strong>~300 prompts</strong> auditados en <strong>3 engines principales</strong> (ChatGPT, Gemini, Perplexity) <strong>+ Claude opcional</strong>, <strong>3 idiomas</strong> (ES, EN, PT) y <strong>8 mercados</strong> prioritarios.</p>
 </div>
 
 <!-- 01 METODOLOGIA -->
@@ -488,7 +489,7 @@
     <div class="method-card">
       <div class="num">02</div>
       <h4>Multi-engine sampling</h4>
-      <p>Ejecución sistemática en ChatGPT, Gemini, Perplexity y Claude, capturando respuesta completa, fuentes citadas, latencia y variantes.</p>
+      <p>Ejecución sistemática en los 3 engines principales (ChatGPT, Gemini, Perplexity) más Claude como opción adicional. Captura de respuesta completa, fuentes citadas, latencia y variantes.</p>
     </div>
     <div class="method-card">
       <div class="num">03</div>
@@ -674,7 +675,7 @@
     <tbody>
       <tr>
         <td class="cat-name">1 · Captura de fuentes</td>
-        <td>Para cada respuesta de los 4 engines, se registran todas las fuentes citadas (URL, dominio, tipo: medio, blog, foro, social, official).</td>
+        <td>Para cada respuesta de los 3 engines principales (más Claude si está incluido), se registran todas las fuentes citadas (URL, dominio, tipo: medio, blog, foro, social, official).</td>
         <td class="target">Inventario completo (~30k data points)</td>
       </tr>
       <tr>
@@ -822,7 +823,7 @@
         <div class="dept-col benefit">
           <h4>Qué aporta GEO/AEO</h4>
           <ul>
-            <li>Share of voice y sentiment medibles en GPT/Gemini/Perplexity/Claude</li>
+            <li>Share of voice y sentiment medibles en GPT/Gemini/Perplexity (Claude opcional)</li>
             <li>Mapa de atributos de marca que "fijan" los LLMs y los que faltan por consolidar</li>
             <li>Alerta temprana (semanal) de narrativas tóxicas o información falsa</li>
             <li>Benchmark trimestral vs LAFC, NYCFC, Real Madrid, Barça, PSG, Boca</li>
@@ -1074,7 +1075,7 @@
           <h4>Qué aporta GEO/AEO</h4>
           <ul>
             <li>Auditoría de qué LLM cita reventa vs canal oficial → plan de corrección con cada engine</li>
-            <li>Validación trimestral de info matchday correcta y unificada en los 4 engines</li>
+            <li>Validación trimestral de info matchday correcta y unificada en los engines auditados</li>
             <li>Plan de schema markup para páginas de tickets, abonos, accesibilidad</li>
             <li>Mensajes optimizados para que abonos y season tickets surfaceen en queries de fan recurrente</li>
             <li>Conversion attribution model que incluye AI-mediated traffic</li>
@@ -1509,7 +1510,7 @@
             <li>Decisiones estratégicas sin dato cuantitativo del canal IA (canal en fuerte crecimiento año a año según estudios independientes)</li>
             <li>Falsificaciones y reventa promovidas por LLMs sin enforcement coordinado</li>
             <li>Sin trend monitoring del relato post-Messi en tiempo real</li>
-            <li>Inteligencia competitiva manual; no escala a 4 engines × 8 mercados</li>
+            <li>Inteligencia competitiva manual; no escala a 3+ engines × 8 mercados</li>
             <li>Board reporting carece de KPIs de visibilidad IA</li>
           </ul>
         </div>
@@ -1577,7 +1578,7 @@
         <div class="desc">Construcción del corpus de prompts, ejecución multi-engine, análisis cuantitativo y briefings iniciales por departamento. Foco: tener la foto fija antes del Mundial.</div>
         <div class="deliv-list">
           <div>~300 prompts validados con cliente</div>
-          <div>Ejecución en 4 engines × 3 idiomas × 8 mercados</div>
+          <div>Ejecución en 3 engines × 3 idiomas × 8 mercados (Claude opcional)</div>
           <div>Dashboards en GEOradar configurados</div>
           <div>Briefings entregados a los 12 departamentos</div>
           <div>Plan de quick wins por área</div>
@@ -1736,17 +1737,162 @@
   </table>
 </div>
 
-<!-- 06 ANEXOS -->
-<div class="section" id="anexos">
+<!-- 06 PROPUESTA ECONÓMICA -->
+<div class="section" id="propuesta">
   <div class="section-header">
     <div class="section-number">6</div>
+    <div class="section-title">Propuesta económica y plan de ejecución</div>
+    <div class="section-tag">★ Comercial</div>
+  </div>
+
+  <p class="lead-p">Esta sección detalla el coste, calendario, entregables y condiciones comerciales del proyecto. La propuesta tiene <strong>validez de 1 mes</strong>: los costes de los LLMs están en alza constante y el uso masivo de estos sistemas es cada vez más complejo dada la disponibilidad limitada de cómputo y el incremento exponencial de la demanda.</p>
+
+  <h3 class="sub-h">Configuración y precio</h3>
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:18px 0;">
+    <div style="border:2px solid #000; background:#fff; padding:22px 24px; position:relative;">
+      <div style="position:absolute; top:0; left:0; right:0; height:6px; background:#000;"></div>
+      <div style="font-size:9pt; text-transform:uppercase; letter-spacing:1.5px; color:#b8005c; font-weight:700; margin-bottom:8px;">Configuración base</div>
+      <div style="font-family:Georgia,serif; font-size:42pt; font-weight:700; color:#000; line-height:1; margin-bottom:12px;">45.000 €</div>
+      <div style="font-size:10pt; color:#444; line-height:1.55; margin-bottom:14px;">Auditoría completa con los 3 engines principales:</div>
+      <ul style="list-style:none; padding:0; margin:0;">
+        <li style="font-size:10pt; padding:5px 0 5px 18px; position:relative; color:#333;"><span style="position:absolute; left:0; color:#E91E63; font-weight:700;">▸</span> ChatGPT (OpenAI)</li>
+        <li style="font-size:10pt; padding:5px 0 5px 18px; position:relative; color:#333;"><span style="position:absolute; left:0; color:#E91E63; font-weight:700;">▸</span> Gemini (Google)</li>
+        <li style="font-size:10pt; padding:5px 0 5px 18px; position:relative; color:#333;"><span style="position:absolute; left:0; color:#E91E63; font-weight:700;">▸</span> Perplexity</li>
+      </ul>
+      <div style="margin-top:14px; padding-top:12px; border-top:1px dotted #ccc; font-size:9.5pt; color:#666;">~22.000 puntos de datos analizados</div>
+    </div>
+    <div style="border:2px solid #E91E63; background:#fff; padding:22px 24px; position:relative;">
+      <div style="position:absolute; top:0; left:0; right:0; height:6px; background:linear-gradient(90deg, #F7B5CD 0%, #E91E63 100%);"></div>
+      <div style="font-size:9pt; text-transform:uppercase; letter-spacing:1.5px; color:#b8005c; font-weight:700; margin-bottom:8px;">Configuración premium · con Claude</div>
+      <div style="font-family:Georgia,serif; font-size:42pt; font-weight:700; color:#000; line-height:1; margin-bottom:12px;">50.000 €</div>
+      <div style="font-size:10pt; color:#444; line-height:1.55; margin-bottom:14px;">Auditoría ampliada con los 4 engines:</div>
+      <ul style="list-style:none; padding:0; margin:0;">
+        <li style="font-size:10pt; padding:5px 0 5px 18px; position:relative; color:#333;"><span style="position:absolute; left:0; color:#E91E63; font-weight:700;">▸</span> ChatGPT (OpenAI)</li>
+        <li style="font-size:10pt; padding:5px 0 5px 18px; position:relative; color:#333;"><span style="position:absolute; left:0; color:#E91E63; font-weight:700;">▸</span> Gemini (Google)</li>
+        <li style="font-size:10pt; padding:5px 0 5px 18px; position:relative; color:#333;"><span style="position:absolute; left:0; color:#E91E63; font-weight:700;">▸</span> Perplexity</li>
+        <li style="font-size:10pt; padding:5px 0 5px 18px; position:relative; color:#333;"><span style="position:absolute; left:0; color:#E91E63; font-weight:700;">▸</span> <strong>Claude</strong> (Anthropic) — adicional</li>
+      </ul>
+      <div style="margin-top:14px; padding-top:12px; border-top:1px dotted #ccc; font-size:9.5pt; color:#666;">~30.000 puntos de datos analizados</div>
+    </div>
+  </div>
+
+  <h3 class="sub-h">Plan de ejecución · 5 semanas</h3>
+  <div style="display:grid; grid-template-columns:repeat(5, 1fr); gap:6px; margin:14px 0;">
+    <div style="background:#000; color:#fff; padding:12px 10px; text-align:center;">
+      <div style="font-size:8pt; text-transform:uppercase; letter-spacing:1px; color:#F7B5CD; margin-bottom:4px;">Semana 1</div>
+      <div style="font-size:10pt; font-weight:700;">Setup y briefing</div>
+      <div style="font-size:8pt; color:#ccc; margin-top:4px;">Validación scope con cliente, prompt set final, configuración engines</div>
+    </div>
+    <div style="background:#000; color:#fff; padding:12px 10px; text-align:center;">
+      <div style="font-size:8pt; text-transform:uppercase; letter-spacing:1px; color:#F7B5CD; margin-bottom:4px;">Semana 2-3</div>
+      <div style="font-size:10pt; font-weight:700;">Lanzamiento dataset</div>
+      <div style="font-size:8pt; color:#ccc; margin-top:4px;">2 semanas de ejecución continuada multi-engine, captura completa de respuestas y fuentes</div>
+    </div>
+    <div style="background:#000; color:#fff; padding:12px 10px; text-align:center;">
+      <div style="font-size:8pt; text-transform:uppercase; letter-spacing:1px; color:#F7B5CD; margin-bottom:4px;">Semana 4</div>
+      <div style="font-size:10pt; font-weight:700;">Análisis</div>
+      <div style="font-size:8pt; color:#ccc; margin-top:4px;">Procesamiento cuantitativo, benchmark competitivo, mapeo de atributos y fuentes</div>
+    </div>
+    <div style="background:#000; color:#fff; padding:12px 10px; text-align:center;">
+      <div style="font-size:8pt; text-transform:uppercase; letter-spacing:1px; color:#F7B5CD; margin-bottom:4px;">Semana 5</div>
+      <div style="font-size:10pt; font-weight:700;">Insights & playbook</div>
+      <div style="font-size:8pt; color:#ccc; margin-top:4px;">Briefings por departamento, plan de acción accionable, roadmap operativo</div>
+    </div>
+    <div style="background:#E91E63; color:#fff; padding:12px 10px; text-align:center;">
+      <div style="font-size:8pt; text-transform:uppercase; letter-spacing:1px; color:#fff; margin-bottom:4px;">Cierre</div>
+      <div style="font-size:10pt; font-weight:700;">Entrega final</div>
+      <div style="font-size:8pt; color:#fff; margin-top:4px; opacity:0.9;">Sesión de presentación, informe completo y dashboards en GEOradar</div>
+    </div>
+  </div>
+
+  <h3 class="sub-h">Qué incluye el estudio</h3>
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:14px 0;">
+    <div style="background:#fafafa; border:1px solid #ddd; padding:14px 16px;">
+      <h4 style="font-size:9pt; text-transform:uppercase; letter-spacing:1.2px; color:#000; margin-bottom:8px; border-bottom:1px solid #F7B5CD; padding-bottom:4px;">Servicios consultivos</h4>
+      <ul style="list-style:none; padding:0; margin:0;">
+        <li style="font-size:9.5pt; padding:3px 0 3px 14px; position:relative; line-height:1.45;"><span style="position:absolute; left:0; color:#060; font-weight:700;">+</span> Sesiones de consultoría con el equipo del club</li>
+        <li style="font-size:9.5pt; padding:3px 0 3px 14px; position:relative; line-height:1.45;"><span style="position:absolute; left:0; color:#060; font-weight:700;">+</span> Validación de personas, funnel y prompts</li>
+        <li style="font-size:9.5pt; padding:3px 0 3px 14px; position:relative; line-height:1.45;"><span style="position:absolute; left:0; color:#060; font-weight:700;">+</span> Briefings por departamento (12 áreas)</li>
+        <li style="font-size:9.5pt; padding:3px 0 3px 14px; position:relative; line-height:1.45;"><span style="position:absolute; left:0; color:#060; font-weight:700;">+</span> Plan de acción priorizado</li>
+        <li style="font-size:9.5pt; padding:3px 0 3px 14px; position:relative; line-height:1.45;"><span style="position:absolute; left:0; color:#060; font-weight:700;">+</span> Roadmap operativo de 3 fases</li>
+      </ul>
+    </div>
+    <div style="background:#fafafa; border:1px solid #ddd; padding:14px 16px;">
+      <h4 style="font-size:9pt; text-transform:uppercase; letter-spacing:1.2px; color:#000; margin-bottom:8px; border-bottom:1px solid #F7B5CD; padding-bottom:4px;">Entregables analíticos</h4>
+      <ul style="list-style:none; padding:0; margin:0;">
+        <li style="font-size:9.5pt; padding:3px 0 3px 14px; position:relative; line-height:1.45;"><span style="position:absolute; left:0; color:#060; font-weight:700;">+</span> Informe completo (este documento ampliado con datos reales)</li>
+        <li style="font-size:9.5pt; padding:3px 0 3px 14px; position:relative; line-height:1.45;"><span style="position:absolute; left:0; color:#060; font-weight:700;">+</span> Dashboards interactivos en GEOradar</li>
+        <li style="font-size:9.5pt; padding:3px 0 3px 14px; position:relative; line-height:1.45;"><span style="position:absolute; left:0; color:#060; font-weight:700;">+</span> Datasets exportables (CSV/JSON)</li>
+        <li style="font-size:9.5pt; padding:3px 0 3px 14px; position:relative; line-height:1.45;"><span style="position:absolute; left:0; color:#060; font-weight:700;">+</span> Mapa de fuentes por persona</li>
+        <li style="font-size:9.5pt; padding:3px 0 3px 14px; position:relative; line-height:1.45;"><span style="position:absolute; left:0; color:#060; font-weight:700;">+</span> Alertas iniciales de brand protection</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 class="sub-h">Servicios recurrentes (on top de la auditoría)</h3>
+  <p class="lead-p">Más allá del estudio inicial, se ofrecen dos modalidades complementarias diseñadas para mantener la inteligencia GEO/AEO viva en el club y traducirla en ejecución continua.</p>
+
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:14px 0;">
+    <div style="border:2px solid #000; background:#fff; padding:18px 20px; position:relative;">
+      <div style="position:absolute; top:0; left:0; right:0; height:5px; background:#E91E63;"></div>
+      <div style="font-size:8pt; text-transform:uppercase; letter-spacing:1.5px; color:#b8005c; font-weight:700; margin-bottom:8px;">Servicio 01 · Recurrente</div>
+      <h4 style="font-size:13pt; font-weight:700; margin-bottom:10px; line-height:1.2;">Actualización periódica del estudio</h4>
+      <p style="font-size:9.5pt; color:#444; line-height:1.55; margin-bottom:10px;">Refresco completo del dataset cada <strong>2 meses</strong>: nuevo pase del prompt set por los engines, comparativa con la baseline anterior, detección de cambios en visibilidad, fuentes y narrativa. Permite seguir la evolución del posicionamiento en IA y ajustar la estrategia en tiempo casi real.</p>
+      <ul style="list-style:none; padding:0; margin:0;">
+        <li style="font-size:9pt; padding:3px 0 3px 14px; position:relative; line-height:1.4;"><span style="position:absolute; left:0; color:#060; font-weight:700;">+</span> Re-ejecución del prompt set en los engines</li>
+        <li style="font-size:9pt; padding:3px 0 3px 14px; position:relative; line-height:1.4;"><span style="position:absolute; left:0; color:#060; font-weight:700;">+</span> Comparativa vs baseline + trend tracking</li>
+        <li style="font-size:9pt; padding:3px 0 3px 14px; position:relative; line-height:1.4;"><span style="position:absolute; left:0; color:#060; font-weight:700;">+</span> Alertas de cambios críticos</li>
+        <li style="font-size:9pt; padding:3px 0 3px 14px; position:relative; line-height:1.4;"><span style="position:absolute; left:0; color:#060; font-weight:700;">+</span> Update de dashboards en GEOradar</li>
+      </ul>
+      <div style="margin-top:12px; padding-top:10px; border-top:1px dotted #ccc; font-size:9pt; color:#666; font-style:italic;">Coste bimensual · cotización a confirmar según escala</div>
+    </div>
+
+    <div style="border:2px solid #000; background:#fff; padding:18px 20px; position:relative;">
+      <div style="position:absolute; top:0; left:0; right:0; height:5px; background:#E91E63;"></div>
+      <div style="font-size:8pt; text-transform:uppercase; letter-spacing:1.5px; color:#b8005c; font-weight:700; margin-bottom:8px;">Servicio 02 · Ejecución</div>
+      <h4 style="font-size:13pt; font-weight:700; margin-bottom:10px; line-height:1.2;">Fee de agencia · ejecución del plan de acción</h4>
+      <p style="font-size:9.5pt; color:#444; line-height:1.55; margin-bottom:10px;">Implementación operativa de las recomendaciones de la auditoría: <strong>creación de contenidos AI-citeable</strong>, acciones técnicas (schema, structured data, optimización web), <strong>identificación continua de insights</strong> accionables y consultoría estratégica al club. Convierte el plan en resultados.</p>
+      <ul style="list-style:none; padding:0; margin:0;">
+        <li style="font-size:9pt; padding:3px 0 3px 14px; position:relative; line-height:1.4;"><span style="position:absolute; left:0; color:#060; font-weight:700;">+</span> Creación de contenidos optimizados para IA</li>
+        <li style="font-size:9pt; padding:3px 0 3px 14px; position:relative; line-height:1.4;"><span style="position:absolute; left:0; color:#060; font-weight:700;">+</span> Acciones técnicas (schema, AEO, indexación)</li>
+        <li style="font-size:9pt; padding:3px 0 3px 14px; position:relative; line-height:1.4;"><span style="position:absolute; left:0; color:#060; font-weight:700;">+</span> Identificación continua de insights y oportunidades</li>
+        <li style="font-size:9pt; padding:3px 0 3px 14px; position:relative; line-height:1.4;"><span style="position:absolute; left:0; color:#060; font-weight:700;">+</span> Consultoría al club (sesiones recurrentes)</li>
+      </ul>
+      <div style="margin-top:12px; padding-top:10px; border-top:1px dotted #ccc; font-size:9pt; color:#666; font-style:italic;">Fee de agencia · scope a definir con el cliente</div>
+    </div>
+  </div>
+
+  <h3 class="sub-h">Componente clave · benchmark competitivo y análisis de atributos</h3>
+  <div style="background:linear-gradient(135deg, #FFF5F9 0%, #FCE4EC 100%); border:2px solid #E91E63; padding:20px 24px; margin:14px 0;">
+    <p style="font-size:10.5pt; line-height:1.6; color:#333; margin-bottom:12px;">El estudio incluye un <strong style="color:#b8005c;">benchmark competitivo completo</strong> y un <strong style="color:#b8005c;">análisis de atributos que las IA relacionan con cada club</strong>: cuáles domina Inter Miami, cuáles no, y cómo esa valoración influye —de forma severa— en la recomendación y visibilidad del club y sus productos en respuestas IA.</p>
+    <p style="font-size:10pt; line-height:1.55; color:#444; margin-bottom:10px;">Esta información es <strong>clave estratégicamente</strong> para varios escenarios:</p>
+    <ul style="list-style:none; padding:0; margin:0;">
+      <li style="font-size:10pt; padding:5px 0 5px 18px; position:relative; line-height:1.5;"><span style="position:absolute; left:0; color:#E91E63; font-weight:700;">●</span> <strong>Retorno de sponsors actuales</strong>: cuantificar el <em>AI Media Value</em> que reciben las marcas asociadas y justificar renovaciones con dato cuantitativo.</li>
+      <li style="font-size:10pt; padding:5px 0 5px 18px; position:relative; line-height:1.5;"><span style="position:absolute; left:0; color:#E91E63; font-weight:700;">●</span> <strong>Captación de futuros sponsors</strong>: ofrecer un nuevo activo medible (presencia y co-citation en IAs) como argumento comercial diferencial.</li>
+      <li style="font-size:10pt; padding:5px 0 5px 18px; position:relative; line-height:1.5;"><span style="position:absolute; left:0; color:#E91E63; font-weight:700;">●</span> <strong>Evaluación estratégica de nuevos assets</strong>: antes de incorporar un jugador, partnership o nueva línea de producto, simular su encaje con los atributos que el club domina (o necesita reforzar) en IA.</li>
+      <li style="font-size:10pt; padding:5px 0 5px 18px; position:relative; line-height:1.5;"><span style="position:absolute; left:0; color:#E91E63; font-weight:700;">●</span> <strong>Identificación de clusters competitivos</strong>: agrupar a los rivales (otros clubes MLS, top europeos, F1 Miami GP, Heat, Dolphins) por atributos compartidos y localizar el <strong>posicionamiento óptimo</strong> para diferenciar al club.</li>
+      <li style="font-size:10pt; padding:5px 0 5px 18px; position:relative; line-height:1.5;"><span style="position:absolute; left:0; color:#E91E63; font-weight:700;">●</span> <strong>Detección de gaps narrativos</strong>: atributos donde la competencia gana la conversación IA y el club debería actuar, y atributos donde Inter Miami ya lidera y conviene amplificar.</li>
+    </ul>
+  </div>
+
+  <h3 class="sub-h">Validez de la propuesta</h3>
+  <div style="background:#fffde7; border-left:4px solid #b38a00; padding:14px 18px; margin:14px 0;">
+    <p style="font-size:10pt; line-height:1.55; color:#333; margin-bottom:8px;"><strong style="color:#996600; text-transform:uppercase; letter-spacing:1px; font-size:8pt;">Importante</strong></p>
+    <p style="font-size:10pt; line-height:1.55; color:#333;">Esta propuesta tiene una validez de <strong>1 mes</strong> desde su emisión. Los costes de uso de los LLMs están en alza constante y la disponibilidad de cómputo se está volviendo cada vez más restrictiva debido al incremento exponencial de demanda. Pasado ese plazo, los precios y los plazos de ejecución pueden verse afectados y deberán ser recotizados.</p>
+  </div>
+</div>
+
+<!-- 07 ANEXOS -->
+<div class="section" id="anexos">
+  <div class="section-header">
+    <div class="section-number">7</div>
     <div class="section-title">Anexos técnicos</div>
     <div class="section-tag">Reference</div>
   </div>
 
   <div class="annex">
     <h3>A · Glosario GEO/AEO</h3>
-    <p><strong>GEO (Generative Engine Optimization):</strong> conjunto de prácticas para optimizar la presencia de una marca en respuestas generadas por motores IA (ChatGPT, Gemini, Perplexity, Claude). Equivalente moderno del SEO clásico.</p>
+    <p><strong>GEO (Generative Engine Optimization):</strong> conjunto de prácticas para optimizar la presencia de una marca en respuestas generadas por motores IA (ChatGPT, Gemini, Perplexity y, opcionalmente, Claude). Equivalente moderno del SEO clásico.</p>
     <p><strong>AEO (Answer Engine Optimization):</strong> subespecialidad enfocada en motores de respuesta directa (Perplexity, AI Overviews de Google, ChatGPT Search). Optimiza para citación, no para ranking de enlaces.</p>
     <p><strong>Share of voice IA:</strong> porcentaje de respuestas IA que mencionan una marca dada un contexto (ej. "club fútbol Miami") frente al total de respuestas en ese contexto.</p>
     <p><strong>Hallucination:</strong> información incorrecta, inventada o desactualizada que un LLM presenta como hecho. Riesgo crítico cuando es persistente y replicable.</p>
@@ -1755,11 +1901,15 @@
 
   <div class="annex">
     <h3>B · Engines auditados</h3>
+    <p style="font-size:9.5pt; color:#666; margin-bottom:8px;"><strong>Configuración base</strong> (3 engines principales):</p>
     <ul>
       <li><strong>ChatGPT</strong> (OpenAI · GPT-5 / 5.5): líder en tráfico, integrado en buscadores y apps</li>
       <li><strong>Gemini</strong> (Google · 2.5 / 3): integrado en Search/AI Overviews, alto impacto en discovery</li>
       <li><strong>Perplexity</strong> (Perplexity AI): líder en answer engine puro, citación intensiva de fuentes</li>
-      <li><strong>Claude</strong> (Anthropic · Opus 4.7 / Sonnet 4.6): creciente en uso enterprise y desarrollo</li>
+    </ul>
+    <p style="font-size:9.5pt; color:#666; margin-top:10px; margin-bottom:8px;"><strong>Opción adicional</strong> (configuración premium):</p>
+    <ul>
+      <li><strong>Claude</strong> (Anthropic · Opus 4.7 / Sonnet 4.6): creciente en uso enterprise y desarrollo. Su inclusión añade ~8.000 puntos de datos al estudio.</li>
     </ul>
   </div>
 

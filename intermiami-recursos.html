@@ -688,7 +688,7 @@
     <div class="faq-item">
       <div class="faq-q"><span class="q-num">01</span>¿Cuál es el objetivo principal de la auditoría GEO/AEO para Inter Miami CF?</div>
       <div class="faq-a">
-        <p>El objetivo es transformar el canal de las respuestas generadas por inteligencia artificial (LLMs como ChatGPT, Gemini, Perplexity y Claude), hasta ahora opaco, en una <strong>superficie medible, optimizable y defendible</strong>.</p>
+        <p>El objetivo es transformar el canal de las respuestas generadas por inteligencia artificial (LLMs como ChatGPT, Gemini y Perplexity, con Claude como engine adicional opcional), hasta ahora opaco, en una <strong>superficie medible, optimizable y defendible</strong>.</p>
         <p>Se busca mejorar la visibilidad de la marca en respuestas relacionadas con entradas, experiencia de partido, merchandising, academia y búsquedas vinculadas a Lionel Messi y al propio club, partiendo de baselines reales y con objetivos conservadores y verificables.</p>
       </div>
     </div>
@@ -707,7 +707,7 @@
       <div class="faq-a">
         <p>Las dos instalaciones del club son sede física del Mundial 2026 en Miami, pero los LLMs pueden citarlas como "estadios genéricos del torneo" sin mencionar al club. Eso convertiría una oportunidad de exposición histórica en visibilidad genérica desconectada de la marca.</p>
         <p><strong>NU Stadium</strong> (nuevo, ~25k) acoge competiciones del Mundial y será la casa permanente del club desde 2026/27. El <strong>antiguo estadio</strong> (ex-Chase Stadium, Fort Lauderdale, ~21k) actúa como base oficial de entrenamiento de selecciones FIFA durante el torneo. Inter Miami no juega esas 6 semanas, pero cada retransmisión, cada noticia y cada foto de selección entrenando deben citar las instalaciones <em>como propiedad de Inter Miami CF</em>.</p>
-        <p>Operaciones, PR y Marketing ejecutan un plan de corrección con narrativa "<em>Inter Miami hosts the World</em>" para asegurar respuestas precisas en los 4 engines auditados. Objetivo orientativo: ≥90% de respuestas IA asocian explícitamente NU Stadium con Inter Miami CF.</p>
+        <p>Operaciones, PR y Marketing ejecutan un plan de corrección con narrativa "<em>Inter Miami hosts the World</em>" para asegurar respuestas precisas en los engines auditados. Objetivo orientativo: ≥90% de respuestas IA asocian explícitamente NU Stadium con Inter Miami CF.</p>
       </div>
     </div>
 
@@ -740,7 +740,7 @@
     <div class="faq-item">
       <div class="faq-q"><span class="q-num">06</span>¿Cómo predecimos el impacto de una noticia, fichaje o campaña en cada perfil de fan?</div>
       <div class="faq-a">
-        <p>Mediante el <strong>mapeo de fuentes por persona</strong>: la auditoría registra para cada uno de los perfiles definidos (P01 fan global, P02 local, P03 shopper, P04 academia, etc.) qué fuentes utilizan los 4 engines al responder. El resultado es una tabla "fuentes × persona × engine" que permite anticipar qué cobertura mediática moverá la conversación IA para cada audiencia.</p>
+        <p>Mediante el <strong>mapeo de fuentes por persona</strong>: la auditoría registra para cada uno de los perfiles definidos (P01 fan global, P02 local, P03 shopper, P04 academia, etc.) qué fuentes utilizan los 3 engines principales (más Claude si está incluido) al responder. El resultado es una tabla "fuentes × persona × engine" que permite anticipar qué cobertura mediática moverá la conversación IA para cada audiencia.</p>
         <p>La capacidad predictiva tiene 5 aplicaciones principales:</p>
         <ul>
           <li><strong>Pre-flight de campañas</strong>: antes de lanzar, simular qué personas alcanzará el plan de PR previsto.</li>
@@ -1142,7 +1142,7 @@
     <div class="method-card">
       <div class="num">02</div>
       <h4>Multi-engine sampling</h4>
-      <p>Ejecución sistemática en ChatGPT, Gemini, Perplexity y Claude, capturando respuesta completa, fuentes citadas, latencia y variantes.</p>
+      <p>Ejecución sistemática en los 3 engines principales (ChatGPT, Gemini, Perplexity) más Claude como opción adicional. Captura de respuesta completa, fuentes citadas, latencia y variantes.</p>
     </div>
     <div class="method-card">
       <div class="num">03</div>
@@ -1158,7 +1158,7 @@
 
   <div class="method-detail">
     <h4>Volumen real de datos analizados</h4>
-    <p>~300 prompts × 4 engines × 8 mercados × 3 idiomas = aproximadamente <strong>30.000 puntos de datos</strong> auditados por ciclo. Cada punto incluye: respuesta completa, fuentes citadas, ranking de citation, sentiment, entidades reconocidas y co-citations.</p>
+    <p>~300 prompts × engines × 8 mercados × 3 idiomas. En la <strong>configuración base (3 engines)</strong>: ~22.000 puntos de datos auditados por ciclo. En la <strong>configuración premium (con Claude)</strong>: ~30.000 puntos de datos. Cada punto incluye: respuesta completa, fuentes citadas, ranking de citation, sentiment, entidades reconocidas y co-citations.</p>
     <ul>
       <li><strong>Engines auditados</strong>: ChatGPT (OpenAI), Gemini (Google), Perplexity, Claude (Anthropic)</li>
       <li><strong>Mercados</strong>: EE.UU. (EN/ES Miami latino), México, Argentina, Colombia, Brasil, España, Reino Unido, Arabia Saudí</li>
