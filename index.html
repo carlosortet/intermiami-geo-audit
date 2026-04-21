@@ -87,6 +87,46 @@
 
   .docs { display: grid; gap: 14px; margin-top: 28px; }
 
+  /* One-pager CTA */
+  .onepager-cta {
+    display: block;
+    margin-top: 18px;
+    padding: 18px 22px;
+    background: linear-gradient(135deg, var(--im-pink) 0%, var(--im-pink-strong) 100%);
+    color: var(--im-black);
+    text-decoration: none;
+    border: 2px solid var(--im-black);
+    transition: transform .12s ease, box-shadow .12s ease;
+    position: relative;
+  }
+  .onepager-cta:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(233,30,99,0.25);
+  }
+  .op-tag {
+    font-size: 8pt; text-transform: uppercase;
+    letter-spacing: 2px; color: var(--im-black);
+    font-weight: 700; margin-bottom: 6px;
+  }
+  .op-headline {
+    font-size: 14pt; font-weight: 700;
+    color: var(--im-black); line-height: 1.2;
+    margin-bottom: 6px;
+  }
+  .op-summary {
+    font-size: 10pt; color: #1a1a1a;
+    line-height: 1.5; margin-bottom: 10px;
+  }
+  .op-arrow {
+    font-size: 9pt; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 1.5px;
+    color: var(--im-black);
+    background: var(--im-black);
+    color: var(--im-pink);
+    display: inline-block;
+    padding: 6px 14px;
+  }
+
   /* Messi callout */
   .messi-callout {
     display: block;
@@ -425,6 +465,13 @@
     <p>La propuesta abarca <strong>12 departamentos del club</strong> y establece métricas accionables para mejorar la visibilidad internacional, evitar la difusión de información errónea en respuestas IA y capturar el tráfico digital de aficionados durante el torneo. La metodología se basa en el análisis de <strong>~30.000 puntos de datos</strong> (~300 prompts × 4 engines × 8 mercados × 3 idiomas), convirtiendo un canal hasta ahora opaco en una superficie de negocio medible.</p>
     <p>El proyecto se estructura en un cronograma operativo de <strong>3 fases</strong> —auditoría base, activación Mundial, operación continua— orientado a fortalecer la conversión en venta de entradas y merchandising y a consolidar la autoridad de marca tras la era Messi.</p>
   </div>
+
+  <a class="onepager-cta" href="intermiami-onepager.html">
+    <div class="op-tag">★ Empieza por aquí</div>
+    <div class="op-headline">One-pager · resumen completo del proyecto en 1 página</div>
+    <div class="op-summary">Objetivo, propuesta, estrategia, beneficios, diferenciadores y próximos pasos. Con pastillas clickables a cada sección del knowledge base.</div>
+    <div class="op-arrow">Ver one-pager ›</div>
+  </a>
 
   <a class="messi-callout" href="intermiami-geo-argumentario-extenso.html#messi">
     <div class="messi-tag">Decisión metodológica clave</div>
