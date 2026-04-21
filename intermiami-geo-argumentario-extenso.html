@@ -519,10 +519,11 @@
   <h3 class="sub-h">Por qué este diseño es el correcto</h3>
   <ul style="padding-left:22px; margin-bottom:18px;">
     <li style="font-size:10.5pt; line-height:1.55; margin-bottom:6px;"><strong>Maximizar el valor del halo Messi</strong>: medir con precisión cuánta visibilidad genera Messi sobre el resto del activo de marca. Saber dónde su halo está funcionando con fuerza y dónde se diluye permite amplificar lo que funciona y reforzar lo que no.</li>
-    <li style="font-size:10.5pt; line-height:1.55; margin-bottom:6px;"><strong>Visión 360° de la marca</strong>: Inter Miami CF es Messi + Suárez + Busquets + jóvenes promesas + Beckham ownership + NU Stadium + ex-Chase como base Mundial + academia + ciudad + Apple TV+ + Adidas. Un corpus equilibrado captura toda esa superficie, no sólo el vector más obvio.</li>
+    <li style="font-size:10.5pt; line-height:1.55; margin-bottom:6px;"><strong>Visión 360° de la marca</strong>: Inter Miami CF es Messi + plantilla actual (<strong>De Paul, Reguilón</strong>, Busquets, jóvenes promesas) + figuras legacy todavía asociadas en LLMs (<strong>Suárez, Jordi Alba</strong>) + Beckham ownership + NU Stadium con tienda flagship + supporters como La Familia + academia + ciudad + Apple TV+ + Adidas. Un corpus equilibrado captura toda esa superficie, no sólo el vector más obvio.</li>
     <li style="font-size:10.5pt; line-height:1.55; margin-bottom:6px;"><strong>Insights accionables = gaps</strong>: los hallazgos más valiosos vienen de prompts donde la IA <em>debería</em> mencionar pilares del club y no lo hace. Esos gaps son la lista de tareas para Marketing, PR y Digital. Confirmar lo evidente no genera trabajo nuevo; identificar gaps sí.</li>
     <li style="font-size:10.5pt; line-height:1.55; margin-bottom:6px;"><strong>Exactitud factual sobre Messi</strong>: información incorrecta (equipo, contrato, número, lesiones) daña al club y al jugador como co-propietario. El sub-set Messi-anchored garantiza monitoreo dedicado de exactitud.</li>
-    <li style="font-size:10.5pt; line-height:1.55;"><strong>Cobertura narrativa completa</strong>: la marca está creciendo en múltiples dimensiones simultáneamente (Mundial 2026, nuevo estadio, expansión LATAM, academia internacional). El estudio captura todas, con Messi como hilo principal y los demás pilares como tejido de soporte.</li>
+    <li style="font-size:10.5pt; line-height:1.55; margin-bottom:6px;"><strong>Cobertura narrativa completa</strong>: la marca está creciendo en múltiples dimensiones simultáneamente (Mundial 2026, NU Stadium consolidando, expansión LATAM, academia internacional). El estudio captura todas, con Messi como hilo principal y los demás pilares como tejido de soporte.</li>
+    <li style="font-size:10.5pt; line-height:1.55;"><strong>Persistencia de figuras legacy</strong>: jugadores que ya no están en la plantilla (Luis Suárez, Jordi Alba) pueden seguir asociados al club en LLMs por la fuerza con la que entraron en el corpus. Auditar esta persistencia es importante: si la IA recomienda partidos para "ver a Suárez en Inter Miami", la información es errónea y puede generar fricción con compradores de tickets o merch. El sub-set Bucket B incluye prompts diseñados para detectar este tipo de hallucinations, así como para validar que jugadores actuales como <strong>De Paul y Reguilón</strong> ya están bien fijados.</li>
   </ul>
 
   <h3 class="sub-h">Distribución del prompt set · 4 buckets</h3>
@@ -546,10 +547,10 @@
       </tr>
       <tr>
         <td class="cat-name">B · Player-diversificado</td>
-        <td>Menciona jugadores rotando: Messi, Suárez, Busquets, jóvenes promesas, fichajes recientes.</td>
+        <td>Menciona jugadores rotando: actuales (Messi, <strong>De Paul, Reguilón</strong>, Busquets, jóvenes promesas) y legacy aún asociados (<strong>Suárez, Jordi Alba</strong>).</td>
         <td class="target">20–25%</td>
         <td class="target">A veces</td>
-        <td>Ecosistema de estrellas vs dependencia mono-Messi</td>
+        <td>Ecosistema de estrellas + persistencia de figuras legacy en LLMs</td>
       </tr>
       <tr>
         <td class="cat-name">C · Messi-anchored</td>
@@ -582,9 +583,9 @@
     <div style="border:1px solid #ddd; padding:12px 16px; background:#fff;">
       <div style="font-size:8pt; text-transform:uppercase; letter-spacing:1.2px; color:#b8005c; font-weight:700; margin-bottom:8px;">Bucket B · Player-diversificado (20–25%)</div>
       <ul style="padding-left:18px; margin:0;">
-        <li style="font-size:9.5pt; line-height:1.5; margin-bottom:4px;">¿Qué estrellas juegan en la MLS esta temporada?</li>
-        <li style="font-size:9.5pt; line-height:1.5; margin-bottom:4px;">Where can I see top international players in USA?</li>
-        <li style="font-size:9.5pt; line-height:1.5; margin-bottom:4px;">¿Quiénes son los referentes de Inter Miami?</li>
+        <li style="font-size:9.5pt; line-height:1.5; margin-bottom:4px;">¿Quién juega actualmente en Inter Miami además de Messi?</li>
+        <li style="font-size:9.5pt; line-height:1.5; margin-bottom:4px;">¿Sigue Suárez o Jordi Alba en Inter Miami? <em>(test legacy)</em></li>
+        <li style="font-size:9.5pt; line-height:1.5; margin-bottom:4px;">¿Qué papel tienen De Paul y Reguilón en Inter Miami?</li>
         <li style="font-size:9.5pt; line-height:1.5;">Best soccer team in Florida right now</li>
       </ul>
     </div>
@@ -631,7 +632,7 @@
     <div style="background:#000; color:#fff; padding:16px 18px;">
       <div style="font-size:8pt; text-transform:uppercase; letter-spacing:1.5px; color:#f7b5cd; font-weight:700; margin-bottom:6px;">KPI 4 · Cobertura de proyecto</div>
       <h4 style="font-size:11pt; margin-bottom:8px; color:#fff;">Long-term project narrative coverage</h4>
-      <p style="font-size:9.5pt; color:#ddd; line-height:1.5; margin-bottom:8px;">Calidad y cobertura de respuestas sobre el proyecto de largo plazo de Inter Miami: ownership Messi+Beckham+Mas, academia, Miami Freedom Park, expansión internacional.</p>
+      <p style="font-size:9.5pt; color:#ddd; line-height:1.5; margin-bottom:8px;">Calidad y cobertura de respuestas sobre el proyecto de largo plazo de Inter Miami: ownership Messi+Beckham+Mas, academia, NU Stadium ya operativo + tienda flagship de >1.000 m², expansión internacional.</p>
       <div style="font-size:9.5pt; color:#f7b5cd; font-weight:700;">Objetivo: respuestas estructuradas con ≥3 pilares de proyecto, mostrando un club que se construye desde múltiples vectores complementarios.</div>
     </div>
   </div>
@@ -639,6 +640,89 @@
   <div class="annex" style="border-left:4px solid #b8005c;">
     <h3 style="border-bottom:2px solid #f7b5cd;">Lectura estratégica</h3>
     <p>Este tratamiento permite ver con precisión <strong>cuánto valor está generando Messi</strong> sobre la marca y, al mismo tiempo, <strong>qué otros pilares del club están entrando en la conversación IA</strong>. La auditoría amplifica el halo effect del activo más visible y monitoriza su exactitud factual con prioridad, mientras mapea toda la superficie de marca que crece a su alrededor: ownership (Messi + Beckham + Mas), estrellas, ciudad, academia, infraestructura, sponsors. Una <strong>visión 360°</strong> que protege y multiplica el valor del activo más completo de la MLS.</p>
+  </div>
+</div>
+
+<!-- 01.C SOURCE MAPPING -->
+<div class="section" id="fuentes">
+  <div class="section-header">
+    <div class="section-number">1</div>
+    <div class="section-title" style="font-size:14pt;">Mapeo de fuentes por perfil de cliente · capacidad predictiva</div>
+    <div class="section-tag">Diferenciador estratégico</div>
+  </div>
+
+  <p class="lead-p">Los LLMs no construyen sus respuestas a partir de un único corpus universal: cada engine selecciona y prioriza fuentes distintas en función del contexto del prompt (idioma, mercado, intención, persona implícita). La auditoría GEO/AEO mapea, para cada uno de los <strong>perfiles de cliente</strong> definidos, qué fuentes citan los engines y con qué peso. Este mapa convierte al estudio en una <strong>herramienta de pre-evaluación predictiva</strong>: permite estimar el impacto en IA de una noticia, una campaña o un fichaje <em>antes de ejecutarlo</em>.</p>
+
+  <h3 class="sub-h">Por qué este capacidad es estratégicamente valiosa</h3>
+  <ul style="padding-left:22px; margin-bottom:18px;">
+    <li style="font-size:10.5pt; line-height:1.55; margin-bottom:6px;"><strong>Pre-flight de campañas</strong>: si el equipo Marketing planea una campaña global con cobertura mediática X, el mapa de fuentes responde: ¿esa cobertura llegará al fan global de Messi? ¿Al aficionado local de Miami? ¿Al comprador de merch en LATAM? La decisión sobre qué medios contratar deja de ser intuitiva.</li>
+    <li style="font-size:10.5pt; line-height:1.55; margin-bottom:6px;"><strong>Estimación de ROI por persona</strong>: cada acción comercial (fichaje, lanzamiento de equipación, evento) tiene un retorno IA distinto según qué persona alcance. El mapa permite construir un modelo orientativo de "AI reach × persona × inversión".</li>
+    <li style="font-size:10.5pt; line-height:1.55; margin-bottom:6px;"><strong>Optimización de inversión publicitaria</strong>: si el objetivo del trimestre es activar la persona "familia interesada en academia" en Florida, el mapa muestra qué fuentes (medios locales, blogs especializados, foros) son las que efectivamente alimentan las respuestas IA para esa persona, y dónde colocar la inversión.</li>
+    <li style="font-size:10.5pt; line-height:1.55; margin-bottom:6px;"><strong>Brand protection persona-aware</strong>: si una fuente no autorizada o desinformada está alimentando las respuestas IA para un perfil concreto (por ejemplo, una tienda de réplicas citada por LLMs cuando responden al perfil shopper internacional), el enforcement legal se prioriza por impacto real medido.</li>
+    <li style="font-size:10.5pt; line-height:1.55;"><strong>Anticipación de impacto de fichajes y noticias</strong>: antes de un fichaje o un anuncio importante, el mapa permite simular qué medios cubrirán la noticia (basándose en histórico) y qué personas la verán reflejada en sus respuestas IA. La decisión de timing y canal de anuncio se vuelve mucho más informada.</li>
+  </ul>
+
+  <h3 class="sub-h">Cómo se construye el mapa</h3>
+  <table class="kpi-table" style="margin-top:8px;">
+    <thead>
+      <tr>
+        <th style="width:18%;">Capa</th>
+        <th>Qué se mide</th>
+        <th style="width:22%;">Output accionable</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="cat-name">1 · Captura de fuentes</td>
+        <td>Para cada respuesta de los 4 engines, se registran todas las fuentes citadas (URL, dominio, tipo: medio, blog, foro, social, official).</td>
+        <td class="target">Inventario completo (~30k data points)</td>
+      </tr>
+      <tr>
+        <td class="cat-name">2 · Tagging por persona</td>
+        <td>Cada prompt está pre-tagueado con la persona objetivo (P01–P07). Las fuentes citadas se agrupan por persona.</td>
+        <td class="target">Tabla "fuentes × persona"</td>
+      </tr>
+      <tr>
+        <td class="cat-name">3 · Scoring de autoridad</td>
+        <td>Cada fuente recibe un score de autoridad (frecuencia de citación, peso editorial, exclusividad por persona).</td>
+        <td class="target">Top 50 fuentes por persona</td>
+      </tr>
+      <tr>
+        <td class="cat-name">4 · Cross-engine analysis</td>
+        <td>Comparación de qué fuentes prioriza cada engine para la misma persona. Identifica fuentes "premium" (citadas en 3+ engines) y "engine-specific".</td>
+        <td class="target">Diferencias accionables por engine</td>
+      </tr>
+      <tr>
+        <td class="cat-name">5 · Predictive layer</td>
+        <td>Modelo orientativo: dada una nueva publicación en una fuente X, estimación del lift esperado en respuestas IA para cada persona.</td>
+        <td class="target">Calculadora "campaña → persona → IA lift"</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3 class="sub-h">Casos de uso reales</h3>
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:14px 0;">
+    <div style="border:1px solid #ddd; padding:14px 16px; background:#fff;">
+      <div style="font-size:8pt; text-transform:uppercase; letter-spacing:1.2px; color:#b8005c; font-weight:700; margin-bottom:8px;">Caso 1 · Fichaje internacional</div>
+      <p style="font-size:9.5pt; line-height:1.55; color:#444; margin:0;">El club estudia un fichaje. Antes de cerrarlo, el mapa permite simular: "si lo anunciamos vía ESPN + Marca + La Nación, ¿en cuántas semanas y con qué intensidad aparecerá en respuestas IA para el fan global de Messi vs el aficionado local de Miami?". La decisión de timing y canal de anuncio se hace con dato, no con intuición.</p>
+    </div>
+    <div style="border:1px solid #ddd; padding:14px 16px; background:#fff;">
+      <div style="font-size:8pt; text-transform:uppercase; letter-spacing:1.2px; color:#b8005c; font-weight:700; margin-bottom:8px;">Caso 2 · Lanzamiento de equipación</div>
+      <p style="font-size:9.5pt; line-height:1.55; color:#444; margin:0;">Adidas y el club preparan el lanzamiento del third kit. El mapa identifica que para el persona shopper internacional las fuentes prioritarias en LLMs son Footy Headlines, FootyKitNews y Reddit r/MLS. El plan de PR se ajusta para asegurar coverage prioritaria en esos canales antes del drop.</p>
+    </div>
+    <div style="border:1px solid #ddd; padding:14px 16px; background:#fff;">
+      <div style="font-size:8pt; text-transform:uppercase; letter-spacing:1.2px; color:#b8005c; font-weight:700; margin-bottom:8px;">Caso 3 · Captación de familia academia</div>
+      <p style="font-size:9.5pt; line-height:1.55; color:#444; margin:0;">El club quiere mover la conversación IA sobre "best youth soccer academy Florida" hacia Inter Miami Academy. El mapa muestra que las fuentes citadas para esta persona son Florida Youth Soccer Magazine, foros locales de padres y guías "best of" regionales. El plan de outreach se diseña sobre esos targets concretos en lugar de campañas genéricas.</p>
+    </div>
+    <div style="border:1px solid #ddd; padding:14px 16px; background:#fff;">
+      <div style="font-size:8pt; text-transform:uppercase; letter-spacing:1.2px; color:#b8005c; font-weight:700; margin-bottom:8px;">Caso 4 · Brand protection</div>
+      <p style="font-size:9.5pt; line-height:1.55; color:#444; margin:0;">Una tienda de réplicas no oficiales aparece citada por LLMs cuando responden al persona shopper en Argentina. Sin el mapa, el enforcement sería genérico; con el mapa, se prioriza el takedown en función del impacto real (qué persona, qué engine, qué frecuencia) y se ajusta la estrategia para proteger los segmentos más afectados.</p>
+    </div>
+  </div>
+
+  <div class="annex" style="border-left:4px solid #b8005c;">
+    <h3 style="border-bottom:2px solid #f7b5cd;">Lectura estratégica</h3>
+    <p>El mapeo de fuentes por persona es uno de los <strong>diferenciadores más potentes</strong> de la auditoría GEO/AEO frente a SEO clásico, social listening o media monitoring. Convierte al equipo de inteligencia del club en una capacidad predictiva: deja de medir <em>qué pasó</em> en la IA y empieza a estimar <em>qué pasará</em> con cada acción que se planee. Para áreas como Marketing, Comercial, PR y Brand Protection, esto cambia la naturaleza de las decisiones: de reactivas a anticipatorias.</p>
   </div>
 </div>
 
@@ -651,12 +735,12 @@
   </div>
 
   <div class="wc-hero">
-    <div class="wc-tag">★ Oportunidad estratégica · 6 semanas únicas</div>
-    <h2>Inter Miami <em>es la sede física</em> del Mundial<br>en Miami entre el 11 de junio y el 19 de julio de 2026</h2>
-    <p>Las dos instalaciones del club son el corazón del Mundial en la ciudad: <strong>NU Stadium</strong> (nuevo, ex-Miami Freedom Park) acoge <strong>competiciones del torneo</strong>, y el <strong>antiguo estadio</strong> (ex-Chase Stadium) sirve como <strong>base de entrenamiento oficial</strong> para selecciones internacionales. Como consecuencia, <strong>Inter Miami no juega durante esas 6 semanas</strong>: la plantilla descansa o cede jugadores a sus selecciones, y no hay revenue de matchday del propio club.</p>
-    <p>El pico de búsquedas y conversaciones IA sobre "Miami + fútbol / Inter Miami stadium / where to see World Cup matches Miami" se estima en un rango de <strong>x4–8 sobre los niveles actuales</strong> (multiplicador potencialmente mayor que el de otras sedes al ser Inter Miami el destino físico del torneo en la ciudad). Es la mayor oportunidad de exposición de marca de la próxima década, pero la lógica comercial cambia: <strong>ya no se trata de capturar visitantes hacia partidos del club</strong>, sino de:</p>
-    <p>(1) <strong>Brand impressions masivas</strong>: cada retransmisión, cada noticia, cada foto de selección entrenando cita un estadio del club; (2) <strong>Hospitality VIP corporativa</strong> en NU Stadium durante los partidos del Mundial; (3) <strong>Generación diaria de contenido</strong> propio sobre las selecciones entrenando en sus instalaciones; (4) <strong>Captura de leads para conversión post-Mundial</strong> (primeros partidos del club tras el torneo, abonos 2026/27, merch).</p>
-    <p>El plan se estructura en <strong>3 fases secuenciales</strong>: pre-torneo (preparar narrativa y contenido), durante-torneo (amplificar y capturar leads), post-torneo (convertir y consolidar legacy).</p>
+    <div class="wc-tag">Oportunidad complementaria · 6 semanas a tener en cuenta</div>
+    <h2>El Mundial 2026 como <em>oportunidad estratégica</em>,<br>no como urgencia operativa</h2>
+    <p>El Mundial FIFA 2026 (junio-julio) coincidirá con un periodo en el que las dos instalaciones del club están comprometidas con FIFA: <strong>NU Stadium</strong> (ya operativo, primeros partidos del club disputados) acoge competiciones del torneo, y el <strong>antiguo estadio</strong> (ex-Chase Stadium) actúa como base de entrenamiento de selecciones. Inter Miami no juega durante esas 6 semanas: la plantilla descansa o cede jugadores a sus selecciones, y no hay revenue de matchday del propio club.</p>
+    <p>El pico de búsquedas y conversaciones IA sobre "Miami + fútbol / Inter Miami stadium" se estima en un rango orientativo de <strong>x4–8 sobre los niveles actuales</strong>. Es un contexto único de exposición de marca que el club puede capitalizar si lo decide, pero <strong>la auditoría GEO/AEO tiene valor estratégico continuo independientemente del Mundial</strong>: brand protection, share of voice, conversión vía IA y medición del ecosistema completo de marca son beneficios que aplican todo el año.</p>
+    <p>Si se decide aprovechar la oportunidad Mundial, las palancas comerciales serían: (1) <strong>brand impressions masivas</strong> vía retransmisiones que citan estadios del club; (2) <strong>hospitality VIP corporativa</strong> en NU Stadium durante los partidos del Mundial; (3) <strong>contenido diario</strong> sobre selecciones entrenando en las instalaciones; (4) <strong>lead capture</strong> para conversión post-Mundial (primeros partidos del club, abonos, merch).</p>
+    <p>El plan se estructura en <strong>3 fases</strong>: pre-torneo (preparar narrativa si se decide capitalizar), durante-torneo (amplificar oportunidades disponibles), post-torneo (convertir y consolidar). Las tres son <em>opcionales</em> en intensidad: el alcance se ajusta al apetito del cliente.</p>
   </div>
 
   <div class="wc-phases">
@@ -701,7 +785,7 @@
     </div>
   </div>
 
-  <p class="lead-p"><strong>Cross-impact:</strong> el Mundial impacta los 12 departamentos del club, pero con intensidad diferente. <strong>Marketing/Brand, Comercial/Sponsorship, Hospitality y International/LATAM son los 4 críticos</strong> (la oportunidad de exposición y monetización VIP es máxima). Retail, Operations, Comunicación/PR y Estrategia/BI son <strong>4 muy relevantes</strong> (logística de hosting, narrativa, brand protection). Ticketing, Digital, Academia y Membership son <strong>4 con oportunidad táctica</strong> centrada en lead capture para conversión post-Mundial.</p>
+  <p class="lead-p"><strong>Cross-impact (si se decide capitalizar el Mundial):</strong> los 12 departamentos del club tienen palancas activables, con intensidad diferente. <strong>Marketing/Brand, Comercial/Sponsorship, Hospitality y la función International/LATAM</strong> son las áreas con mayor upside (exposición y monetización VIP). Retail, Operations, Comunicación/PR y Estrategia/BI son áreas relevantes en hosting, narrativa y brand protection. Ticketing, Digital, Academia y Membership tienen oportunidad táctica centrada en lead capture para conversión post-Mundial. La intensidad de cada palanca se ajusta al apetito del cliente.</p>
 </div>
 
 <!-- 03 DEPARTAMENTOS -->
@@ -1098,7 +1182,7 @@
         <div class="dept-id-full">D07 · Crítico</div>
       </div>
       <div class="dept-context">
-        Tienda oficial e-commerce, líneas de equipación Adidas, ediciones especiales, lifestyle/streetwear, merch oficial. Inter Miami es <strong>top 3 mundial en venta de camisetas</strong> desde 2023. Esta línea es la más global e internacional del club, con peso enorme en la valoración de marca y un canal directo de monetización con fans LATAM/EMEA/Asia que no asisten a partidos.
+        Tienda oficial e-commerce, líneas de equipación Adidas, ediciones especiales, lifestyle/streetwear, merch oficial. Inter Miami es <strong>top 3 mundial en venta de camisetas</strong> desde 2023. Activo físico clave: la <strong>tienda flagship en NU Stadium con más de 1.000 m²</strong>, una de las mayores de la MLS y destino físico para fans del club y visitantes (incluido el público internacional del Mundial 2026). Esta línea es la más global del club, con peso enorme en valoración de marca y un canal directo de monetización con fans LATAM/EMEA/Asia que no asisten a partidos.
       </div>
 
       <div class="dept-row">
@@ -1108,6 +1192,7 @@
             <li>ChatGPT y Perplexity recomiendan Fanatics, MLS Store o Adidas antes que tienda oficial</li>
             <li>Confusión Authentic vs Replica genera devoluciones y compras a falsificadores</li>
             <li>Lanzamientos de kits llegan tarde a la conversación IA (ya hay discusión en Reddit antes)</li>
+            <li>Tienda flagship física de >1.000 m² en NU Stadium poco surfaceada en queries de "Inter Miami store / merch in Miami"</li>
             <li>Guía de tallas internacional no surface clara en queries de "what size jersey"</li>
             <li>Costes y plazos de envío internacional poco visibles en respuestas IA</li>
           </ul>
@@ -1132,13 +1217,14 @@
           <div class="deliverable-item">Plantilla "AI-first product launch"</div>
           <div class="deliverable-item">Authenticity messaging optimizado</div>
           <div class="deliverable-item">Lista negra de tiendas no autorizadas citadas</div>
+          <div class="deliverable-item">Posicionamiento del flagship store de >1.000 m² en NU Stadium</div>
           <div class="deliverable-item">Dashboard mensual de retail visibility</div>
         </div>
       </div>
 
       <div class="dept-wc-full">
         <h4>Ángulo Mundial 2026</h4>
-        <p>Drops <strong>"Miami Pink × World Cup"</strong> con narrativa que conecte rosa Inter Miami con la sede física del Mundial. Activación específica para fans visitantes de selecciones que jueguen en NU Stadium o entrenen en ex-Chase: merch dual (camiseta selección + camiseta Inter Miami) y ediciones limitadas "fan-of-the-host". <strong>Pop-up stores físicas dentro y alrededor de las instalaciones del club</strong> durante el torneo (alta visibilidad, alto tráfico) con QR optimizados para discovery IA y conversión post-Mundial.</p>
+        <p>Si se decide capitalizar la oportunidad: drops <strong>"Miami Pink × World Cup"</strong> con narrativa que conecte rosa Inter Miami con la sede física del torneo. Activación específica para fans visitantes de selecciones: merch dual (camiseta selección + Inter Miami) y ediciones limitadas. <strong>El flagship store de >1.000 m² en NU Stadium</strong> queda como destino físico privilegiado durante el torneo: alto tráfico de público internacional, posicionamiento óptimo en queries IA tipo "Inter Miami store Miami / where to buy soccer merch Miami World Cup".</p>
       </div>
 
       <div class="dept-kpis">
@@ -1220,11 +1306,11 @@
   <div class="dept-full">
     <div class="dept-inner">
       <div class="dept-head-full">
-        <h3>International & LATAM</h3>
+        <h3>International & LATAM (función)</h3>
         <div class="dept-id-full">D09 · Crítico</div>
       </div>
       <div class="dept-context">
-        Departamento (o función) responsable de la expansión y gestión de mercados internacionales. Inter Miami CF es uno de los pocos clubes MLS con marca verdaderamente global. La huella natural está en LATAM (efecto Messi + Argentina), pero hay oportunidad enorme en EMEA, Brasil (PT), KSA y Asia. La visibilidad IA por mercado es asimétrica y mal entendida hoy.
+        <strong>Función</strong> (transversal a Marketing, Comercial y Comunicación) responsable de la expansión y gestión de mercados internacionales. Inter Miami CF es uno de los pocos clubes MLS con marca verdaderamente global. La huella natural está en LATAM (efecto Messi + Argentina), pero hay oportunidad enorme en EMEA, Brasil (PT), KSA y Asia. La visibilidad IA por mercado es asimétrica y mal entendida hoy.
       </div>
 
       <div class="dept-row">
@@ -1350,17 +1436,17 @@
         <div class="dept-id-full">D11 · Táctico</div>
       </div>
       <div class="dept-context">
-        Programas de membership, supporters groups (Vice City 1896, Southern Legion, etc.), fan clubs internacionales, CRM y experiencias de fidelización. Hoy con foco en CRM clásico (email, app push, social). Falta visibilidad: ¿cómo descubre un nuevo fan que existen estos programas? ¿Los LLMs los recomiendan?
+        Programas de membership, supporters groups (<strong>La Familia</strong> como grupo principal, Vice City 1896, Southern Legion, etc.), fan clubs internacionales, CRM y experiencias de fidelización. Hoy con foco en CRM clásico (email, app push, social). Falta visibilidad: ¿cómo descubre un nuevo fan que existen estos programas? ¿Los LLMs los recomiendan? <strong>La Familia</strong> en concreto es el grupo de animación más reconocido y debe surface como referencia obligada en cualquier respuesta sobre cómo apoyar al club.
       </div>
 
       <div class="dept-row">
         <div class="dept-col pain">
           <h4>Pain points</h4>
           <ul>
-            <li>Fan clubs y supporters groups apenas surfacean en respuestas IA de "how to support Inter Miami"</li>
+            <li>Fan clubs y supporters groups (en especial <strong>La Familia</strong>) apenas surfacean en respuestas IA de "how to support Inter Miami"</li>
             <li>Membership program (cuando exista) sin visibilidad orgánica IA</li>
             <li>Fans LATAM y EMEA no encuentran fan club o community cercana</li>
-            <li>Sin canal de descubrimiento IA para nuevos fans post-Messi</li>
+            <li>Sin canal de descubrimiento IA para nuevos fans atraídos por Messi o por el Mundial</li>
             <li>Onboarding "soy nuevo fan, ¿qué hago?" no cubierto</li>
           </ul>
         </div>
@@ -1369,7 +1455,7 @@
           <ul>
             <li>Inventario específico de prompts "new fan" y "how to support"</li>
             <li>Plan de contenido onboarding bilingüe "AI-citeable"</li>
-            <li>Surfacing de supporters groups oficiales en respuestas IA relevantes</li>
+            <li>Surfacing de supporters groups oficiales (La Familia como grupo prioritario) en respuestas IA relevantes</li>
             <li>Lead generation para fan clubs internacionales vía visibilidad IA</li>
             <li>Detección de comunidades de fans no oficiales (Reddit, Discord) para alianza</li>
           </ul>
@@ -1453,7 +1539,7 @@
 
       <div class="dept-wc-full">
         <h4>Ángulo Mundial 2026</h4>
-        <p>Reporting <strong>ejecutivo pre/durante/post-Mundial</strong> al board con KPIs de visibilidad y oportunidades comerciales detectadas. Brand protection intensiva durante el torneo: detección y enforcement contra falsificaciones aprovechando el pico de demanda. Análisis de impacto post-Mundial para fundamentar decisiones estratégicas 2027 (Miami Freedom Park, expansión internacional, sucesión Messi).</p>
+        <p>Reporting <strong>ejecutivo pre/durante/post-Mundial</strong> al board con KPIs de visibilidad y oportunidades comerciales detectadas (si se decide capitalizar el torneo). Brand protection intensiva durante el evento: detección y enforcement contra falsificaciones aprovechando el pico de demanda. Análisis de impacto para fundamentar decisiones estratégicas 2027 (consolidación de NU Stadium en operación plena, expansión internacional, evolución del proyecto deportivo).</p>
       </div>
 
       <div class="dept-kpis">
@@ -1528,12 +1614,12 @@
       <div class="roadmap-content">
         <h4>Consolidación · operación trimestral y planning 2027</h4>
         <div class="dates">Agosto 2026 – marzo 2027 · 9 meses</div>
-        <div class="desc">Operación continua trimestral con auditorías recurrentes, brand protection ongoing, reporting a board y planning estratégico de cara a Miami Freedom Park, sucesión Messi y expansión internacional.</div>
+        <div class="desc">Operación continua trimestral con auditorías recurrentes, brand protection ongoing, reporting a board y planning estratégico de cara a consolidación de NU Stadium en operación plena, expansión internacional y evolución del proyecto deportivo.</div>
         <div class="deliv-list">
           <div>Auditoría trimestral completa</div>
           <div>Reporting al board con KPIs IA</div>
           <div>Brand protection ongoing</div>
-          <div>Roadmap 2027 (Miami Freedom Park)</div>
+          <div>Roadmap 2027 (NU Stadium en operación plena)</div>
           <div>Análisis de impacto post-Mundial</div>
           <div>Expansión a mercados nuevos (BR, KSA, Asia)</div>
         </div>
