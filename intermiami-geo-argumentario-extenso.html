@@ -519,11 +519,11 @@
   <h3 class="sub-h">Por qué este diseño es el correcto</h3>
   <ul style="padding-left:22px; margin-bottom:18px;">
     <li style="font-size:10.5pt; line-height:1.55; margin-bottom:6px;"><strong>Maximizar el valor del halo Messi</strong>: medir con precisión cuánta visibilidad genera Messi sobre el resto del activo de marca. Saber dónde su halo está funcionando con fuerza y dónde se diluye permite amplificar lo que funciona y reforzar lo que no.</li>
-    <li style="font-size:10.5pt; line-height:1.55; margin-bottom:6px;"><strong>Visión 360° de la marca</strong>: Inter Miami CF es Messi + plantilla actual (<strong>De Paul, Reguilón</strong>, Busquets, jóvenes promesas) + figuras legacy todavía asociadas en LLMs (<strong>Suárez, Jordi Alba</strong>) + Beckham ownership + NU Stadium con tienda flagship + supporters como La Familia + academia + ciudad + Apple TV+ + Adidas. Un corpus equilibrado captura toda esa superficie, no sólo el vector más obvio.</li>
+    <li style="font-size:10.5pt; line-height:1.55; margin-bottom:6px;"><strong>Visión 360° de la marca</strong>: Inter Miami CF es Messi + plantilla actual (<strong>De Paul, Reguilón</strong>, Busquets, jóvenes promesas) + figuras legacy todavía asociadas en LLMs —jugadores (<strong>Suárez, Jordi Alba</strong>) y staff técnico (<strong>Mascherano</strong>, ex-entrenador recién salido)— + Beckham ownership + NU Stadium con tienda flagship + supporters como La Familia + academia + ciudad + Apple TV+ + Adidas. Un corpus equilibrado captura toda esa superficie, no sólo el vector más obvio.</li>
     <li style="font-size:10.5pt; line-height:1.55; margin-bottom:6px;"><strong>Insights accionables = gaps</strong>: los hallazgos más valiosos vienen de prompts donde la IA <em>debería</em> mencionar pilares del club y no lo hace. Esos gaps son la lista de tareas para Marketing, PR y Digital. Confirmar lo evidente no genera trabajo nuevo; identificar gaps sí.</li>
     <li style="font-size:10.5pt; line-height:1.55; margin-bottom:6px;"><strong>Exactitud factual sobre Messi</strong>: información incorrecta (equipo, contrato, número, lesiones) daña al club y al jugador como co-propietario. El sub-set Messi-anchored garantiza monitoreo dedicado de exactitud.</li>
     <li style="font-size:10.5pt; line-height:1.55; margin-bottom:6px;"><strong>Cobertura narrativa completa</strong>: la marca está creciendo en múltiples dimensiones simultáneamente (Mundial 2026, NU Stadium consolidando, expansión LATAM, academia internacional). El estudio captura todas, con Messi como hilo principal y los demás pilares como tejido de soporte.</li>
-    <li style="font-size:10.5pt; line-height:1.55;"><strong>Persistencia de figuras legacy</strong>: jugadores que ya no están en la plantilla (Luis Suárez, Jordi Alba) pueden seguir asociados al club en LLMs por la fuerza con la que entraron en el corpus. Auditar esta persistencia es importante: si la IA recomienda partidos para "ver a Suárez en Inter Miami", la información es errónea y puede generar fricción con compradores de tickets o merch. El sub-set Bucket B incluye prompts diseñados para detectar este tipo de hallucinations, así como para validar que jugadores actuales como <strong>De Paul y Reguilón</strong> ya están bien fijados.</li>
+    <li style="font-size:10.5pt; line-height:1.55;"><strong>Persistencia de figuras legacy</strong>: nombres que ya no están en el club —jugadores (Luis Suárez, Jordi Alba) o staff técnico (<strong>Mascherano</strong>, ex-entrenador recién salido)— pueden seguir asociados a Inter Miami en LLMs por la fuerza con la que entraron en el corpus. Auditar esta persistencia es importante: si la IA recomienda comprar entradas para "ver a Suárez" o asume que "Mascherano sigue siendo el entrenador", la información es errónea y genera fricción con tickets, merch o cobertura mediática. El sub-set Bucket B incluye prompts diseñados para detectar este tipo de hallucinations en jugadores y cuerpo técnico, así como para validar que figuras actuales como <strong>De Paul, Reguilón y el nuevo entrenador</strong> ya están bien fijados.</li>
   </ul>
 
   <h3 class="sub-h">Distribución del prompt set · 4 buckets</h3>
@@ -546,11 +546,11 @@
         <td>Mapeo 360° de la superficie de marca + medición del halo de Messi (aparece o no espontáneamente)</td>
       </tr>
       <tr>
-        <td class="cat-name">B · Player-diversificado</td>
-        <td>Menciona jugadores rotando: actuales (Messi, <strong>De Paul, Reguilón</strong>, Busquets, jóvenes promesas) y legacy aún asociados (<strong>Suárez, Jordi Alba</strong>).</td>
+        <td class="cat-name">B · Player & staff diversificado</td>
+        <td>Menciona jugadores y cuerpo técnico rotando: actuales (Messi, <strong>De Paul, Reguilón</strong>, Busquets, jóvenes, nuevo entrenador) y legacy aún asociados (<strong>Suárez, Jordi Alba, Mascherano</strong>).</td>
         <td class="target">20–25%</td>
         <td class="target">A veces</td>
-        <td>Ecosistema de estrellas + persistencia de figuras legacy en LLMs</td>
+        <td>Ecosistema de estrellas + persistencia de figuras legacy (jugadores y staff) en LLMs</td>
       </tr>
       <tr>
         <td class="cat-name">C · Messi-anchored</td>
@@ -585,8 +585,8 @@
       <ul style="padding-left:18px; margin:0;">
         <li style="font-size:9.5pt; line-height:1.5; margin-bottom:4px;">¿Quién juega actualmente en Inter Miami además de Messi?</li>
         <li style="font-size:9.5pt; line-height:1.5; margin-bottom:4px;">¿Sigue Suárez o Jordi Alba en Inter Miami? <em>(test legacy)</em></li>
-        <li style="font-size:9.5pt; line-height:1.5; margin-bottom:4px;">¿Qué papel tienen De Paul y Reguilón en Inter Miami?</li>
-        <li style="font-size:9.5pt; line-height:1.5;">Best soccer team in Florida right now</li>
+        <li style="font-size:9.5pt; line-height:1.5; margin-bottom:4px;">¿Quién es el entrenador actual de Inter Miami? <em>(test post-Mascherano)</em></li>
+        <li style="font-size:9.5pt; line-height:1.5;">¿Qué papel tienen De Paul y Reguilón en Inter Miami?</li>
       </ul>
     </div>
     <div style="border:1px solid #ddd; padding:12px 16px; background:#fff;">
